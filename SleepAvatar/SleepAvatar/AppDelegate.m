@@ -10,6 +10,15 @@
 
 @implementation AppDelegate
 
+- (CMMotionManager *)sharedManager
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        self.motionmanager = [[CMMotionManager alloc] init];
+    });
+    return self.motionmanager;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.

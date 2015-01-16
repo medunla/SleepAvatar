@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB6AA27E1A68EC5D00D2F3B0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA27D1A68EC5D00D2F3B0 /* SWRevealViewController.m */; };
+		AB6AA2801A68ECFC00D2F3B0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6AA27F1A68ECFC00D2F3B0 /* CoreMotion.framework */; };
+		AB6AA2821A68ED0D00D2F3B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6AA2811A68ED0D00D2F3B0 /* QuartzCore.framework */; };
+		AB6AA2841A68ED1600D2F3B0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6AA2831A68ED1600D2F3B0 /* libsqlite3.dylib */; };
+		AB6AA2871A68EEB000D2F3B0 /* AvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2861A68EEB000D2F3B0 /* AvatarViewController.m */; };
+		AB6AA28A1A68EECF00D2F3B0 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2891A68EECF00D2F3B0 /* MenuTableViewController.m */; };
+		AB6AA2901A68F56100D2F3B0 /* SleepGraphListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA28F1A68F56100D2F3B0 /* SleepGraphListTableViewController.m */; };
+		AB6AA2931A68F59D00D2F3B0 /* AchievementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2921A68F59D00D2F3B0 /* AchievementViewController.m */; };
+		AB6AA2961A68F5FE00D2F3B0 /* SleepGraphDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2951A68F5FE00D2F3B0 /* SleepGraphDetailViewController.m */; };
+		AB6AA2991A68F6CF00D2F3B0 /* ChangeWearableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2981A68F6CF00D2F3B0 /* ChangeWearableViewController.m */; };
+		AB6AA29C1A68F6E900D2F3B0 /* StartSleepRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA29B1A68F6E900D2F3B0 /* StartSleepRecommendViewController.m */; };
+		AB6AA29F1A68F70800D2F3B0 /* StartSleepDetectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA29E1A68F70800D2F3B0 /* StartSleepDetectTableViewController.m */; };
+		AB6AA2A31A68F7A900D2F3B0 /* AboutSleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2A21A68F7A900D2F3B0 /* AboutSleepViewController.m */; };
+		AB6AA2A61A68F7BB00D2F3B0 /* AboutSleepDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2A51A68F7BB00D2F3B0 /* AboutSleepDetailViewController.m */; };
+		AB6AA2AB1A68FB3300D2F3B0 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2AA1A68FB3300D2F3B0 /* DBManager.m */; };
+		AB6AA2AF1A68FD7D00D2F3B0 /* StartSleepDetectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6AA2AE1A68FD7D00D2F3B0 /* StartSleepDetectTableViewCell.m */; };
 		ABF07E691A67F94500000700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF07E681A67F94500000700 /* Foundation.framework */; };
 		ABF07E6B1A67F94500000700 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF07E6A1A67F94500000700 /* CoreGraphics.framework */; };
 		ABF07E6D1A67F94500000700 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF07E6C1A67F94500000700 /* UIKit.framework */; };
@@ -34,6 +50,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB6AA27C1A68EC5D00D2F3B0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		AB6AA27D1A68EC5D00D2F3B0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AB6AA27F1A68ECFC00D2F3B0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		AB6AA2811A68ED0D00D2F3B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AB6AA2831A68ED1600D2F3B0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		AB6AA2851A68EEB000D2F3B0 /* AvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarViewController.h; sourceTree = "<group>"; };
+		AB6AA2861A68EEB000D2F3B0 /* AvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarViewController.m; sourceTree = "<group>"; };
+		AB6AA2881A68EECF00D2F3B0 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		AB6AA2891A68EECF00D2F3B0 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		AB6AA28E1A68F56100D2F3B0 /* SleepGraphListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepGraphListTableViewController.h; sourceTree = "<group>"; };
+		AB6AA28F1A68F56100D2F3B0 /* SleepGraphListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepGraphListTableViewController.m; sourceTree = "<group>"; };
+		AB6AA2911A68F59D00D2F3B0 /* AchievementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementViewController.h; sourceTree = "<group>"; };
+		AB6AA2921A68F59D00D2F3B0 /* AchievementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementViewController.m; sourceTree = "<group>"; };
+		AB6AA2941A68F5FE00D2F3B0 /* SleepGraphDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepGraphDetailViewController.h; sourceTree = "<group>"; };
+		AB6AA2951A68F5FE00D2F3B0 /* SleepGraphDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepGraphDetailViewController.m; sourceTree = "<group>"; };
+		AB6AA2971A68F6CF00D2F3B0 /* ChangeWearableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWearableViewController.h; sourceTree = "<group>"; };
+		AB6AA2981A68F6CF00D2F3B0 /* ChangeWearableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWearableViewController.m; sourceTree = "<group>"; };
+		AB6AA29A1A68F6E900D2F3B0 /* StartSleepRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartSleepRecommendViewController.h; sourceTree = "<group>"; };
+		AB6AA29B1A68F6E900D2F3B0 /* StartSleepRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartSleepRecommendViewController.m; sourceTree = "<group>"; };
+		AB6AA29D1A68F70800D2F3B0 /* StartSleepDetectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartSleepDetectTableViewController.h; sourceTree = "<group>"; };
+		AB6AA29E1A68F70800D2F3B0 /* StartSleepDetectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartSleepDetectTableViewController.m; sourceTree = "<group>"; };
+		AB6AA2A11A68F7A900D2F3B0 /* AboutSleepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSleepViewController.h; sourceTree = "<group>"; };
+		AB6AA2A21A68F7A900D2F3B0 /* AboutSleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSleepViewController.m; sourceTree = "<group>"; };
+		AB6AA2A41A68F7BB00D2F3B0 /* AboutSleepDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSleepDetailViewController.h; sourceTree = "<group>"; };
+		AB6AA2A51A68F7BB00D2F3B0 /* AboutSleepDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSleepDetailViewController.m; sourceTree = "<group>"; };
+		AB6AA2A91A68FB3300D2F3B0 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		AB6AA2AA1A68FB3300D2F3B0 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		AB6AA2AC1A68FBC400D2F3B0 /* sleepBehavior.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepBehavior.sql; sourceTree = "<group>"; };
+		AB6AA2AD1A68FD7D00D2F3B0 /* StartSleepDetectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartSleepDetectTableViewCell.h; sourceTree = "<group>"; };
+		AB6AA2AE1A68FD7D00D2F3B0 /* StartSleepDetectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartSleepDetectTableViewCell.m; sourceTree = "<group>"; };
 		ABF07E651A67F94500000700 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF07E681A67F94500000700 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ABF07E6A1A67F94500000700 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6AA2841A68ED1600D2F3B0 /* libsqlite3.dylib in Frameworks */,
+				AB6AA2821A68ED0D00D2F3B0 /* QuartzCore.framework in Frameworks */,
+				AB6AA2801A68ECFC00D2F3B0 /* CoreMotion.framework in Frameworks */,
 				ABF07E6B1A67F94500000700 /* CoreGraphics.framework in Frameworks */,
 				ABF07E6D1A67F94500000700 /* UIKit.framework in Frameworks */,
 				ABF07E691A67F94500000700 /* Foundation.framework in Frameworks */,
@@ -79,6 +128,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB6AA27A1A68EC4E00D2F3B0 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				AB6AA27B1A68EC5D00D2F3B0 /* SlideOutMenuFiles */,
+			);
+			name = Plugin;
+			sourceTree = "<group>";
+		};
+		AB6AA27B1A68EC5D00D2F3B0 /* SlideOutMenuFiles */ = {
+			isa = PBXGroup;
+			children = (
+				AB6AA27C1A68EC5D00D2F3B0 /* SWRevealViewController.h */,
+				AB6AA27D1A68EC5D00D2F3B0 /* SWRevealViewController.m */,
+			);
+			path = SlideOutMenuFiles;
+			sourceTree = "<group>";
+		};
+		AB6AA2A01A68F71200D2F3B0 /* CustomTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB6AA2AD1A68FD7D00D2F3B0 /* StartSleepDetectTableViewCell.h */,
+				AB6AA2AE1A68FD7D00D2F3B0 /* StartSleepDetectTableViewCell.m */,
+			);
+			name = CustomTableCell;
+			sourceTree = "<group>";
+		};
+		AB6AA2A81A68FB3300D2F3B0 /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				AB6AA2A91A68FB3300D2F3B0 /* DBManager.h */,
+				AB6AA2AA1A68FB3300D2F3B0 /* DBManager.m */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
 		ABF07E5C1A67F94500000700 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +185,9 @@
 		ABF07E671A67F94500000700 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB6AA2831A68ED1600D2F3B0 /* libsqlite3.dylib */,
+				AB6AA2811A68ED0D00D2F3B0 /* QuartzCore.framework */,
+				AB6AA27F1A68ECFC00D2F3B0 /* CoreMotion.framework */,
 				ABF07E681A67F94500000700 /* Foundation.framework */,
 				ABF07E6A1A67F94500000700 /* CoreGraphics.framework */,
 				ABF07E6C1A67F94500000700 /* UIKit.framework */,
@@ -117,6 +204,29 @@
 				ABF07E7A1A67F94600000700 /* Main.storyboard */,
 				ABF07E7D1A67F94600000700 /* ViewController.h */,
 				ABF07E7E1A67F94600000700 /* ViewController.m */,
+				AB6AA2881A68EECF00D2F3B0 /* MenuTableViewController.h */,
+				AB6AA2891A68EECF00D2F3B0 /* MenuTableViewController.m */,
+				AB6AA2851A68EEB000D2F3B0 /* AvatarViewController.h */,
+				AB6AA2861A68EEB000D2F3B0 /* AvatarViewController.m */,
+				AB6AA28E1A68F56100D2F3B0 /* SleepGraphListTableViewController.h */,
+				AB6AA28F1A68F56100D2F3B0 /* SleepGraphListTableViewController.m */,
+				AB6AA2941A68F5FE00D2F3B0 /* SleepGraphDetailViewController.h */,
+				AB6AA2951A68F5FE00D2F3B0 /* SleepGraphDetailViewController.m */,
+				AB6AA2911A68F59D00D2F3B0 /* AchievementViewController.h */,
+				AB6AA2921A68F59D00D2F3B0 /* AchievementViewController.m */,
+				AB6AA29A1A68F6E900D2F3B0 /* StartSleepRecommendViewController.h */,
+				AB6AA29B1A68F6E900D2F3B0 /* StartSleepRecommendViewController.m */,
+				AB6AA29D1A68F70800D2F3B0 /* StartSleepDetectTableViewController.h */,
+				AB6AA29E1A68F70800D2F3B0 /* StartSleepDetectTableViewController.m */,
+				AB6AA2971A68F6CF00D2F3B0 /* ChangeWearableViewController.h */,
+				AB6AA2981A68F6CF00D2F3B0 /* ChangeWearableViewController.m */,
+				AB6AA2A11A68F7A900D2F3B0 /* AboutSleepViewController.h */,
+				AB6AA2A21A68F7A900D2F3B0 /* AboutSleepViewController.m */,
+				AB6AA2A41A68F7BB00D2F3B0 /* AboutSleepDetailViewController.h */,
+				AB6AA2A51A68F7BB00D2F3B0 /* AboutSleepDetailViewController.m */,
+				AB6AA2A81A68FB3300D2F3B0 /* DBManager */,
+				AB6AA2A01A68F71200D2F3B0 /* CustomTableCell */,
+				AB6AA27A1A68EC4E00D2F3B0 /* Plugin */,
 				ABF07E801A67F94600000700 /* Images.xcassets */,
 				ABF07E6F1A67F94600000700 /* Supporting Files */,
 			);
@@ -126,6 +236,7 @@
 		ABF07E6F1A67F94600000700 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB6AA2AC1A68FBC400D2F3B0 /* sleepBehavior.sql */,
 				ABF07E701A67F94600000700 /* SleepAvatar-Info.plist */,
 				ABF07E711A67F94600000700 /* InfoPlist.strings */,
 				ABF07E741A67F94600000700 /* main.m */,
@@ -249,9 +360,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6AA29C1A68F6E900D2F3B0 /* StartSleepRecommendViewController.m in Sources */,
+				AB6AA2A31A68F7A900D2F3B0 /* AboutSleepViewController.m in Sources */,
 				ABF07E7F1A67F94600000700 /* ViewController.m in Sources */,
 				ABF07E791A67F94600000700 /* AppDelegate.m in Sources */,
+				AB6AA29F1A68F70800D2F3B0 /* StartSleepDetectTableViewController.m in Sources */,
 				ABF07E751A67F94600000700 /* main.m in Sources */,
+				AB6AA2991A68F6CF00D2F3B0 /* ChangeWearableViewController.m in Sources */,
+				AB6AA27E1A68EC5D00D2F3B0 /* SWRevealViewController.m in Sources */,
+				AB6AA28A1A68EECF00D2F3B0 /* MenuTableViewController.m in Sources */,
+				AB6AA2AB1A68FB3300D2F3B0 /* DBManager.m in Sources */,
+				AB6AA2901A68F56100D2F3B0 /* SleepGraphListTableViewController.m in Sources */,
+				AB6AA2A61A68F7BB00D2F3B0 /* AboutSleepDetailViewController.m in Sources */,
+				AB6AA2961A68F5FE00D2F3B0 /* SleepGraphDetailViewController.m in Sources */,
+				AB6AA2AF1A68FD7D00D2F3B0 /* StartSleepDetectTableViewCell.m in Sources */,
+				AB6AA2931A68F59D00D2F3B0 /* AchievementViewController.m in Sources */,
+				AB6AA2871A68EEB000D2F3B0 /* AvatarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +580,7 @@
 				ABF07E991A67F94600000700 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABF07E9A1A67F94600000700 /* Build configuration list for PBXNativeTarget "SleepAvatarTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +589,7 @@
 				ABF07E9C1A67F94600000700 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
