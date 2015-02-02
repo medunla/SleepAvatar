@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
+		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
+		ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
+		ABDC44291A8021D70048EBE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44271A8021D70048EBE6 /* InfoPlist.strings */; };
+		ABDC442B1A8021D70048EBE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC442A1A8021D70048EBE6 /* main.m */; };
+		ABDC442F1A8021D70048EBE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC442E1A8021D70048EBE6 /* AppDelegate.m */; };
+		ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44301A8021D70048EBE6 /* Main.storyboard */; };
+		ABDC44351A8021D70048EBE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44341A8021D70048EBE6 /* ViewController.m */; };
+		ABDC44371A8021D70048EBE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44361A8021D70048EBE6 /* Images.xcassets */; };
+		ABDC443E1A8021D70048EBE6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC443D1A8021D70048EBE6 /* XCTest.framework */; };
+		ABDC443F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
+		ABDC44401A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
+		ABDC44481A8021D70048EBE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44461A8021D70048EBE6 /* InfoPlist.strings */; };
+		ABDC444A1A8021D70048EBE6 /* SleepAvatarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44491A8021D70048EBE6 /* SleepAvatarTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABDC44411A8021D70048EBE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABDC44131A8021D70048EBE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABDC441A1A8021D70048EBE6;
+			remoteInfo = SleepAvatar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ABDC44221A8021D70048EBE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepAvatar-Info.plist"; sourceTree = "<group>"; };
+		ABDC44281A8021D70048EBE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ABDC442A1A8021D70048EBE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ABDC442C1A8021D70048EBE6 /* SleepAvatar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepAvatar-Prefix.pch"; sourceTree = "<group>"; };
+		ABDC442D1A8021D70048EBE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ABDC442E1A8021D70048EBE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ABDC44311A8021D70048EBE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABDC44331A8021D70048EBE6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ABDC44341A8021D70048EBE6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ABDC44361A8021D70048EBE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ABDC443C1A8021D70048EBE6 /* SleepAvatarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepAvatarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABDC443D1A8021D70048EBE6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		ABDC44451A8021D70048EBE6 /* SleepAvatarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepAvatarTests-Info.plist"; sourceTree = "<group>"; };
+		ABDC44471A8021D70048EBE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ABDC44491A8021D70048EBE6 /* SleepAvatarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepAvatarTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABDC44181A8021D70048EBE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */,
+				ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */,
+				ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABDC44391A8021D70048EBE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABDC443E1A8021D70048EBE6 /* XCTest.framework in Frameworks */,
+				ABDC44401A8021D70048EBE6 /* UIKit.framework in Frameworks */,
+				ABDC443F1A8021D70048EBE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABDC44121A8021D70048EBE6 = {
+			isa = PBXGroup;
+			children = (
+				ABDC44241A8021D70048EBE6 /* SleepAvatar */,
+				ABDC44431A8021D70048EBE6 /* SleepAvatarTests */,
+				ABDC441D1A8021D70048EBE6 /* Frameworks */,
+				ABDC441C1A8021D70048EBE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABDC441C1A8021D70048EBE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */,
+				ABDC443C1A8021D70048EBE6 /* SleepAvatarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABDC441D1A8021D70048EBE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC441E1A8021D70048EBE6 /* Foundation.framework */,
+				ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */,
+				ABDC44221A8021D70048EBE6 /* UIKit.framework */,
+				ABDC443D1A8021D70048EBE6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABDC44241A8021D70048EBE6 /* SleepAvatar */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC442D1A8021D70048EBE6 /* AppDelegate.h */,
+				ABDC442E1A8021D70048EBE6 /* AppDelegate.m */,
+				ABDC44301A8021D70048EBE6 /* Main.storyboard */,
+				ABDC44331A8021D70048EBE6 /* ViewController.h */,
+				ABDC44341A8021D70048EBE6 /* ViewController.m */,
+				ABDC44361A8021D70048EBE6 /* Images.xcassets */,
+				ABDC44251A8021D70048EBE6 /* Supporting Files */,
+			);
+			path = SleepAvatar;
+			sourceTree = "<group>";
+		};
+		ABDC44251A8021D70048EBE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */,
+				ABDC44271A8021D70048EBE6 /* InfoPlist.strings */,
+				ABDC442A1A8021D70048EBE6 /* main.m */,
+				ABDC442C1A8021D70048EBE6 /* SleepAvatar-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABDC44431A8021D70048EBE6 /* SleepAvatarTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC44491A8021D70048EBE6 /* SleepAvatarTests.m */,
+				ABDC44441A8021D70048EBE6 /* Supporting Files */,
+			);
+			path = SleepAvatarTests;
+			sourceTree = "<group>";
+		};
+		ABDC44441A8021D70048EBE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC44451A8021D70048EBE6 /* SleepAvatarTests-Info.plist */,
+				ABDC44461A8021D70048EBE6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABDC441A1A8021D70048EBE6 /* SleepAvatar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABDC444D1A8021D70048EBE6 /* Build configuration list for PBXNativeTarget "SleepAvatar" */;
+			buildPhases = (
+				ABDC44171A8021D70048EBE6 /* Sources */,
+				ABDC44181A8021D70048EBE6 /* Frameworks */,
+				ABDC44191A8021D70048EBE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SleepAvatar;
+			productName = SleepAvatar;
+			productReference = ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABDC443B1A8021D70048EBE6 /* SleepAvatarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABDC44501A8021D70048EBE6 /* Build configuration list for PBXNativeTarget "SleepAvatarTests" */;
+			buildPhases = (
+				ABDC44381A8021D70048EBE6 /* Sources */,
+				ABDC44391A8021D70048EBE6 /* Frameworks */,
+				ABDC443A1A8021D70048EBE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABDC44421A8021D70048EBE6 /* PBXTargetDependency */,
+			);
+			name = SleepAvatarTests;
+			productName = SleepAvatarTests;
+			productReference = ABDC443C1A8021D70048EBE6 /* SleepAvatarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABDC44131A8021D70048EBE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = medunla;
+				TargetAttributes = {
+					ABDC443B1A8021D70048EBE6 = {
+						TestTargetID = ABDC441A1A8021D70048EBE6;
+					};
+				};
+			};
+			buildConfigurationList = ABDC44161A8021D70048EBE6 /* Build configuration list for PBXProject "SleepAvatar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABDC44121A8021D70048EBE6;
+			productRefGroup = ABDC441C1A8021D70048EBE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABDC441A1A8021D70048EBE6 /* SleepAvatar */,
+				ABDC443B1A8021D70048EBE6 /* SleepAvatarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABDC44191A8021D70048EBE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABDC44371A8021D70048EBE6 /* Images.xcassets in Resources */,
+				ABDC44291A8021D70048EBE6 /* InfoPlist.strings in Resources */,
+				ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABDC443A1A8021D70048EBE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABDC44481A8021D70048EBE6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABDC44171A8021D70048EBE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABDC44351A8021D70048EBE6 /* ViewController.m in Sources */,
+				ABDC442F1A8021D70048EBE6 /* AppDelegate.m in Sources */,
+				ABDC442B1A8021D70048EBE6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABDC44381A8021D70048EBE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABDC444A1A8021D70048EBE6 /* SleepAvatarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABDC44421A8021D70048EBE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABDC441A1A8021D70048EBE6 /* SleepAvatar */;
+			targetProxy = ABDC44411A8021D70048EBE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ABDC44271A8021D70048EBE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABDC44281A8021D70048EBE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ABDC44301A8021D70048EBE6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABDC44311A8021D70048EBE6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ABDC44461A8021D70048EBE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABDC44471A8021D70048EBE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABDC444B1A8021D70048EBE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ABDC444C1A8021D70048EBE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABDC444E1A8021D70048EBE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SleepAvatar/SleepAvatar-Prefix.pch";
+				INFOPLIST_FILE = "SleepAvatar/SleepAvatar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ABDC444F1A8021D70048EBE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SleepAvatar/SleepAvatar-Prefix.pch";
+				INFOPLIST_FILE = "SleepAvatar/SleepAvatar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		ABDC44511A8021D70048EBE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SleepAvatar.app/SleepAvatar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SleepAvatar/SleepAvatar-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SleepAvatarTests/SleepAvatarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		ABDC44521A8021D70048EBE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SleepAvatar.app/SleepAvatar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SleepAvatar/SleepAvatar-Prefix.pch";
+				INFOPLIST_FILE = "SleepAvatarTests/SleepAvatarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABDC44161A8021D70048EBE6 /* Build configuration list for PBXProject "SleepAvatar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABDC444B1A8021D70048EBE6 /* Debug */,
+				ABDC444C1A8021D70048EBE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABDC444D1A8021D70048EBE6 /* Build configuration list for PBXNativeTarget "SleepAvatar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABDC444E1A8021D70048EBE6 /* Debug */,
+				ABDC444F1A8021D70048EBE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ABDC44501A8021D70048EBE6 /* Build configuration list for PBXNativeTarget "SleepAvatarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABDC44511A8021D70048EBE6 /* Debug */,
+				ABDC44521A8021D70048EBE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABDC44131A8021D70048EBE6 /* Project object */;
+}
