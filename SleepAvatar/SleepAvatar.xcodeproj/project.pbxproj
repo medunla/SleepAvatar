@@ -21,6 +21,9 @@
 		ABDC44401A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
 		ABDC44481A8021D70048EBE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44461A8021D70048EBE6 /* InfoPlist.strings */; };
 		ABDC444A1A8021D70048EBE6 /* SleepAvatarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44491A8021D70048EBE6 /* SleepAvatarTests.m */; };
+		ABDC44581A802AB90048EBE6 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44571A802AB90048EBE6 /* DBManager.m */; };
+		ABDC445A1A802ACD0048EBE6 /* sleepAvatar.sql in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44591A802ACD0048EBE6 /* sleepAvatar.sql */; };
+		ABDC445C1A802C390048EBE6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC445B1A802C390048EBE6 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		ABDC44451A8021D70048EBE6 /* SleepAvatarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepAvatarTests-Info.plist"; sourceTree = "<group>"; };
 		ABDC44471A8021D70048EBE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ABDC44491A8021D70048EBE6 /* SleepAvatarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepAvatarTests.m; sourceTree = "<group>"; };
+		ABDC44561A802AB90048EBE6 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		ABDC44571A802AB90048EBE6 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		ABDC44591A802ACD0048EBE6 /* sleepAvatar.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sql; sourceTree = "<group>"; };
+		ABDC445B1A802C390048EBE6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABDC445C1A802C390048EBE6 /* libsqlite3.dylib in Frameworks */,
 				ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */,
 				ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */,
 				ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */,
@@ -101,6 +109,7 @@
 		ABDC441D1A8021D70048EBE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABDC445B1A802C390048EBE6 /* libsqlite3.dylib */,
 				ABDC441E1A8021D70048EBE6 /* Foundation.framework */,
 				ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */,
 				ABDC44221A8021D70048EBE6 /* UIKit.framework */,
@@ -117,6 +126,8 @@
 				ABDC44301A8021D70048EBE6 /* Main.storyboard */,
 				ABDC44331A8021D70048EBE6 /* ViewController.h */,
 				ABDC44341A8021D70048EBE6 /* ViewController.m */,
+				ABDC44541A8029D40048EBE6 /* Images */,
+				ABDC44531A80296E0048EBE6 /* Extension */,
 				ABDC44361A8021D70048EBE6 /* Images.xcassets */,
 				ABDC44251A8021D70048EBE6 /* Supporting Files */,
 			);
@@ -126,6 +137,7 @@
 		ABDC44251A8021D70048EBE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ABDC44591A802ACD0048EBE6 /* sleepAvatar.sql */,
 				ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */,
 				ABDC44271A8021D70048EBE6 /* InfoPlist.strings */,
 				ABDC442A1A8021D70048EBE6 /* main.m */,
@@ -150,6 +162,30 @@
 				ABDC44461A8021D70048EBE6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABDC44531A80296E0048EBE6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC44551A802AB90048EBE6 /* DBManager */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		ABDC44541A8029D40048EBE6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		ABDC44551A802AB90048EBE6 /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC44561A802AB90048EBE6 /* DBManager.h */,
+				ABDC44571A802AB90048EBE6 /* DBManager.m */,
+			);
+			path = DBManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABDC44371A8021D70048EBE6 /* Images.xcassets in Resources */,
+				ABDC445A1A802ACD0048EBE6 /* sleepAvatar.sql in Resources */,
 				ABDC44291A8021D70048EBE6 /* InfoPlist.strings in Resources */,
 				ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */,
 			);
@@ -252,6 +289,7 @@
 				ABDC44351A8021D70048EBE6 /* ViewController.m in Sources */,
 				ABDC442F1A8021D70048EBE6 /* AppDelegate.m in Sources */,
 				ABDC442B1A8021D70048EBE6 /* main.m in Sources */,
+				ABDC44581A802AB90048EBE6 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Initialize the dbManager property.
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sql"];
+    
+    
+    
+    // STEP 1 : Query db
+    NSString *query = @"SELECT * FROM user";
+    
+    if (self.arrUser != nil) {
+        self.arrUser = nil;
+    }
+    self.arrUser = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"count:%i",[self.arrUser count]);
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
