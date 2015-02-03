@@ -7,16 +7,20 @@
 //
 
 #import "NavigationViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 @interface NavigationViewController ()
+
+@property (strong,nonatomic) NSArray *menu;
+@property (nonatomic, strong) UINavigationController *transitionsNavigationController;
 
 @end
 
 @implementation NavigationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
@@ -26,7 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Set menu
+    self.transitionsNavigationController = (UINavigationController *)self.slidingViewController.topViewController;
+    self.menu = @[@"zero", @"one", @"two", @"three"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +42,53 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                                TABLE CELL
+// ----------------------------------------------------------------------------
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.menu count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIdentifier = [self.menu objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    return cell;
+}
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                                  BUTTON GO HOME
+// ----------------------------------------------------------------------------
+
+
+- (IBAction)ButtonToAvatar:(id)sender {
+    self.slidingViewController.topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
+    self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AvatarViewController"];
+    [self.slidingViewController resetTopViewAnimated:YES];
+}
 
 @end
