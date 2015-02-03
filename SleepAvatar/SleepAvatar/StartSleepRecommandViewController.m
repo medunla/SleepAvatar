@@ -11,6 +11,8 @@
 
 @interface StartSleepRecommandViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *ButtonStartDetect;
+
 @end
 
 @implementation StartSleepRecommandViewController
@@ -27,7 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Custom button
+    self.ButtonStartDetect.layer.cornerRadius = 5;
+    self.ButtonStartDetect.layer.masksToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning

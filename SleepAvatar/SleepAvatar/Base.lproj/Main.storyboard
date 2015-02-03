@@ -711,6 +711,9 @@
                         <color key="backgroundColor" red="0.10196078568696976" green="0.12549020349979401" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="r7h-jJ-2U2"/>
+                    <connections>
+                        <outlet property="ButtonStartDetect" destination="4tN-8Q-m4l" id="9NU-WN-JxX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfc-sQ-QpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
