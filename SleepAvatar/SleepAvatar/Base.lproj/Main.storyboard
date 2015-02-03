@@ -358,6 +358,134 @@
             </objects>
             <point key="canvasLocation" x="1538" y="146"/>
         </scene>
+        <!--Achievement View Controller - Achievement-->
+        <scene sceneID="u86-Uc-6Ae">
+            <objects>
+                <viewController id="LFb-Sn-dqf" customClass="AchievementViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7LN-b9-Kg8"/>
+                        <viewControllerLayoutGuide type="bottom" id="pqb-8W-IYs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ux5-Qj-wRO">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TVp-bK-LXV" userLabel="Tabbar">
+                                <rect key="frame" x="0.0" y="454" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Avatar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-CR-3ex">
+                                        <rect key="frame" x="13" y="31" width="55" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.5176470876" green="0.5176470876" blue="0.5176470876" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep Graph" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6S-im-NYB">
+                                        <rect key="frame" x="92" y="31" width="59" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.51764708757400513" green="0.51764708757400513" blue="0.51764708757400513" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Achievement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwP-C0-pSV">
+                                        <rect key="frame" x="170" y="31" width="61" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.0" green="0.50980395078659058" blue="0.78431373834609985" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxg-bc-9MC">
+                                        <rect key="frame" x="249" y="31" width="61" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.5176470876" green="0.5176470876" blue="0.5176470876" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="uca-yK-nfH">
+                                        <rect key="frame" x="28" y="8" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-sleep-graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="QeE-ls-fUC">
+                                        <rect key="frame" x="109" y="8" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-achievement-active.png" translatesAutoresizingMaskIntoConstraints="NO" id="WBD-Cm-ur2">
+                                        <rect key="frame" x="188" y="8" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-start-sleep.png" translatesAutoresizingMaskIntoConstraints="NO" id="wqD-oH-Twy">
+                                        <rect key="frame" x="267" y="8" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYX-o5-1sr">
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonToAvatar:" destination="6cU-ly-o3P" eventType="touchUpInside" id="bFL-OH-ebi"/>
+                                            <action selector="ButtonToAvatar:" destination="LFb-Sn-dqf" eventType="touchUpInside" id="jQo-k1-2pp"/>
+                                            <action selector="ButtonToAvatar:" destination="9x3-im-8ai" eventType="touchUpInside" id="whC-ft-8KP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wh-Fe-6cm">
+                                        <rect key="frame" x="76" y="0.0" width="86" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonToSleepGraph:" destination="6cU-ly-o3P" eventType="touchUpInside" id="q2e-cb-hqL"/>
+                                            <action selector="ButtonToSleepGraph:" destination="LFb-Sn-dqf" eventType="touchUpInside" id="yGT-VS-fTJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADt-xn-esh">
+                                        <rect key="frame" x="159" y="0.0" width="82" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonToAchievement:" destination="6cU-ly-o3P" eventType="touchUpInside" id="dKl-Rp-g0c"/>
+                                            <action selector="ButtonToAchievement:" destination="9x3-im-8ai" eventType="touchUpInside" id="qB3-qi-cZl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDf-ks-AhY">
+                                        <rect key="frame" x="239" y="0.0" width="81" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ButtonToStartSleep:" destination="6cU-ly-o3P" eventType="touchUpInside" id="5sP-B4-2qa"/>
+                                            <action selector="ButtonToStartSleep:" destination="9x3-im-8ai" eventType="touchUpInside" id="g0f-FB-DN7"/>
+                                            <action selector="ButtonToStartSleep:" destination="LFb-Sn-dqf" eventType="touchUpInside" id="oRZ-tD-v02"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1921568662" green="0.25098040700000002" blue="0.27843138579999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10196078568696976" green="0.12549020349979401" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pqb-8W-IYs" firstAttribute="top" secondItem="TVp-bK-LXV" secondAttribute="bottom" id="Uwa-li-RBh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Achievement" id="nPI-RT-rBw">
+                        <barButtonItem key="leftBarButtonItem" image="icon-menu.png" id="3qP-JX-a8C">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="menuButtonTapped:" destination="LFb-Sn-dqf" id="eEj-qA-6K2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HBt-YE-o0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="862"/>
+        </scene>
         <!--Sleep Graph Detail View Controller-->
         <scene sceneID="3Sz-Xb-SQJ">
             <objects>
@@ -558,8 +686,31 @@
             </objects>
             <point key="canvasLocation" x="1012" y="146"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GBX-z2-dLq">
+            <objects>
+                <navigationController storyboardIdentifier="AchievementViewController" automaticallyAdjustsScrollViewInsets="NO" id="ypK-4q-fHZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7Ej-uA-rFv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.19215686619281769" green="0.25098040699958801" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LFb-Sn-dqf" kind="relationship" relationship="rootViewController" id="9tZ-ff-C8A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HzU-le-gmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="862"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="icon-achievement-active.png" width="25" height="25"/>
         <image name="icon-achievement.png" width="25" height="25"/>
         <image name="icon-avatar-active.png" width="25" height="25"/>
         <image name="icon-avatar.png" width="25" height="25"/>
