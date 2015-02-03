@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB4A83541A814F080063DD12 /* sleepAvatar2.sql in Resources */ = {isa = PBXBuildFile; fileRef = AB4A83531A814F080063DD12 /* sleepAvatar2.sql */; };
 		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
 		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
 		ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
@@ -47,10 +48,10 @@
 		ABDC449B1A802F9C0048EBE6 /* icon-sleep-graph.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44851A802F9C0048EBE6 /* icon-sleep-graph.png */; };
 		ABDC449C1A802F9C0048EBE6 /* icon-start-sleep-active.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44861A802F9C0048EBE6 /* icon-start-sleep-active.png */; };
 		ABDC449D1A802F9C0048EBE6 /* icon-start-sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44871A802F9C0048EBE6 /* icon-start-sleep.png */; };
-		ABDC449E1A802F9C0048EBE6 /* avatar-f-0.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44891A802F9C0048EBE6 /* avatar-f-0.png */; };
-		ABDC449F1A802F9C0048EBE6 /* avatar-m-0.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448A1A802F9C0048EBE6 /* avatar-m-0.png */; };
-		ABDC44A01A802F9C0048EBE6 /* codeavatar-f-111.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448B1A802F9C0048EBE6 /* codeavatar-f-111.png */; };
-		ABDC44A11A802F9C0048EBE6 /* codeavatar-m-111.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448C1A802F9C0048EBE6 /* codeavatar-m-111.png */; };
+		ABDC449E1A802F9C0048EBE6 /* avatar-f-1-0.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44891A802F9C0048EBE6 /* avatar-f-1-0.png */; };
+		ABDC449F1A802F9C0048EBE6 /* avatar-m-1-0.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448A1A802F9C0048EBE6 /* avatar-m-1-0.png */; };
+		ABDC44A01A802F9C0048EBE6 /* codeavatar-f-1-111.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448B1A802F9C0048EBE6 /* codeavatar-f-1-111.png */; };
+		ABDC44A11A802F9C0048EBE6 /* codeavatar-m-1-111.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448C1A802F9C0048EBE6 /* codeavatar-m-1-111.png */; };
 		ABDC44A21A802F9C0048EBE6 /* recommand-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448D1A802F9C0048EBE6 /* recommand-1.jpg */; };
 		ABDC44A51A803AEE0048EBE6 /* SleepGraphListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44A41A803AEE0048EBE6 /* SleepGraphListViewController.m */; };
 		ABDC44A91A803D740048EBE6 /* SleepGraphListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44A81A803D740048EBE6 /* SleepGraphListTableViewCell.m */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB4A83531A814F080063DD12 /* sleepAvatar2.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar2.sql; sourceTree = "<group>"; };
 		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,10 +131,10 @@
 		ABDC44851A802F9C0048EBE6 /* icon-sleep-graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-sleep-graph.png"; sourceTree = "<group>"; };
 		ABDC44861A802F9C0048EBE6 /* icon-start-sleep-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-start-sleep-active.png"; sourceTree = "<group>"; };
 		ABDC44871A802F9C0048EBE6 /* icon-start-sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-start-sleep.png"; sourceTree = "<group>"; };
-		ABDC44891A802F9C0048EBE6 /* avatar-f-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-f-0.png"; sourceTree = "<group>"; };
-		ABDC448A1A802F9C0048EBE6 /* avatar-m-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-m-0.png"; sourceTree = "<group>"; };
-		ABDC448B1A802F9C0048EBE6 /* codeavatar-f-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-f-111.png"; sourceTree = "<group>"; };
-		ABDC448C1A802F9C0048EBE6 /* codeavatar-m-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-m-111.png"; sourceTree = "<group>"; };
+		ABDC44891A802F9C0048EBE6 /* avatar-f-1-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-f-1-0.png"; sourceTree = "<group>"; };
+		ABDC448A1A802F9C0048EBE6 /* avatar-m-1-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-m-1-0.png"; sourceTree = "<group>"; };
+		ABDC448B1A802F9C0048EBE6 /* codeavatar-f-1-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-f-1-111.png"; sourceTree = "<group>"; };
+		ABDC448C1A802F9C0048EBE6 /* codeavatar-m-1-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-m-1-111.png"; sourceTree = "<group>"; };
 		ABDC448D1A802F9C0048EBE6 /* recommand-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "recommand-1.jpg"; sourceTree = "<group>"; };
 		ABDC44A31A803AEE0048EBE6 /* SleepGraphListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepGraphListViewController.h; sourceTree = "<group>"; };
 		ABDC44A41A803AEE0048EBE6 /* SleepGraphListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepGraphListViewController.m; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				ABDC44591A802ACD0048EBE6 /* sleepAvatar.sql */,
+				AB4A83531A814F080063DD12 /* sleepAvatar2.sql */,
 				ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */,
 				ABDC44271A8021D70048EBE6 /* InfoPlist.strings */,
 				ABDC442A1A8021D70048EBE6 /* main.m */,
@@ -348,10 +351,10 @@
 		ABDC44881A802F9C0048EBE6 /* illust */ = {
 			isa = PBXGroup;
 			children = (
-				ABDC44891A802F9C0048EBE6 /* avatar-f-0.png */,
-				ABDC448A1A802F9C0048EBE6 /* avatar-m-0.png */,
-				ABDC448B1A802F9C0048EBE6 /* codeavatar-f-111.png */,
-				ABDC448C1A802F9C0048EBE6 /* codeavatar-m-111.png */,
+				ABDC44891A802F9C0048EBE6 /* avatar-f-1-0.png */,
+				ABDC448A1A802F9C0048EBE6 /* avatar-m-1-0.png */,
+				ABDC448B1A802F9C0048EBE6 /* codeavatar-f-1-111.png */,
+				ABDC448C1A802F9C0048EBE6 /* codeavatar-m-1-111.png */,
 				ABDC448D1A802F9C0048EBE6 /* recommand-1.jpg */,
 			);
 			path = illust;
@@ -460,10 +463,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4A83541A814F080063DD12 /* sleepAvatar2.sql in Resources */,
 				ABDC44901A802F9C0048EBE6 /* icon-app-120.png in Resources */,
 				ABDC449D1A802F9C0048EBE6 /* icon-start-sleep.png in Resources */,
 				ABDC44941A802F9C0048EBE6 /* icon-avatar-active.png in Resources */,
-				ABDC44A11A802F9C0048EBE6 /* codeavatar-m-111.png in Resources */,
+				ABDC44A11A802F9C0048EBE6 /* codeavatar-m-1-111.png in Resources */,
 				ABDC448F1A802F9C0048EBE6 /* icon-achievement.png in Resources */,
 				ABDC44981A802F9C0048EBE6 /* icon-latency-30.png in Resources */,
 				ABDC44931A802F9C0048EBE6 /* icon-avatar.png in Resources */,
@@ -474,12 +478,12 @@
 				ABDC448E1A802F9C0048EBE6 /* icon-achievement-active.png in Resources */,
 				ABDC449C1A802F9C0048EBE6 /* icon-start-sleep-active.png in Resources */,
 				ABDC445A1A802ACD0048EBE6 /* sleepAvatar.sql in Resources */,
-				ABDC44A01A802F9C0048EBE6 /* codeavatar-f-111.png in Resources */,
+				ABDC44A01A802F9C0048EBE6 /* codeavatar-f-1-111.png in Resources */,
 				ABDC44921A802F9C0048EBE6 /* icon-app-80.png in Resources */,
 				ABDC44991A802F9C0048EBE6 /* icon-menu.png in Resources */,
 				ABDC44291A8021D70048EBE6 /* InfoPlist.strings in Resources */,
-				ABDC449F1A802F9C0048EBE6 /* avatar-m-0.png in Resources */,
-				ABDC449E1A802F9C0048EBE6 /* avatar-f-0.png in Resources */,
+				ABDC449F1A802F9C0048EBE6 /* avatar-m-1-0.png in Resources */,
+				ABDC449E1A802F9C0048EBE6 /* avatar-f-1-0.png in Resources */,
 				ABDC44961A802F9C0048EBE6 /* icon-duration-30.png in Resources */,
 				ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */,
 				ABDC449B1A802F9C0048EBE6 /* icon-sleep-graph.png in Resources */,
@@ -726,6 +730,7 @@
 				ABDC444F1A8021D70048EBE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABDC44501A8021D70048EBE6 /* Build configuration list for PBXNativeTarget "SleepAvatarTests" */ = {
 			isa = XCConfigurationList;
@@ -734,6 +739,7 @@
 				ABDC44521A8021D70048EBE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -82,7 +82,7 @@
         self.arrSleepBehavior = nil;
     }
     self.arrSleepBehavior = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"%lu",(unsigned long)self.arrSleepBehavior.count);
+    NSLog(@"[SleepBehavior] count arrSleepBehavior : %i",[self.arrSleepBehavior count]);
 //    [self.table reloadData];
     
 }
@@ -353,8 +353,7 @@
 
 -(void)createSleepData:(NSString *)date {
     
-#warning avatar_id not dynamic
-    int avatar_id = 1;
+    int avatar_id = [self findAvatarId];
     NSString *timeStart = @"00:00";
     NSString *timeEnd = @"00:00";
     int latency = 0;
@@ -463,8 +462,8 @@
         }
     }
     
-#warning age not dynamic
-    int age = 21;
+
+    int age = [self findUserAge];
     
     [self analyzeSleep:age sleepData:arrSleepGraph];
     
@@ -523,7 +522,7 @@
 
 
 -(void)analyzeSleep:(int)age sleepData:(NSMutableArray*)sleepData {
-    NSLog(@"analyzeSleep");
+    NSLog(@"[analyzeSleep] Start!");
     //    int age = 21;
     int properDurationMin   = 0;
     int properDurationMax   = 0;
@@ -536,7 +535,6 @@
     int latency             = 0;
     int latencyHour         = 0;
     int latencyMin          = 0;
-    int latencyCount        = 0;
     BOOL latencyCountAmount = false;
     
     int efficiency          = 0; // true sleep/sleep duration
@@ -598,29 +596,27 @@
     }
     
     // Calculate deepSleep, lightSleep, Latency
-    int i=0;
     for (id obj in sleepData) {
         
         float data = [obj floatValue];
         
+        // Deep & Light count
         if (data < 0.31) {
             deepSleep++;
-            latencyCount++;
         }
         else if (data < 0.81) {
             lightSleep++;
-            latencyCount++;
-        }
-        else {
-            latencyCount = 0;
         }
         
-        // latency
-        if (latencyCount == 10 && latencyCountAmount == false) {
-            latency = i+1-10;
+        // Latency count
+        if (data > 0.30 && latencyCountAmount == false) {
+            latency++;
+        }
+        if (data < 0.31 && latencyCountAmount == false) {
             latencyCountAmount = true;
         }
-        i++;
+        
+
     }
     
     deepSleepHour  = deepSleep/60;
@@ -746,6 +742,73 @@
     self.durationlightT = lightSleep;
     self.codeavatarT = codeAvatar;
 }
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                              FIND AVATAR-ID
+// ----------------------------------------------------------------------------
+
+
+- (int) findAvatarId {
+    
+    NSString *query = @"SELECT avatar_id FROM avatar ORDER BY avatar_id DESC LIMIT 1";
+    
+    NSArray *arrAvatarid = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSInteger indexOfavatar_id = [self.dbManager.arrColumnNames indexOfObject:@"avatar_id"];
+    
+    int avatarid = [ [[arrAvatarid objectAtIndex:0] objectAtIndex:indexOfavatar_id] intValue];
+
+    return avatarid;
+}
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                              FIND USER AGE
+// ----------------------------------------------------------------------------
+
+
+- (int) findUserAge {
+    
+    // STEP 1 : Get data
+    
+    NSString *query = @"SELECT user_birthday FROM user ORDER BY user_id DESC LIMIT 1";
+    
+    NSArray *arrUserBDay = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSInteger indexOfuser_birthday = [self.dbManager.arrColumnNames indexOfObject:@"user_birthday"];
+    
+    NSString *bday = [[arrUserBDay objectAtIndex:0] objectAtIndex:indexOfuser_birthday];
+    
+    // STEP 2 : Calculate Age
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSDate *prev = [dateFormatter dateFromString:bday];
+    NSDate* now = [NSDate date];
+    
+    NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
+                                       components:NSYearCalendarUnit
+                                       fromDate:prev
+                                       toDate:now
+                                       options:0];
+    int age = [ageComponents year];
+
+    return age;
+}
+
+
+
 
 
 @end

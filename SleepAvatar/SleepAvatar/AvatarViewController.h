@@ -15,8 +15,5 @@
 - (IBAction)menuButtonTapped:(id)sender;
 
 @property (nonatomic, strong) DBManager *dbManager;
-@property (nonatomic, strong) NSArray *arrUser;
-@property (nonatomic, strong) NSArray *arrAvatar;
-@property (nonatomic, strong) NSArray *arrSleepData;
 
 @end

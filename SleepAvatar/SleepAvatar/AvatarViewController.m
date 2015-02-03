@@ -37,7 +37,7 @@
     
     // Initialize the dbManager property.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sql"];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,54 +63,106 @@
 
 - (void)showAvatar {
     
-    // STEP 1 : Query db
-    NSString *query = @"SELECT sleepData_codeavatar FROM sleepData ORDER BY sleepData_id DESC LIMIT 1";
+    // STEP : 1 Get value
     
-    if (self.arrSleepData != nil) {
-        self.arrSleepData = nil;
-    }
-    self.arrSleepData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"count:%i",[self.arrSleepData count]);
+    NSString *sex        = [self findAvatarSex];
+    NSString *set        = [self findAvatarSet];
+    NSString *codeavatar = [self findCodeAvatar];
     
-    
-    
-    // STEP : 2 Get value
-    
-    NSString *sex;
-    NSString *codeavatar;
-    
-    #warning sex not dynamic
-    sex = @"f";
-    if ([self.arrSleepData count] == 0) {
-        codeavatar = @"111";
-    }
-    else {
-        NSInteger indexOfsleepData_codeavatar = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_codeavatar"];
-        codeavatar = [[self.arrSleepData objectAtIndex:0] objectAtIndex:indexOfsleepData_codeavatar];
-    }
-    NSLog(@"sex : %@,codeavatar : %@",sex,codeavatar);
-    
-    // Fix not has image avatar
-    codeavatar = @"111";
-    NSLog(@"Set new codeavatar for show -> %@", codeavatar);
+    NSLog(@"[Avatar] sex : %@, set : %@, codeavatar : %@", sex, set, codeavatar);
     
     
     
     
-    // STEP 3 : Set image
+    // STEP 2 : Set image
     // avatar
     UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 454)];
-    NSString *avatar_pic = [NSString stringWithFormat:@"avatar-%@-0.png",sex];
+    NSString *avatar_pic = [NSString stringWithFormat:@"avatar-%@-%@-0.png", sex, set];
     avatar.image = [UIImage imageNamed:avatar_pic];
     [self.ViewAvatar addSubview:avatar];
     
+#warning lost change shirt
+    
     // emotion
     UIImageView *emotion = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 454)];
-    NSString *emotion_pic = [NSString stringWithFormat:@"codeavatar-%@-%@.png", sex, codeavatar];
+    NSString *emotion_pic = [NSString stringWithFormat:@"codeavatar-%@-%@-%@.png", sex, set, codeavatar];
     emotion.image = [UIImage imageNamed:emotion_pic];
     [self.ViewAvatar addSubview:emotion];
     
     
+}
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                              FIND AVATAR SEX
+// ----------------------------------------------------------------------------
+
+
+- (NSString*)findAvatarSex {
+    
+    NSString *query = @"SELECT avatar_sex FROM avatar ORDER BY avatar_id DESC LIMIT 1";
+    
+    NSArray *arrSex = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSInteger indexOfavatar_sex = [self.dbManager.arrColumnNames indexOfObject:@"avatar_sex"];
+    
+    NSString *sex = [[arrSex objectAtIndex:0] objectAtIndex:indexOfavatar_sex];
+    return sex;
+}
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                              FIND AVATAR SET
+// ----------------------------------------------------------------------------
+
+
+- (NSString*)findAvatarSet {
+    
+    NSString *query = @"SELECT avatar_set FROM avatar ORDER BY avatar_id DESC LIMIT 1";
+    
+    NSArray *arrSet = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSInteger indexOfavatar_set = [self.dbManager.arrColumnNames indexOfObject:@"avatar_set"];
+    
+    NSString *set = [[arrSet objectAtIndex:0] objectAtIndex:indexOfavatar_set];
+    return set;
+}
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                              FIND CODE-AVATAR
+// ----------------------------------------------------------------------------
+
+
+- (NSString*)findCodeAvatar {
+    
+    NSString *query = @"SELECT sleepData_codeavatar FROM sleepData ORDER BY sleepData_id DESC LIMIT 1";
+
+    NSArray *arrCodeAvatar = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSString *codeavatar;
+    
+    if ([arrCodeAvatar count] == 0) {
+        codeavatar = @"111";
+    }
+    else {
+        NSInteger indexOfsleepData_codeavatar = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_codeavatar"];
+        codeavatar = [[arrCodeAvatar objectAtIndex:0] objectAtIndex:indexOfsleepData_codeavatar];
+    }
+    return codeavatar;
 }
 
 
