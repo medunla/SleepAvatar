@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="-1293"/>
+            <point key="canvasLocation" x="474" y="2370"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="r7x-tE-7Aq">
@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rv-qT-QKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="730"/>
+            <point key="canvasLocation" x="1012" y="2370"/>
         </scene>
         <!--Avatar View Controller - SleepAvatar-->
         <scene sceneID="5xq-Jk-vfe">
@@ -377,6 +377,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sleep Graph" id="64K-EX-XY0">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="3Lt-0S-q3f"/>
                         <barButtonItem key="leftBarButtonItem" image="icon-menu.png" id="7lC-Gp-zGq">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -384,6 +385,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="hEB-4Q-TEw" id="mLL-LY-fYp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yta-IE-rZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -651,7 +655,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10196078568696976" green="0.12549020349979401" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PcI-iQ-y8O"/>
+                    <navigationItem key="navigationItem" id="PcI-iQ-y8O">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="fg3-dF-knz"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="ViewGraph" destination="1iQ-14-yHc" id="e6s-lL-mal"/>
                         <outlet property="ViewGraphText" destination="DX1-ju-jub" id="CV7-T2-IYq"/>
@@ -719,10 +725,10 @@
             </objects>
             <point key="canvasLocation" x="1538" y="1590"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Sleep Detect View Controller-->
         <scene sceneID="0Xb-Lx-uSC">
             <objects>
-                <viewController id="eCh-ig-Ysn" sceneMemberID="viewController">
+                <viewController id="eCh-ig-Ysn" customClass="StartSleepDetectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YFk-Ao-sTQ"/>
                         <viewControllerLayoutGuide type="bottom" id="jDf-sO-HDX"/>
@@ -730,8 +736,26 @@
                     <view key="view" contentMode="scaleToFill" id="EYv-sq-oLA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3df-ng-bxr">
+                                <rect key="frame" x="25" y="269" width="270" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.180392161" green="0.80000001190000003" blue="0.4431372583" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.1019607857" green="0.12549020350000001" blue="0.17254902420000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopDetect:" destination="eCh-ig-Ysn" eventType="touchUpInside" id="kmA-tE-goH"/>
+                                    <segue destination="LTq-wW-uWs" kind="custom" customClass="ECSlidingSegue" id="JR2-Mc-W9O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10196078568696976" green="0.12549020349979401" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="ButtonStopDetect" destination="3df-ng-bxr" id="3t8-b2-X2m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLn-vA-ovf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -760,14 +784,15 @@
             </objects>
             <point key="canvasLocation" x="1012" y="-554"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Back-->
         <scene sceneID="qfg-vx-Zyg">
             <objects>
-                <navigationController storyboardIdentifier="SleepGraphListViewController" automaticallyAdjustsScrollViewInsets="NO" id="LTq-wW-uWs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SleepGraphListViewController" title="Back" automaticallyAdjustsScrollViewInsets="NO" id="LTq-wW-uWs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="sBG-oW-F2J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.19215686619281769" green="0.25098040699958801" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

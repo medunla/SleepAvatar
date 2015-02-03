@@ -73,6 +73,8 @@
     self.arrSleepData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     [self.table reloadData];
     
+    NSLog(@"Count sleepdata %i", [self.arrSleepData count]);
+    
 }
 
 

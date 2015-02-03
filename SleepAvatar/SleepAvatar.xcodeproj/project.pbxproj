@@ -61,6 +61,7 @@
 		ABDC44B81A804AFB0048EBE6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44B71A804AFB0048EBE6 /* CoreMotion.framework */; };
 		ABDC44BB1A804DB10048EBE6 /* AchievementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44BA1A804DB10048EBE6 /* AchievementViewController.m */; };
 		ABDC44BE1A80523C0048EBE6 /* StartSleepRecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44BD1A80523C0048EBE6 /* StartSleepRecommandViewController.m */; };
+		ABDC44C11A8057110048EBE6 /* StartSleepDetectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44C01A8057110048EBE6 /* StartSleepDetectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,8 @@
 		ABDC44BA1A804DB10048EBE6 /* AchievementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementViewController.m; sourceTree = "<group>"; };
 		ABDC44BC1A80523C0048EBE6 /* StartSleepRecommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartSleepRecommandViewController.h; sourceTree = "<group>"; };
 		ABDC44BD1A80523C0048EBE6 /* StartSleepRecommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartSleepRecommandViewController.m; sourceTree = "<group>"; };
+		ABDC44BF1A8057110048EBE6 /* StartSleepDetectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartSleepDetectViewController.h; sourceTree = "<group>"; };
+		ABDC44C01A8057110048EBE6 /* StartSleepDetectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartSleepDetectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,8 @@
 				ABDC44BA1A804DB10048EBE6 /* AchievementViewController.m */,
 				ABDC44BC1A80523C0048EBE6 /* StartSleepRecommandViewController.h */,
 				ABDC44BD1A80523C0048EBE6 /* StartSleepRecommandViewController.m */,
+				ABDC44BF1A8057110048EBE6 /* StartSleepDetectViewController.h */,
+				ABDC44C01A8057110048EBE6 /* StartSleepDetectViewController.m */,
 				ABDC44741A802E830048EBE6 /* NavigationViewController.h */,
 				ABDC44751A802E830048EBE6 /* NavigationViewController.m */,
 				ABDC44A61A803D450048EBE6 /* CustomTableCell */,
@@ -499,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABDC44BE1A80523C0048EBE6 /* StartSleepRecommandViewController.m in Sources */,
+				ABDC44C11A8057110048EBE6 /* StartSleepDetectViewController.m in Sources */,
 				ABDC44AC1A8042670048EBE6 /* SleepGraphDetailViewController.m in Sources */,
 				ABDC446C1A802D5E0048EBE6 /* ECSlidingAnimationController.m in Sources */,
 				ABDC44701A802D5E0048EBE6 /* UIViewController+ECSlidingViewController.m in Sources */,
