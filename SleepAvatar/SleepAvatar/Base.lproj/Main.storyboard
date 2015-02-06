@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="474" y="2658"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Navigation View Controller - Back-->
         <scene sceneID="fPC-Le-BBw">
             <objects>
-                <tableViewController storyboardIdentifier="NavigationViewController" id="ECn-LA-dFA" customClass="NavigationViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NavigationViewController" title="Back" id="ECn-LA-dFA" customClass="NavigationViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2Vm-19-ZU0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +105,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.070588238537311554" green="0.18431372940540314" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="0Ge-Jz-fJt" kind="custom" customClass="ECSlidingSegue" id="psa-Ep-nzf"/>
+                                    <segue destination="UPq-Rr-uZR" kind="custom" customClass="ECSlidingSegue" id="psa-Ep-nzf"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="three" id="lbC-Xm-Gtu">
@@ -160,23 +160,32 @@
             </objects>
             <point key="canvasLocation" x="1538" y="2338"/>
         </scene>
-        <!--View Controller-->
+        <!--About Sleep View Controller - About Sleep-->
         <scene sceneID="ahN-Gy-TD3">
             <objects>
-                <viewController id="0Ge-Jz-fJt" sceneMemberID="viewController">
+                <viewController id="0Ge-Jz-fJt" customClass="AboutSleepViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GPj-8T-8pc"/>
                         <viewControllerLayoutGuide type="bottom" id="wql-NF-1ZB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Jh4-Z6-XBe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.10196078568696976" green="0.12549020349979401" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="About Sleep" id="D73-pE-nYj">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="xgg-DU-LFh"/>
+                        <barButtonItem key="leftBarButtonItem" image="icon-back-text.png" style="done" id="peL-4C-gxH">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="menuButtonTapped:" destination="0Ge-Jz-fJt" id="JIC-xs-MrR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0c-Wa-4xi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="3081"/>
+            <point key="canvasLocation" x="2064" y="3081"/>
         </scene>
         <!--Avatar View Controller - SleepAvatar-->
         <scene sceneID="5xq-Jk-vfe">
@@ -982,12 +991,35 @@
             </objects>
             <point key="canvasLocation" x="1012" y="1590"/>
         </scene>
+        <!--Navigation Controller - Back-->
+        <scene sceneID="nV8-OK-IXt">
+            <objects>
+                <navigationController title="Back" automaticallyAdjustsScrollViewInsets="NO" id="UPq-Rr-uZR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="kbW-sU-Syc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.19215686619281769" green="0.25098040699958801" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Ge-Jz-fJt" kind="relationship" relationship="rootViewController" id="feu-qG-nAv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTr-CM-Bqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="3081"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon-achievement-active.png" width="25" height="25"/>
         <image name="icon-achievement.png" width="25" height="25"/>
         <image name="icon-avatar-active.png" width="25" height="25"/>
         <image name="icon-avatar.png" width="25" height="25"/>
+        <image name="icon-back-text.png" width="54" height="40"/>
         <image name="icon-duration-25.png" width="25" height="25"/>
         <image name="icon-latency-25.png" width="25" height="25"/>
         <image name="icon-menu.png" width="25" height="25"/>

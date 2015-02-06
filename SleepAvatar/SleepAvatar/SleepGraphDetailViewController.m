@@ -142,7 +142,9 @@
     
     //    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon-menu.png"]]];
     //    self.navigationItem.leftBarButtonItem = item;
-    self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-back-text.png"] style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = btn;
+//    self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
     
     // Quality
     self.labelQuality.text = [NSString stringWithFormat:@"%d%%",quality];
@@ -236,7 +238,19 @@
 	[super loadView];
     NSLog(@"StartBar");
     
-    self.arrGraph = @[@1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3 ];
+    NSString *graph    = [self.arrSleepData objectAtIndex:11];
+    NSArray* arrgraph  = [graph componentsSeparatedByString: @","];
+//    NSMutableArray *arrgraph2 = [[NSMutableArray alloc] init];
+//    for (id obj in arrgraph) {
+//        float data = [obj floatValue];
+//        [arrgraph2 addObject:[NSNumber numberWithFloat:data] ];
+//    }
+//    
+//    NSLog(@"arrgraph2 : %@",arrgraph2);
+    
+    self.arrGraph = arrgraph;
+//    self.arrGraph = @[@1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3 ];
+    NSLog(@"arrGraph : %@",self.arrGraph);
     self.arrGraphCount = self.arrGraph.count;
     self.arrDay = @[@6,@7,@8];
     

@@ -33,6 +33,7 @@
     // Custom button
     self.ButtonStartDetect.layer.cornerRadius = 5;
     self.ButtonStartDetect.layer.masksToBounds = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning

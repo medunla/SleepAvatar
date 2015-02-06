@@ -38,6 +38,17 @@
     // Initialize the dbManager property.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sql"];
     
+    
+    
+    // Find sleepData_timestart & sleepData_timeend & create sleepBehavior in graph
+//    NSString *query = [NSString stringWithFormat:@"SELECT * FROM sleepBehavior WHERE sleepData_id = %d",sleepData_id];
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM sleepBehavior"];
+    NSArray *arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"query : %@, result : %@",query,arr);
+    int countArr = [arr count];
+    NSLog(@"countArr : %d", countArr);
+
+    
 }
 
 - (void)didReceiveMemoryWarning

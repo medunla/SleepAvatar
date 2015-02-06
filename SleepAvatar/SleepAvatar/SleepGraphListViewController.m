@@ -65,7 +65,7 @@
 
 - (void)loadData {
     
-    NSString *query = @"select * from sleepData";
+    NSString *query = @"SELECT * FROM sleepData ORDER BY sleepData_id DESC";
     
     if (self.arrSleepData != nil) {
         self.arrSleepData = nil;

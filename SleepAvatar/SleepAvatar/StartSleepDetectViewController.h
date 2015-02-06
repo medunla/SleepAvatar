@@ -12,6 +12,5 @@
 @interface StartSleepDetectViewController : UIViewController
 
 @property (nonatomic, strong) DBManager *dbManager;
-@property (nonatomic, strong) NSArray *arrSleepBehavior;
 
 @end

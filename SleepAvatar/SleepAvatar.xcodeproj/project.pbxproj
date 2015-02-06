@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB4A83541A814F080063DD12 /* sleepAvatar2.sql in Resources */ = {isa = PBXBuildFile; fileRef = AB4A83531A814F080063DD12 /* sleepAvatar2.sql */; };
+		AB2D47491A8551F30058DDDF /* sleepAvatar2.sql in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47481A8551F30058DDDF /* sleepAvatar2.sql */; };
+		AB2D474C1A8571650058DDDF /* AboutSleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */; };
+		AB2D47561A85774C0058DDDF /* icon-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47551A85774C0058DDDF /* icon-back.png */; };
+		AB2D47581A8578E90058DDDF /* icon-back-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47571A8578E90058DDDF /* icon-back-text.png */; };
 		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
 		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
 		ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
@@ -76,7 +79,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB4A83531A814F080063DD12 /* sleepAvatar2.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar2.sql; sourceTree = "<group>"; };
+		AB2D47481A8551F30058DDDF /* sleepAvatar2.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar2.sql; sourceTree = "<group>"; };
+		AB2D474A1A8571650058DDDF /* AboutSleepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSleepViewController.h; sourceTree = "<group>"; };
+		AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSleepViewController.m; sourceTree = "<group>"; };
+		AB2D47551A85774C0058DDDF /* icon-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back.png"; sourceTree = "<group>"; };
+		AB2D47571A8578E90058DDDF /* icon-back-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back-text.png"; sourceTree = "<group>"; };
 		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -236,6 +243,8 @@
 				ABDC44C01A8057110048EBE6 /* StartSleepDetectViewController.m */,
 				ABDC44741A802E830048EBE6 /* NavigationViewController.h */,
 				ABDC44751A802E830048EBE6 /* NavigationViewController.m */,
+				AB2D474A1A8571650058DDDF /* AboutSleepViewController.h */,
+				AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */,
 				ABDC44A61A803D450048EBE6 /* CustomTableCell */,
 				ABDC44541A8029D40048EBE6 /* Images */,
 				ABDC44531A80296E0048EBE6 /* Extension */,
@@ -249,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				ABDC44591A802ACD0048EBE6 /* sleepAvatar.sql */,
-				AB4A83531A814F080063DD12 /* sleepAvatar2.sql */,
+				AB2D47481A8551F30058DDDF /* sleepAvatar2.sql */,
 				ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */,
 				ABDC44271A8021D70048EBE6 /* InfoPlist.strings */,
 				ABDC442A1A8021D70048EBE6 /* main.m */,
@@ -328,6 +337,8 @@
 		ABDC44771A802F9C0048EBE6 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				AB2D47571A8578E90058DDDF /* icon-back-text.png */,
+				AB2D47551A85774C0058DDDF /* icon-back.png */,
 				ABDC44781A802F9C0048EBE6 /* icon-achievement-active.png */,
 				ABDC44791A802F9C0048EBE6 /* icon-achievement.png */,
 				ABDC447A1A802F9C0048EBE6 /* icon-app-120.png */,
@@ -463,7 +474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4A83541A814F080063DD12 /* sleepAvatar2.sql in Resources */,
+				AB2D47491A8551F30058DDDF /* sleepAvatar2.sql in Resources */,
 				ABDC44901A802F9C0048EBE6 /* icon-app-120.png in Resources */,
 				ABDC449D1A802F9C0048EBE6 /* icon-start-sleep.png in Resources */,
 				ABDC44941A802F9C0048EBE6 /* icon-avatar-active.png in Resources */,
@@ -481,6 +492,8 @@
 				ABDC44A01A802F9C0048EBE6 /* codeavatar-f-1-111.png in Resources */,
 				ABDC44921A802F9C0048EBE6 /* icon-app-80.png in Resources */,
 				ABDC44991A802F9C0048EBE6 /* icon-menu.png in Resources */,
+				AB2D47581A8578E90058DDDF /* icon-back-text.png in Resources */,
+				AB2D47561A85774C0058DDDF /* icon-back.png in Resources */,
 				ABDC44291A8021D70048EBE6 /* InfoPlist.strings in Resources */,
 				ABDC449F1A802F9C0048EBE6 /* avatar-m-1-0.png in Resources */,
 				ABDC449E1A802F9C0048EBE6 /* avatar-f-1-0.png in Resources */,
@@ -507,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2D474C1A8571650058DDDF /* AboutSleepViewController.m in Sources */,
 				ABDC44BE1A80523C0048EBE6 /* StartSleepRecommandViewController.m in Sources */,
 				ABDC44C11A8057110048EBE6 /* StartSleepDetectViewController.m in Sources */,
 				ABDC44AC1A8042670048EBE6 /* SleepGraphDetailViewController.m in Sources */,
