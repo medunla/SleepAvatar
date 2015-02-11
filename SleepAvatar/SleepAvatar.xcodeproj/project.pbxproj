@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB2D47491A8551F30058DDDF /* sleepAvatar2.sql in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47481A8551F30058DDDF /* sleepAvatar2.sql */; };
 		AB2D474C1A8571650058DDDF /* AboutSleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */; };
 		AB2D47561A85774C0058DDDF /* icon-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47551A85774C0058DDDF /* icon-back.png */; };
 		AB2D47581A8578E90058DDDF /* icon-back-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47571A8578E90058DDDF /* icon-back-text.png */; };
+		ABAF795E1A8BE91C006AB268 /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ABAF795D1A8BE91C006AB268 /* sleepAvatar.sqlite */; };
 		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
 		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
 		ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
@@ -25,7 +25,6 @@
 		ABDC44481A8021D70048EBE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44461A8021D70048EBE6 /* InfoPlist.strings */; };
 		ABDC444A1A8021D70048EBE6 /* SleepAvatarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44491A8021D70048EBE6 /* SleepAvatarTests.m */; };
 		ABDC44581A802AB90048EBE6 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44571A802AB90048EBE6 /* DBManager.m */; };
-		ABDC445A1A802ACD0048EBE6 /* sleepAvatar.sql in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44591A802ACD0048EBE6 /* sleepAvatar.sql */; };
 		ABDC445C1A802C390048EBE6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC445B1A802C390048EBE6 /* libsqlite3.dylib */; };
 		ABDC446B1A802D5E0048EBE6 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC445F1A802D5E0048EBE6 /* ECPercentDrivenInteractiveTransition.m */; };
 		ABDC446C1A802D5E0048EBE6 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44611A802D5E0048EBE6 /* ECSlidingAnimationController.m */; };
@@ -79,11 +78,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB2D47481A8551F30058DDDF /* sleepAvatar2.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar2.sql; sourceTree = "<group>"; };
 		AB2D474A1A8571650058DDDF /* AboutSleepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSleepViewController.h; sourceTree = "<group>"; };
 		AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSleepViewController.m; sourceTree = "<group>"; };
 		AB2D47551A85774C0058DDDF /* icon-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back.png"; sourceTree = "<group>"; };
 		AB2D47571A8578E90058DDDF /* icon-back-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back-text.png"; sourceTree = "<group>"; };
+		ABAF795D1A8BE91C006AB268 /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
 		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,7 +102,6 @@
 		ABDC44491A8021D70048EBE6 /* SleepAvatarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepAvatarTests.m; sourceTree = "<group>"; };
 		ABDC44561A802AB90048EBE6 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		ABDC44571A802AB90048EBE6 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
-		ABDC44591A802ACD0048EBE6 /* sleepAvatar.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sql; sourceTree = "<group>"; };
 		ABDC445B1A802C390048EBE6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		ABDC445E1A802D5E0048EBE6 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
 		ABDC445F1A802D5E0048EBE6 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
@@ -257,12 +255,11 @@
 		ABDC44251A8021D70048EBE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ABDC44591A802ACD0048EBE6 /* sleepAvatar.sql */,
-				AB2D47481A8551F30058DDDF /* sleepAvatar2.sql */,
-				ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */,
 				ABDC44271A8021D70048EBE6 /* InfoPlist.strings */,
 				ABDC442A1A8021D70048EBE6 /* main.m */,
+				ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */,
 				ABDC442C1A8021D70048EBE6 /* SleepAvatar-Prefix.pch */,
+				ABAF795D1A8BE91C006AB268 /* sleepAvatar.sqlite */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -474,7 +471,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB2D47491A8551F30058DDDF /* sleepAvatar2.sql in Resources */,
 				ABDC44901A802F9C0048EBE6 /* icon-app-120.png in Resources */,
 				ABDC449D1A802F9C0048EBE6 /* icon-start-sleep.png in Resources */,
 				ABDC44941A802F9C0048EBE6 /* icon-avatar-active.png in Resources */,
@@ -488,7 +484,6 @@
 				ABDC44911A802F9C0048EBE6 /* icon-app-58.png in Resources */,
 				ABDC448E1A802F9C0048EBE6 /* icon-achievement-active.png in Resources */,
 				ABDC449C1A802F9C0048EBE6 /* icon-start-sleep-active.png in Resources */,
-				ABDC445A1A802ACD0048EBE6 /* sleepAvatar.sql in Resources */,
 				ABDC44A01A802F9C0048EBE6 /* codeavatar-f-1-111.png in Resources */,
 				ABDC44921A802F9C0048EBE6 /* icon-app-80.png in Resources */,
 				ABDC44991A802F9C0048EBE6 /* icon-menu.png in Resources */,
@@ -501,6 +496,7 @@
 				ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */,
 				ABDC449B1A802F9C0048EBE6 /* icon-sleep-graph.png in Resources */,
 				ABDC449A1A802F9C0048EBE6 /* icon-sleep-graph-active.png in Resources */,
+				ABAF795E1A8BE91C006AB268 /* sleepAvatar.sqlite in Resources */,
 				ABDC44951A802F9C0048EBE6 /* icon-duration-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

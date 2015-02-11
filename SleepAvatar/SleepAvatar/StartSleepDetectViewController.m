@@ -43,7 +43,7 @@
     [super viewDidLoad];
     
     // Initialize the dbManager property.
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sqlite"];
     
     // Set lang
     self.lang = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
@@ -57,6 +57,7 @@
     // Custom button
     self.ButtonStopDetect.layer.cornerRadius = 5;
     self.ButtonStopDetect.layer.masksToBounds = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,7 +82,7 @@
     
     // STEP 1 : Check session & Set start value
     
-    __block int SleepListCount;
+    __block int SleepListCount=0;
     NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
     [objDateformat setLocale:self.lang];
     NSString *query = @"SELECT * FROM sleepData";
@@ -89,7 +90,7 @@
     NSArray *arrCheckSleepList = [(AppDelegate *)[[UIApplication sharedApplication] delegate] arrCheckSleepList];
     if (arrCheckSleepList == nil) {
         arrCheckSleepList = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-        SleepListCount = (unsigned long)arrCheckSleepList.count + 1;
+        SleepListCount = (int)arrCheckSleepList.count + 1;
         NSLog(@"sleepListCount1 = %i",SleepListCount);
         
         
@@ -99,7 +100,7 @@
         [self createSleepData:strTime];
     }
     else {
-        SleepListCount = (unsigned long)arrCheckSleepList.count;
+        SleepListCount = (int)arrCheckSleepList.count;
         NSLog(@"sleepListCount2 = %i",SleepListCount);
     }
     
@@ -280,9 +281,8 @@
 
 - (void)saveSleepBehavior:(int)sleepData_id timeStart:(NSString *)timeStart timeEnd:(NSString *)timeEnd type:(NSString *)type range:(float)range {
     NSLog(@"[saveSleepBehavior] Start!");
-    
-    NSString *query;
-    query = [NSString stringWithFormat:@"INSERT INTO sleepBehavior VALUES(null, %d, '%@', '%@', '%@')", sleepData_id, timeStart, timeEnd, type];
+
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO sleepBehavior (sleepData_id, sleepBehavior_timestart, sleepBehavior_timeend, sleepBehavior_type) VALUES (%i, '%@', '%@', '%@')", sleepData_id, timeStart, timeEnd, type];
     NSLog(@"sql : %@",query);
     [self.dbManager executeQuery:query];
     
@@ -293,7 +293,7 @@
 //        [self loadData];
         
         // Pop the view controller.
-//        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else{
         NSLog(@"[saveSleepBehavior] Could not execute the query.");
@@ -434,14 +434,14 @@
     arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     NSLog(@"query : %@, result : %@",query,arr);
     // sleepData_id <-------------------------------
-    sleepData_id = [arr count];
+    sleepData_id = (int)[arr count];
     NSLog(@"sleepData_id : %i", sleepData_id);
     
     // Find sleepData_timestart & sleepData_timeend & create sleepBehavior in graph
     query = [NSString stringWithFormat:@"SELECT * FROM sleepBehavior WHERE sleepData_id = %d",sleepData_id];
     arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     NSLog(@"query : %@, result : %@",query,arr);
-    int countArr = [arr count];
+    int countArr = (int)[arr count];
     NSLog(@"countArr : %d", countArr);
     
     
@@ -546,7 +546,7 @@
     int properDurationMax   = 0;
     
     
-    int duration            = [sleepData count];
+    int duration            = (int)[sleepData count];
     NSLog(@"sleepData count : %i", duration);
     NSLog(@"sleepData : %@", sleepData);
     int durationHour        = duration/60;
@@ -819,7 +819,7 @@
                                        fromDate:prev
                                        toDate:now
                                        options:0];
-    int age = [ageComponents year];
+    int age = (int)[ageComponents year];
     NSLog(@"Age : %i",age);
     return age;
 }

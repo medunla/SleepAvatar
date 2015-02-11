@@ -36,16 +36,36 @@
     
     
     // Initialize the dbManager property.
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sqlite"];
     
     
     
-    // Find sleepData_timestart & sleepData_timeend & create sleepBehavior in graph
-//    NSString *query = [NSString stringWithFormat:@"SELECT * FROM sleepBehavior WHERE sleepData_id = %d",sleepData_id];
-    NSString *query = [NSString stringWithFormat:@"SELECT * FROM sleepBehavior"];
-    NSArray *arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSString *query;
+    NSArray *arr;
+    int countArr;
+    
+    query = [NSString stringWithFormat:@"SELECT * FROM user"];
+    arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     NSLog(@"query : %@, result : %@",query,arr);
-    int countArr = [arr count];
+    countArr = (int)[arr count];
+    NSLog(@"countArr : %d", countArr);
+    
+    query = [NSString stringWithFormat:@"SELECT * FROM avatar"];
+    arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"query : %@, result : %@",query,arr);
+    countArr = (int)[arr count];
+    NSLog(@"countArr : %d", countArr);
+    
+    query = [NSString stringWithFormat:@"SELECT * FROM sleepData"];
+    arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"query : %@, result : %@",query,arr);
+    countArr = (int)[arr count];
+    NSLog(@"countArr : %d", countArr);
+    
+    query = [NSString stringWithFormat:@"SELECT * FROM sleepBehavior"];
+    arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"query : %@, result : %@",query,arr);
+    countArr = (int)[arr count];
     NSLog(@"countArr : %d", countArr);
 
     

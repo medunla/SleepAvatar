@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="474" y="2658"/>
+            <point key="canvasLocation" x="18" y="1938"/>
         </scene>
         <!--Navigation View Controller - Back-->
         <scene sceneID="fPC-Le-BBw">
@@ -140,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlx-WF-RjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="2658"/>
+            <point key="canvasLocation" x="556" y="1938"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RqO-lh-yrG">
@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9WZ-rz-qWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="2338"/>
+            <point key="canvasLocation" x="1082" y="1618"/>
         </scene>
         <!--About Sleep View Controller - About Sleep-->
         <scene sceneID="ahN-Gy-TD3">
@@ -171,6 +171,83 @@
                     <view key="view" contentMode="scaleToFill" id="Jh4-Z6-XBe">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghw-cl-7KL">
+                                <rect key="frame" x="0.0" y="109" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIO-3p-i7W">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AIX-Ie-R2l" kind="push" id="sUa-xT-cCP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How to good sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocf-vc-whv">
+                                <rect key="frame" x="160" y="108" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ta-st-NdJ">
+                                <rect key="frame" x="160" y="0.0" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RqR-so-WSz" kind="push" id="Ext-0z-7Mn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-vP-j9K">
+                                <rect key="frame" x="0.0" y="269" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bt-SR-6lL">
+                                <rect key="frame" x="0.0" y="160" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zXL-pp-zNK" kind="push" id="dqV-Qu-syE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Measurement of" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-uN-E5X">
+                                <rect key="frame" x="160" y="259" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sleep quality" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="uGT-Bl-Vve">
+                                <rect key="frame" x="160" y="274" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gx-b1-lxy">
+                                <rect key="frame" x="160" y="160" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VQc-NH-XxE" kind="push" id="7JB-Xq-m7l"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.10196078568696976" green="0.12549020349979401" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="About Sleep" id="D73-pE-nYj">
@@ -185,7 +262,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0c-Wa-4xi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064" y="3081"/>
+            <point key="canvasLocation" x="1608" y="2361"/>
+        </scene>
+        <!--View Controller - How to good sleep-->
+        <scene sceneID="daa-WB-y8r">
+            <objects>
+                <viewController id="RqR-so-WSz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xny-Wc-hng"/>
+                        <viewControllerLayoutGuide type="bottom" id="EUk-xl-j0M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="plU-k9-bfp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="How to good sleep" id="kwj-XP-UDz">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="smv-WF-a5l"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2n-XD-uJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2152" y="2361"/>
+        </scene>
+        <!--View Controller - What's sleep-->
+        <scene sceneID="qqZ-GJ-kIA">
+            <objects>
+                <viewController id="AIX-Ie-R2l" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wos-AO-MfW"/>
+                        <viewControllerLayoutGuide type="bottom" id="87J-7F-XEK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mzf-1M-kBv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="What's sleep" id="Sd1-lg-CL3">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SDE-jB-v3s"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qM0-s2-cP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2152" y="1618"/>
         </scene>
         <!--Avatar View Controller - SleepAvatar-->
         <scene sceneID="5xq-Jk-vfe">
@@ -315,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9X-vq-ATx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="-554"/>
+            <point key="canvasLocation" x="1082" y="-1274"/>
         </scene>
         <!--Sleep Graph List View Controller - Back-->
         <scene sceneID="yn4-j5-C1b">
@@ -534,7 +653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yta-IE-rZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="146"/>
+            <point key="canvasLocation" x="1082" y="-574"/>
         </scene>
         <!--Achievement View Controller - Achievement-->
         <scene sceneID="u86-Uc-6Ae">
@@ -662,7 +781,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBt-YE-o0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="862"/>
+            <point key="canvasLocation" x="1082" y="142"/>
         </scene>
         <!--Sleep Graph Detail View Controller-->
         <scene sceneID="3Sz-Xb-SQJ">
@@ -819,7 +938,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRI-Xj-Ji1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="146"/>
+            <point key="canvasLocation" x="1580" y="-574"/>
         </scene>
         <!--Start Sleep Recommand View Controller-->
         <scene sceneID="O4I-3Q-w7S">
@@ -866,7 +985,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfc-sQ-QpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="1590"/>
+            <point key="canvasLocation" x="1082" y="870"/>
         </scene>
         <!--Start Sleep Detect View Controller-->
         <scene sceneID="0Xb-Lx-uSC">
@@ -902,7 +1021,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLn-vA-ovf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="1590"/>
+            <point key="canvasLocation" x="1580" y="870"/>
+        </scene>
+        <!--View Controller - Sleep level-->
+        <scene sceneID="oCd-IZ-qtN">
+            <objects>
+                <viewController id="zXL-pp-zNK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="THN-mS-0p5"/>
+                        <viewControllerLayoutGuide type="bottom" id="iG7-LH-Ebg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4If-Qr-E0a">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sleep level" id="yAk-Gp-IGM">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="jhc-gF-4Nn"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="04k-Ek-fBw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2152" y="3102"/>
+        </scene>
+        <!--View Controller - Measument-->
+        <scene sceneID="9lS-jj-log">
+            <objects>
+                <viewController id="VQc-NH-XxE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lwv-Ly-JT0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bfd-EN-1hm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jHI-t0-ll4">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Measument" id="Yed-CP-0LL">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="WQF-jf-bYl"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Su-Br-H9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2152" y="3815"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GgH-Uc-2aL">
@@ -925,7 +1086,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fa1-G9-BTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="-554"/>
+            <point key="canvasLocation" x="556" y="-1274"/>
         </scene>
         <!--Navigation Controller - Back-->
         <scene sceneID="qfg-vx-Zyg">
@@ -948,7 +1109,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkE-lz-KJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="146"/>
+            <point key="canvasLocation" x="556" y="-574"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GBX-z2-dLq">
@@ -970,7 +1131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzU-le-gmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="862"/>
+            <point key="canvasLocation" x="556" y="142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YMg-kl-pyO">
@@ -989,7 +1150,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdW-wI-gVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="1590"/>
+            <point key="canvasLocation" x="556" y="870"/>
         </scene>
         <!--Navigation Controller - Back-->
         <scene sceneID="nV8-OK-IXt">
@@ -1011,7 +1172,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTr-CM-Bqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="3081"/>
+            <point key="canvasLocation" x="1082" y="2361"/>
         </scene>
     </scenes>
     <resources>

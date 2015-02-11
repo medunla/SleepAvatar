@@ -42,7 +42,7 @@
     self.table.backgroundColor = [UIColor colorWithRed:(26/255.0) green:(32/255.0) blue:(44/255.0) alpha:1.0];
     
     // Initialize the dbManager property.
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sqlite"];
     
     // Load the data.
     [self loadData];
@@ -73,7 +73,7 @@
     self.arrSleepData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     [self.table reloadData];
     
-    NSLog(@"Count sleepdata %i", [self.arrSleepData count]);
+    NSLog(@"Count sleepdata %lu", (unsigned long)[self.arrSleepData count]);
     
 }
 
