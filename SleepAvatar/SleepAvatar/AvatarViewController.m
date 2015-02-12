@@ -37,36 +37,6 @@
     
     // Initialize the dbManager property.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sqlite"];
-    
-    
-    
-    NSString *query;
-    NSArray *arr;
-    int countArr;
-    
-    query = [NSString stringWithFormat:@"SELECT * FROM user"];
-    arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"query : %@, result : %@",query,arr);
-    countArr = (int)[arr count];
-    NSLog(@"countArr : %d", countArr);
-    
-    query = [NSString stringWithFormat:@"SELECT * FROM avatar"];
-    arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"query : %@, result : %@",query,arr);
-    countArr = (int)[arr count];
-    NSLog(@"countArr : %d", countArr);
-    
-    query = [NSString stringWithFormat:@"SELECT * FROM sleepData"];
-    arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"query : %@, result : %@",query,arr);
-    countArr = (int)[arr count];
-    NSLog(@"countArr : %d", countArr);
-    
-    query = [NSString stringWithFormat:@"SELECT * FROM sleepBehavior"];
-    arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"query : %@, result : %@",query,arr);
-    countArr = (int)[arr count];
-    NSLog(@"countArr : %d", countArr);
 
     
 }
