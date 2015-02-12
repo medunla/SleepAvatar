@@ -96,15 +96,32 @@
     return 1;
 }
 
-//- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
-//    headerView.backgroundColor = [UIColor redColor];
-//    return headerView;
-//}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"January, 2015";
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    // 1. The view for the header
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 68)];
+    
+    // 2. Set a custom background color and a border
+    headerView.backgroundColor = [UIColor colorWithRed:(26/255.0) green:(32/255.0) blue:(44/255.0) alpha:0.5];
+    
+    // 3. Add a label
+    UILabel* headerLabel = [[UILabel alloc] init];
+    headerLabel.frame = CGRectMake(25, 31, tableView.frame.size.width - 25, 17);
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.font = [UIFont boldSystemFontOfSize:17.0];
+    headerLabel.textAlignment = NSTextAlignmentLeft;
+    
+    NSInteger indexOfsleepData_date = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_date"];
+    NSString *sleepData_date = [[self.arrSleepData objectAtIndex:0] objectAtIndex:indexOfsleepData_date];
+    NSArray* arrSleepData_date = [sleepData_date componentsSeparatedByString: @" "];
+    
+    headerLabel.text = [NSString stringWithFormat:@"%@, %@", [arrSleepData_date objectAtIndex:1], [arrSleepData_date objectAtIndex:2]];
+    
+    // 4. Add the label to the header view
+    [headerView addSubview:headerLabel];
+    
+    return headerView;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
