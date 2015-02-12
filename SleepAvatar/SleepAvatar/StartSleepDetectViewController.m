@@ -378,8 +378,7 @@
     NSString *codeavatar = @"000";
     NSString *graphBar = @"0";
     
-    NSString *query;
-    query = [NSString stringWithFormat:@"INSERT INTO sleepData VALUES(null, %d, '%@', '%@', '%@', %d, %d, %d, %d, %d, '%@', '%@')", avatar_id, date, timeStart, timeEnd, latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar];
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO sleepData (Avatar_id, sleepData_date, sleepData_timestart, sleepData_timeend, sleepData_latency, sleepData_quality, sleepData_duration, sleepData_durationdeep, sleepData_durationlight, sleepData_codeavatar, sleepData_graphBar) VALUES(%i, '%@', '%@', '%@', %d, %d, %d, %d, %d, '%@', '%@')", avatar_id, date, timeStart, timeEnd, latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar];
     [self.dbManager executeQuery:query];
     
     if (self.dbManager.affectedRows != 0) {
@@ -507,7 +506,7 @@
     
     NSLog(@"Update database sleepData");
     // STEP 2 : update database
-    query = [NSString stringWithFormat:@"UPDATE sleepData SET sleepData_timestart = '%@', sleepData_timeend = '%@', sleepData_duration = %d, sleepData_durationdeep = %d, sleepData_durationlight = %d, sleepData_quality = %d, sleepData_codeavatar = '%@', sleepData_graphBar = '%@' WHERE sleepData_id = %d", timeStart, timeEnd, duration, durationdeep, durationlight, quality, codeavatar, graphBar, sleepData_id];
+    query = [NSString stringWithFormat:@"UPDATE sleepData SET sleepData_timestart = '%@', sleepData_timeend = '%@', sleepData_latency = %d, sleepData_quality = %d, sleepData_duration = %d, sleepData_durationdeep = %d, sleepData_durationlight = %d, sleepData_codeavatar = '%@', sleepData_graphBar = '%@' WHERE sleepData_id = %d", timeStart, timeEnd, latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar, sleepData_id];
     NSLog(@"sql : %@",query);
     [self.dbManager executeQuery:query];
     
@@ -541,7 +540,7 @@
 
 -(void)analyzeSleep:(int)age sleepData:(NSMutableArray*)sleepData {
     NSLog(@"[analyzeSleep] Start!");
-    //    int age = 21;
+    
     int properDurationMin   = 0;
     int properDurationMax   = 0;
     
@@ -550,23 +549,17 @@
     NSLog(@"sleepData count : %i", duration);
     NSLog(@"sleepData : %@", sleepData);
     int durationHour        = duration/60;
-    //    int durationMin         = duration-(60*durationHour);
+    NSLog(@"durationHour : %i", durationHour);
     
     int latency             = 0;
-    int latencyHour         = 0;
-    int latencyMin          = 0;
     BOOL latencyCountAmount = false;
     
     int efficiency          = 0; // true sleep/sleep duration
     
     int deepSleep           = 0;
     int deepSleepHour       = 0;
-    int deepSleepMin        = 0;
-    int deepSleepPer        = 0;
     int lightSleep          = 0;
     int lightSleepHour      = 0;
-    int lightSleepMin       = 0;
-    int lightSleepPer       = 0;
     
     int quality             = 0;
     int scoreLatency        = 0;
@@ -624,34 +617,28 @@
         if (data < 0.31) {
             deepSleep++;
             NSLog(@"Deep++");
+            latencyCountAmount = true;
         }
         else if (data < 0.81) {
             lightSleep++;
             NSLog(@"Light++");
+            latencyCountAmount = true;
         }
         
         // Latency count
-        if (data > 0.30 && latencyCountAmount == false) {
+        if (latencyCountAmount == false) {
             latency++;
             NSLog(@"Latency++");
-        }
-        if (data < 0.31 && latencyCountAmount == false) {
-            latencyCountAmount = true;
-            NSLog(@"Latency Stop count");
         }
         
 
     }
+    NSLog(@"Latency : %d", latency);
+    
     
     deepSleepHour  = deepSleep/60;
-    deepSleepMin   = deepSleep - (deepSleepHour*60);
-    deepSleepPer   = (100*deepSleep)/duration;
     lightSleepHour = lightSleep/60;
-    lightSleepMin  = lightSleep - (lightSleepHour*60);
-    lightSleepPer  = (100*lightSleep)/duration;
-    latencyHour    = latency/60;
-    latencyMin     = latency - (latencyHour*60);
-    NSLog(@"Latency : %d", latency);
+    
     
     // Calculate Sleep Efficiency
     // true sleep/sleep duration
@@ -671,6 +658,7 @@
     
     
     // Latency
+#warning low duration = good latency ,but it not good fix it
     if      (latency > 60) { scoreLatency = 3; }
     else if (latency > 30) { scoreLatency = 2; }
     else if (latency > 15) { scoreLatency = 1; }
