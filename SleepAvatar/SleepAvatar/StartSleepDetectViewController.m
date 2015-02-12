@@ -23,6 +23,7 @@
 @property (nonatomic) NSString *codeavatarT;
 @property (nonatomic) NSString *graphT;
 @property (nonatomic) BOOL graphCheck;
+@property (nonatomic) NSString *graphTextT;
 @property (strong, nonatomic) NSLocale *lang;
 
 @property (weak, nonatomic) IBOutlet UIButton *ButtonStopDetect;
@@ -137,7 +138,7 @@
         [mManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
             
             //            self.labelCount.text = [NSString stringWithFormat:@"%d",count];
-            NSLog(@"%d",count);
+//            NSLog(@"%d",count);
             
             if (count == 0) {
                 X = accelerometerData.acceleration.x;
@@ -202,20 +203,37 @@
                 tempX = X;
                 tempY = Y;
                 
+                
+                
+                
+                // --------------------------
+                rangePer = ( (rangeXX+rangeYY) *100)/0.5; // 0.5 => max range
+                typeFloat = rangePer*0.01;
+                if (typeFloat <= 0.1) {
+                    type = @"Deep sleep";
+                }
+                else if (typeFloat <= 0.5) {
+                    type = @"Light sleep";
+                }
+                else {
+                    type = @"Awake";
+                }
+                NSLog(@"%d, rangePer : %i, typeFloat : %f, [%@]",count,rangePer,typeFloat,type);
+                
                 if (count == (60/timeRun) ) {
                     timeEnd = [objDateformat stringFromDate:[NSDate date]];
                     
-                    rangePer = ( (rangeXX+rangeYY) *100)/0.5; // 0.5 => max range
-                    typeFloat = (rangePer/100);
-                    if (typeFloat <= 0.1) {
-                        type = @"Deep sleep";
-                    }
-                    else if (typeFloat <= 0.5) {
-                        type = @"Light sleep";
-                    }
-                    else {
-                        type = @"Awake";
-                    }
+//                    rangePer = ( (rangeXX+rangeYY) *100)/0.5; // 0.5 => max range
+//                    typeFloat = (rangePer/100);
+//                    if (typeFloat <= 0.1) {
+//                        type = @"Deep sleep";
+//                    }
+//                    else if (typeFloat <= 0.5) {
+//                        type = @"Light sleep";
+//                    }
+//                    else {
+//                        type = @"Awake";
+//                    }
                     
                     NSLog(@"rangeX : %f, rangeY : %f",rangeXX, rangeYY);
                     NSLog(@"%@[%f]", type, typeFloat);
@@ -365,19 +383,20 @@
 
 -(void)createSleepData:(NSString *)date {
     
-    int avatar_id = [self findAvatarId];
+    int avatar_id           = [self findAvatarId];
     NSLog(@"AvatarID : %i", avatar_id);
-    NSString *timeStart = @"00:00";
-    NSString *timeEnd = @"00:00";
-    int latency = 0;
-    int quality = 0;
-    int duration = 0;
-    int durationdeep = 0;
-    int durationlight = 0;
-    NSString *codeavatar = @"000";
-    NSString *graphBar = @"0";
+    NSString *timeStart     = @"00:00";
+    NSString *timeEnd       = @"00:00";
+    int latency             = 0;
+    int quality             = 0;
+    int duration            = 0;
+    int durationdeep        = 0;
+    int durationlight       = 0;
+    NSString *codeavatar    = @"000";
+    NSString *graphBar      = @"0";
+    NSString *graphBarText  = @"01";
     
-    NSString *query = [NSString stringWithFormat:@"INSERT INTO sleepData (Avatar_id, sleepData_date, sleepData_timestart, sleepData_timeend, sleepData_latency, sleepData_quality, sleepData_duration, sleepData_durationdeep, sleepData_durationlight, sleepData_codeavatar, sleepData_graphBar) VALUES(%i, '%@', '%@', '%@', %d, %d, %d, %d, %d, '%@', '%@')", avatar_id, date, timeStart, timeEnd, latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar];
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO sleepData (Avatar_id, sleepData_date, sleepData_timestart, sleepData_timeend, sleepData_latency, sleepData_quality, sleepData_duration, sleepData_durationdeep, sleepData_durationlight, sleepData_codeavatar, sleepData_graphBar, sleepData_graphBarText) VALUES(%i, '%@', '%@', '%@', %d, %d, %d, %d, %d, '%@', '%@', '%@')", avatar_id, date, timeStart, timeEnd, latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar, graphBarText];
     [self.dbManager executeQuery:query];
     
     if (self.dbManager.affectedRows != 0) {
@@ -419,6 +438,7 @@
     int durationlight       = 0;
     NSString *codeavatar    = @"000";
     NSString *graphBar      = @"0";
+    NSString *graphBarText  = @"01";
     
     
     
@@ -436,14 +456,15 @@
     durationlight   = self.durationlightT;
     codeavatar      = self.codeavatarT;
     graphBar        = self.graphT;
+    graphBarText    = self.graphTextT;
     
-    NSLog(@"latency : %d, quality : %d, duration : %d, durationdeep : %d, durationlight : %d, codeavatar : %@, graphBar : %@", latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar);
+    NSLog(@"latency : %d, quality : %d, duration : %d, durationdeep : %d, durationlight : %d, codeavatar : %@, graphBar : %@, graphBarText : %@", latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar, graphBarText);
     
     
     
     
     // STEP 2 : update database
-    NSString *query = [NSString stringWithFormat:@"UPDATE sleepData SET sleepData_timestart = '%@', sleepData_timeend = '%@', sleepData_latency = %d, sleepData_quality = %d, sleepData_duration = %d, sleepData_durationdeep = %d, sleepData_durationlight = %d, sleepData_codeavatar = '%@', sleepData_graphBar = '%@' WHERE sleepData_id = %d", timeStart, timeEnd, latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar, sleepData_id];
+    NSString *query = [NSString stringWithFormat:@"UPDATE sleepData SET sleepData_timestart = '%@', sleepData_timeend = '%@', sleepData_latency = %d, sleepData_quality = %d, sleepData_duration = %d, sleepData_durationdeep = %d, sleepData_durationlight = %d, sleepData_codeavatar = '%@', sleepData_graphBar = '%@', sleepData_graphBarText = '%@' WHERE sleepData_id = %d", timeStart, timeEnd, latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar, graphBarText, sleepData_id];
     NSLog(@"sql : %@",query);
     [self.dbManager executeQuery:query];
     
@@ -484,25 +505,32 @@
     // STEP 0 : Create value
     // ------------------------------------------------
     
-    int sleepData_id = 0;
-    NSString *timeStart = @"00:00";
-    NSString *timeEnd = @"00:00";
+    int sleepData_id            = 0;
+    NSString *timeStart         = @"00:00";
+    NSString *timeEnd           = @"00:00";
     
-    int latency             = 0;
-    BOOL latencyCountAmount = false;
+    int latency                 = 0;
+    BOOL latencyCountAmount     = false;
     
-    int quality             = 0;
-    int scoreLatency        = 0;
-    int scoreDuration       = 0;
-    int scoreEfficiency     = 0;
-    int efficiency          = 0; // true sleep/sleep duration
+    int quality                 = 0;
+    int scoreLatency            = 0;
+    int scoreDuration           = 0;
+    int scoreEfficiency         = 0;
+    int efficiency              = 0; // true sleep/sleep duration
     
-    int duration = 0;
-    int durationHour = 0;
-    int durationdeep           = 0;
-    int durationlight          = 0;
+    int duration                = 0;
+    int durationHour            = 0;
+    int durationdeep            = 0;
+    int durationlight           = 0;
     
-    NSString *codeAvatar    = @"000";
+    NSString *codeAvatar        = @"000";
+    
+    NSString *graphBarText      = @"";
+    NSString *graphBarTextTemp  = @""; // Temp text for any loop
+    NSString *graphBarTextGet   = @""; // Temp text in loop
+    NSArray *arr_graphBarTextGet;
+    BOOL graphBarTextCheck      = false;
+
 
     
     
@@ -574,11 +602,13 @@
     // --------------------------
     // Find - sleepData_timestart
     //      - sleepData_timeend
+    //      - graphBar
     //      - Duration
     //      - Duration deep
     //      - Dutation light
     //      - Latency
     //      - Efficiency
+    //      - graphBarText
     // --------------------------
     query = [NSString stringWithFormat:@"SELECT * FROM sleepBehavior WHERE sleepData_id = %d",sleepData_id];
     arr = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
@@ -637,8 +667,44 @@
         }
         
         
+        // --------------------------
+        // Find graphBarText
+        // --------------------------
+        
+        // Get
+        if (i==0) {
+            graphBarTextGet = [[arr objectAtIndex:i] objectAtIndex:2];
+        }
+        else if (i == (duration-1) ) {
+            graphBarTextGet = [[arr objectAtIndex:i] objectAtIndex:3];
+        }
+        arr_graphBarTextGet  = [graphBarTextGet componentsSeparatedByString: @":"];
+        graphBarTextGet = [arr_graphBarTextGet objectAtIndex:0];
+        NSLog(@"graphBarTextGet : %@",graphBarTextGet);
+        
+        // Temp & Set graphBarText
+        if ([graphBarTextTemp isEqualToString:graphBarTextGet]) {}
+        else {
+            
+            // Temp
+            graphBarTextTemp = graphBarTextGet;
+            
+            // Set graphBarText
+            if (graphBarTextCheck == false) {
+                graphBarText = graphBarTextTemp;
+                graphBarTextCheck = true;
+            }
+            else {
+                graphBarText = [NSString stringWithFormat:@"%@,%@", graphBarText, graphBarTextTemp];
+            }
+            NSLog(@"graphBarText : %@", graphBarText);
+            
+        }
+        
+        
+        
     }
-    NSLog(@"timestart : %@, timeend : %@, durationdeep : %i, durationlight : %i, latency : %i", timeStart, timeEnd, durationdeep, durationlight, latency);
+    NSLog(@"timestart : %@, timeend : %@, durationdeep : %i, durationlight : %i, latency : %i, graphBarText : %@", timeStart, timeEnd, durationdeep, durationlight, latency, graphBarText);
     
     
     
@@ -756,6 +822,7 @@
     self.durationdeepT  = durationdeep;
     self.durationlightT = durationlight;
     self.codeavatarT    = codeAvatar;
+    self.graphTextT     = graphBarText;
     
     
     NSLog(@"[analyzeSleep] End!");

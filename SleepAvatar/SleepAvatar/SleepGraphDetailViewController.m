@@ -240,19 +240,13 @@
     
     NSString *graph    = [self.arrSleepData objectAtIndex:11];
     NSArray* arrgraph  = [graph componentsSeparatedByString: @","];
-//    NSMutableArray *arrgraph2 = [[NSMutableArray alloc] init];
-//    for (id obj in arrgraph) {
-//        float data = [obj floatValue];
-//        [arrgraph2 addObject:[NSNumber numberWithFloat:data] ];
-//    }
-//    
-//    NSLog(@"arrgraph2 : %@",arrgraph2);
+    NSString *day      = [self.arrSleepData objectAtIndex:12];
+    NSArray* arrday    = [day componentsSeparatedByString: @","];
     
     self.arrGraph = arrgraph;
-//    self.arrGraph = @[@1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @1.0, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.5, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3, @0.3 ];
     NSLog(@"arrGraph : %@",self.arrGraph);
     self.arrGraphCount = self.arrGraph.count;
-    self.arrDay = @[@6,@7,@8];
+    self.arrDay = arrday;
     
     float frameW                    = self.ViewGraph.frame.size.width;
     float frameH                    = self.ViewGraph.frame.size.height;
