@@ -10,7 +10,7 @@
 		AB2D474C1A8571650058DDDF /* AboutSleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */; };
 		AB2D47561A85774C0058DDDF /* icon-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47551A85774C0058DDDF /* icon-back.png */; };
 		AB2D47581A8578E90058DDDF /* icon-back-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47571A8578E90058DDDF /* icon-back-text.png */; };
-		ABAF79601A8C56BD006AB268 /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ABAF795F1A8C56BD006AB268 /* sleepAvatar.sqlite */; };
+		AB4DEC471A9311B90096691E /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB4DEC461A9311B90096691E /* sleepAvatar.sqlite */; };
 		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
 		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
 		ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
@@ -82,7 +82,7 @@
 		AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSleepViewController.m; sourceTree = "<group>"; };
 		AB2D47551A85774C0058DDDF /* icon-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back.png"; sourceTree = "<group>"; };
 		AB2D47571A8578E90058DDDF /* icon-back-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back-text.png"; sourceTree = "<group>"; };
-		ABAF795F1A8C56BD006AB268 /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
+		AB4DEC461A9311B90096691E /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
 		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -259,7 +259,7 @@
 				ABDC442A1A8021D70048EBE6 /* main.m */,
 				ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */,
 				ABDC442C1A8021D70048EBE6 /* SleepAvatar-Prefix.pch */,
-				ABAF795F1A8C56BD006AB268 /* sleepAvatar.sqlite */,
+				AB4DEC461A9311B90096691E /* sleepAvatar.sqlite */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -496,7 +496,7 @@
 				ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */,
 				ABDC449B1A802F9C0048EBE6 /* icon-sleep-graph.png in Resources */,
 				ABDC449A1A802F9C0048EBE6 /* icon-sleep-graph-active.png in Resources */,
-				ABAF79601A8C56BD006AB268 /* sleepAvatar.sqlite in Resources */,
+				AB4DEC471A9311B90096691E /* sleepAvatar.sqlite in Resources */,
 				ABDC44951A802F9C0048EBE6 /* icon-duration-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

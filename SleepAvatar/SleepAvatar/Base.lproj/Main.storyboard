@@ -667,7 +667,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TVp-bK-LXV" userLabel="Tabbar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVp-bK-LXV" userLabel="Tabbar">
                                 <rect key="frame" x="0.0" y="454" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -764,10 +764,64 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.1921568662" green="0.25098040700000002" blue="0.27843138579999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XkK-bq-tjG">
+                                <rect key="frame" x="28" y="35" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon-sleep-graph.png">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fI9-WQ-pf2">
+                                <rect key="frame" x="85" y="35" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon-start-sleep.png">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="grf-R1-LUE" userLabel="ViewDescript">
+                                <rect key="frame" x="0.0" y="339" width="320" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4be-AJ-sR7" userLabel="line">
+                                        <rect key="frame" x="0.0" y="114" width="320" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.30196078431372547" green="0.39215686274509803" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhl-hp-8kg">
+                                        <rect key="frame" x="15" y="20" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" text="Require quality of sleep better than 80% in once." translatesAutoresizingMaskIntoConstraints="NO" id="a62-Mj-lJ5">
+                                        <rect key="frame" x="90" y="8" width="210" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reward:      x 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjm-py-GVZ">
+                                        <rect key="frame" x="95" y="54" width="98" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tRM-P6-uYM">
+                                        <rect key="frame" x="153" y="57" width="15" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.19215686619281769" green="0.25098040699958801" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078568696976" green="0.12549020349979401" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pqb-8W-IYs" firstAttribute="top" secondItem="TVp-bK-LXV" secondAttribute="bottom" id="Uwa-li-RBh"/>
+                            <constraint firstItem="TVp-bK-LXV" firstAttribute="leading" secondItem="ux5-Qj-wRO" secondAttribute="leading" id="Bnb-jg-4Gg"/>
+                            <constraint firstItem="grf-R1-LUE" firstAttribute="trailing" secondItem="TVp-bK-LXV" secondAttribute="trailing" id="ZdI-yu-Mf7"/>
+                            <constraint firstItem="grf-R1-LUE" firstAttribute="leading" secondItem="TVp-bK-LXV" secondAttribute="leading" id="ZvR-7m-xPB"/>
+                            <constraint firstItem="TVp-bK-LXV" firstAttribute="top" secondItem="grf-R1-LUE" secondAttribute="bottom" id="gEf-vd-Hxb"/>
+                            <constraint firstAttribute="bottom" secondItem="TVp-bK-LXV" secondAttribute="bottom" id="gzv-UA-b2e"/>
+                            <constraint firstAttribute="bottom" secondItem="grf-R1-LUE" secondAttribute="bottom" constant="50" id="iqE-0C-10K"/>
+                            <constraint firstAttribute="trailing" secondItem="TVp-bK-LXV" secondAttribute="trailing" id="sMG-14-Qno"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Achievement" id="nPI-RT-rBw">
@@ -778,6 +832,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Descript" destination="a62-Mj-lJ5" id="ybC-gk-SNC"/>
+                        <outlet property="ImageAchievement" destination="jhl-hp-8kg" id="3Km-dT-Qcb"/>
+                        <outlet property="ImageReward" destination="tRM-P6-uYM" id="g4a-jG-sdC"/>
+                        <outlet property="ViewDescript" destination="grf-R1-LUE" id="tPc-hV-cRg"/>
+                        <outlet property="ach1" destination="XkK-bq-tjG" id="dEp-SX-ta5"/>
+                        <outlet property="ach2" destination="fI9-WQ-pf2" id="ddZ-Gt-AKW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBt-YE-o0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1173,6 +1235,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTr-CM-Bqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1082" y="2361"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oJL-my-T0L">
+            <objects>
+                <viewController id="gST-hT-WKe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WN0-g6-Xwk"/>
+                        <viewControllerLayoutGuide type="bottom" id="LbJ-eR-9Mu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xTS-8U-pdT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kI0-20-89G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
