@@ -10,6 +10,31 @@
 		AB2D474C1A8571650058DDDF /* AboutSleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */; };
 		AB2D47561A85774C0058DDDF /* icon-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47551A85774C0058DDDF /* icon-back.png */; };
 		AB2D47581A8578E90058DDDF /* icon-back-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47571A8578E90058DDDF /* icon-back-text.png */; };
+		AB47D07E1A94069A007C7F09 /* achievement-1-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0721A94069A007C7F09 /* achievement-1-active.png */; };
+		AB47D07F1A94069A007C7F09 /* achievement-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0731A94069A007C7F09 /* achievement-1.png */; };
+		AB47D0801A94069A007C7F09 /* achievement-2-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0741A94069A007C7F09 /* achievement-2-active.png */; };
+		AB47D0811A94069A007C7F09 /* achievement-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0751A94069A007C7F09 /* achievement-2.png */; };
+		AB47D0821A94069A007C7F09 /* achievement-3-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0761A94069A007C7F09 /* achievement-3-active.png */; };
+		AB47D0831A94069A007C7F09 /* achievement-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0771A94069A007C7F09 /* achievement-3.png */; };
+		AB47D0841A94069A007C7F09 /* achievement-4-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0781A94069A007C7F09 /* achievement-4-active.png */; };
+		AB47D0851A94069A007C7F09 /* achievement-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0791A94069A007C7F09 /* achievement-4.png */; };
+		AB47D0861A94069A007C7F09 /* achievement-5-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D07A1A94069A007C7F09 /* achievement-5-active.png */; };
+		AB47D0871A94069A007C7F09 /* achievement-5.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D07B1A94069A007C7F09 /* achievement-5.png */; };
+		AB47D0881A94069A007C7F09 /* achievement-6-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D07C1A94069A007C7F09 /* achievement-6-active.png */; };
+		AB47D0891A94069A007C7F09 /* achievement-6.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D07D1A94069A007C7F09 /* achievement-6.png */; };
+		AB47D08B1A940883007C7F09 /* icon-back-title.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D08A1A940883007C7F09 /* icon-back-title.png */; };
+		AB47D0951A940B9C007C7F09 /* tabbar-achievement-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D08D1A940B9C007C7F09 /* tabbar-achievement-active.png */; };
+		AB47D0961A940B9C007C7F09 /* tabbar-achievement.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D08E1A940B9C007C7F09 /* tabbar-achievement.png */; };
+		AB47D0971A940B9C007C7F09 /* tabbar-avatar-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D08F1A940B9C007C7F09 /* tabbar-avatar-active.png */; };
+		AB47D0981A940B9C007C7F09 /* tabbar-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0901A940B9C007C7F09 /* tabbar-avatar.png */; };
+		AB47D0991A940B9C007C7F09 /* tabbar-sleep-graph-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0911A940B9C007C7F09 /* tabbar-sleep-graph-active.png */; };
+		AB47D09A1A940B9C007C7F09 /* tabbar-sleep-graph.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0921A940B9C007C7F09 /* tabbar-sleep-graph.png */; };
+		AB47D09C1A940B9C007C7F09 /* tabbar-start-sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0941A940B9C007C7F09 /* tabbar-start-sleep.png */; };
+		AB47D0A31A9410F2007C7F09 /* avatar-f-1-0.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D09E1A9410F2007C7F09 /* avatar-f-1-0.png */; };
+		AB47D0A41A9410F2007C7F09 /* avatar-m-1-0.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D09F1A9410F2007C7F09 /* avatar-m-1-0.png */; };
+		AB47D0A51A9410F2007C7F09 /* codeavatar-f-1-111.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0A01A9410F2007C7F09 /* codeavatar-f-1-111.png */; };
+		AB47D0A61A9410F2007C7F09 /* codeavatar-m-1-111.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0A11A9410F2007C7F09 /* codeavatar-m-1-111.png */; };
+		AB47D0A71A9410F2007C7F09 /* codeavatar-m-1-433.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0A21A9410F2007C7F09 /* codeavatar-m-1-433.png */; };
 		AB4DEC471A9311B90096691E /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB4DEC461A9311B90096691E /* sleepAvatar.sqlite */; };
 		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
 		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
@@ -50,11 +75,6 @@
 		ABDC449B1A802F9C0048EBE6 /* icon-sleep-graph.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44851A802F9C0048EBE6 /* icon-sleep-graph.png */; };
 		ABDC449C1A802F9C0048EBE6 /* icon-start-sleep-active.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44861A802F9C0048EBE6 /* icon-start-sleep-active.png */; };
 		ABDC449D1A802F9C0048EBE6 /* icon-start-sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44871A802F9C0048EBE6 /* icon-start-sleep.png */; };
-		ABDC449E1A802F9C0048EBE6 /* avatar-f-1-0.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC44891A802F9C0048EBE6 /* avatar-f-1-0.png */; };
-		ABDC449F1A802F9C0048EBE6 /* avatar-m-1-0.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448A1A802F9C0048EBE6 /* avatar-m-1-0.png */; };
-		ABDC44A01A802F9C0048EBE6 /* codeavatar-f-1-111.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448B1A802F9C0048EBE6 /* codeavatar-f-1-111.png */; };
-		ABDC44A11A802F9C0048EBE6 /* codeavatar-m-1-111.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448C1A802F9C0048EBE6 /* codeavatar-m-1-111.png */; };
-		ABDC44A21A802F9C0048EBE6 /* recommand-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABDC448D1A802F9C0048EBE6 /* recommand-1.jpg */; };
 		ABDC44A51A803AEE0048EBE6 /* SleepGraphListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44A41A803AEE0048EBE6 /* SleepGraphListViewController.m */; };
 		ABDC44A91A803D740048EBE6 /* SleepGraphListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44A81A803D740048EBE6 /* SleepGraphListTableViewCell.m */; };
 		ABDC44AC1A8042670048EBE6 /* SleepGraphDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC44AB1A8042670048EBE6 /* SleepGraphDetailViewController.m */; };
@@ -82,6 +102,31 @@
 		AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSleepViewController.m; sourceTree = "<group>"; };
 		AB2D47551A85774C0058DDDF /* icon-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back.png"; sourceTree = "<group>"; };
 		AB2D47571A8578E90058DDDF /* icon-back-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back-text.png"; sourceTree = "<group>"; };
+		AB47D0721A94069A007C7F09 /* achievement-1-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-1-active.png"; sourceTree = "<group>"; };
+		AB47D0731A94069A007C7F09 /* achievement-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-1.png"; sourceTree = "<group>"; };
+		AB47D0741A94069A007C7F09 /* achievement-2-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-2-active.png"; sourceTree = "<group>"; };
+		AB47D0751A94069A007C7F09 /* achievement-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-2.png"; sourceTree = "<group>"; };
+		AB47D0761A94069A007C7F09 /* achievement-3-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-3-active.png"; sourceTree = "<group>"; };
+		AB47D0771A94069A007C7F09 /* achievement-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-3.png"; sourceTree = "<group>"; };
+		AB47D0781A94069A007C7F09 /* achievement-4-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-4-active.png"; sourceTree = "<group>"; };
+		AB47D0791A94069A007C7F09 /* achievement-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-4.png"; sourceTree = "<group>"; };
+		AB47D07A1A94069A007C7F09 /* achievement-5-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-5-active.png"; sourceTree = "<group>"; };
+		AB47D07B1A94069A007C7F09 /* achievement-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-5.png"; sourceTree = "<group>"; };
+		AB47D07C1A94069A007C7F09 /* achievement-6-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-6-active.png"; sourceTree = "<group>"; };
+		AB47D07D1A94069A007C7F09 /* achievement-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-6.png"; sourceTree = "<group>"; };
+		AB47D08A1A940883007C7F09 /* icon-back-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back-title.png"; sourceTree = "<group>"; };
+		AB47D08D1A940B9C007C7F09 /* tabbar-achievement-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-achievement-active.png"; sourceTree = "<group>"; };
+		AB47D08E1A940B9C007C7F09 /* tabbar-achievement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-achievement.png"; sourceTree = "<group>"; };
+		AB47D08F1A940B9C007C7F09 /* tabbar-avatar-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-avatar-active.png"; sourceTree = "<group>"; };
+		AB47D0901A940B9C007C7F09 /* tabbar-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-avatar.png"; sourceTree = "<group>"; };
+		AB47D0911A940B9C007C7F09 /* tabbar-sleep-graph-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-sleep-graph-active.png"; sourceTree = "<group>"; };
+		AB47D0921A940B9C007C7F09 /* tabbar-sleep-graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-sleep-graph.png"; sourceTree = "<group>"; };
+		AB47D0941A940B9C007C7F09 /* tabbar-start-sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-start-sleep.png"; sourceTree = "<group>"; };
+		AB47D09E1A9410F2007C7F09 /* avatar-f-1-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-f-1-0.png"; sourceTree = "<group>"; };
+		AB47D09F1A9410F2007C7F09 /* avatar-m-1-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-m-1-0.png"; sourceTree = "<group>"; };
+		AB47D0A01A9410F2007C7F09 /* codeavatar-f-1-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-f-1-111.png"; sourceTree = "<group>"; };
+		AB47D0A11A9410F2007C7F09 /* codeavatar-m-1-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-m-1-111.png"; sourceTree = "<group>"; };
+		AB47D0A21A9410F2007C7F09 /* codeavatar-m-1-433.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-m-1-433.png"; sourceTree = "<group>"; };
 		AB4DEC461A9311B90096691E /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
 		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,11 +181,6 @@
 		ABDC44851A802F9C0048EBE6 /* icon-sleep-graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-sleep-graph.png"; sourceTree = "<group>"; };
 		ABDC44861A802F9C0048EBE6 /* icon-start-sleep-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-start-sleep-active.png"; sourceTree = "<group>"; };
 		ABDC44871A802F9C0048EBE6 /* icon-start-sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-start-sleep.png"; sourceTree = "<group>"; };
-		ABDC44891A802F9C0048EBE6 /* avatar-f-1-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-f-1-0.png"; sourceTree = "<group>"; };
-		ABDC448A1A802F9C0048EBE6 /* avatar-m-1-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-m-1-0.png"; sourceTree = "<group>"; };
-		ABDC448B1A802F9C0048EBE6 /* codeavatar-f-1-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-f-1-111.png"; sourceTree = "<group>"; };
-		ABDC448C1A802F9C0048EBE6 /* codeavatar-m-1-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-m-1-111.png"; sourceTree = "<group>"; };
-		ABDC448D1A802F9C0048EBE6 /* recommand-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "recommand-1.jpg"; sourceTree = "<group>"; };
 		ABDC44A31A803AEE0048EBE6 /* SleepGraphListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepGraphListViewController.h; sourceTree = "<group>"; };
 		ABDC44A41A803AEE0048EBE6 /* SleepGraphListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepGraphListViewController.m; sourceTree = "<group>"; };
 		ABDC44A71A803D740048EBE6 /* SleepGraphListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepGraphListTableViewCell.h; sourceTree = "<group>"; };
@@ -188,6 +228,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB47D0711A94069A007C7F09 /* achievement */ = {
+			isa = PBXGroup;
+			children = (
+				AB47D0721A94069A007C7F09 /* achievement-1-active.png */,
+				AB47D0731A94069A007C7F09 /* achievement-1.png */,
+				AB47D0741A94069A007C7F09 /* achievement-2-active.png */,
+				AB47D0751A94069A007C7F09 /* achievement-2.png */,
+				AB47D0761A94069A007C7F09 /* achievement-3-active.png */,
+				AB47D0771A94069A007C7F09 /* achievement-3.png */,
+				AB47D0781A94069A007C7F09 /* achievement-4-active.png */,
+				AB47D0791A94069A007C7F09 /* achievement-4.png */,
+				AB47D07A1A94069A007C7F09 /* achievement-5-active.png */,
+				AB47D07B1A94069A007C7F09 /* achievement-5.png */,
+				AB47D07C1A94069A007C7F09 /* achievement-6-active.png */,
+				AB47D07D1A94069A007C7F09 /* achievement-6.png */,
+			);
+			path = achievement;
+			sourceTree = "<group>";
+		};
+		AB47D08C1A940B5B007C7F09 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				AB47D08D1A940B9C007C7F09 /* tabbar-achievement-active.png */,
+				AB47D08E1A940B9C007C7F09 /* tabbar-achievement.png */,
+				AB47D08F1A940B9C007C7F09 /* tabbar-avatar-active.png */,
+				AB47D0901A940B9C007C7F09 /* tabbar-avatar.png */,
+				AB47D0911A940B9C007C7F09 /* tabbar-sleep-graph-active.png */,
+				AB47D0921A940B9C007C7F09 /* tabbar-sleep-graph.png */,
+				AB47D0941A940B9C007C7F09 /* tabbar-start-sleep.png */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+		AB47D09D1A9410F2007C7F09 /* avatar */ = {
+			isa = PBXGroup;
+			children = (
+				AB47D09E1A9410F2007C7F09 /* avatar-f-1-0.png */,
+				AB47D09F1A9410F2007C7F09 /* avatar-m-1-0.png */,
+				AB47D0A01A9410F2007C7F09 /* codeavatar-f-1-111.png */,
+				AB47D0A11A9410F2007C7F09 /* codeavatar-m-1-111.png */,
+				AB47D0A21A9410F2007C7F09 /* codeavatar-m-1-433.png */,
+			);
+			path = avatar;
+			sourceTree = "<group>";
+		};
 		ABDC44121A8021D70048EBE6 = {
 			isa = PBXGroup;
 			children = (
@@ -296,8 +381,10 @@
 		ABDC44541A8029D40048EBE6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				ABDC44771A802F9C0048EBE6 /* icon */,
-				ABDC44881A802F9C0048EBE6 /* illust */,
+				AB47D08C1A940B5B007C7F09 /* tabbar */,
+				AB47D0711A94069A007C7F09 /* achievement */,
+				AB47D09D1A9410F2007C7F09 /* avatar */,
+				ABDC44771A802F9C0048EBE6 /* iconapp */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -331,9 +418,10 @@
 			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
-		ABDC44771A802F9C0048EBE6 /* icon */ = {
+		ABDC44771A802F9C0048EBE6 /* iconapp */ = {
 			isa = PBXGroup;
 			children = (
+				AB47D08A1A940883007C7F09 /* icon-back-title.png */,
 				AB2D47571A8578E90058DDDF /* icon-back-text.png */,
 				AB2D47551A85774C0058DDDF /* icon-back.png */,
 				ABDC44781A802F9C0048EBE6 /* icon-achievement-active.png */,
@@ -353,19 +441,8 @@
 				ABDC44861A802F9C0048EBE6 /* icon-start-sleep-active.png */,
 				ABDC44871A802F9C0048EBE6 /* icon-start-sleep.png */,
 			);
+			name = iconapp;
 			path = icon;
-			sourceTree = "<group>";
-		};
-		ABDC44881A802F9C0048EBE6 /* illust */ = {
-			isa = PBXGroup;
-			children = (
-				ABDC44891A802F9C0048EBE6 /* avatar-f-1-0.png */,
-				ABDC448A1A802F9C0048EBE6 /* avatar-m-1-0.png */,
-				ABDC448B1A802F9C0048EBE6 /* codeavatar-f-1-111.png */,
-				ABDC448C1A802F9C0048EBE6 /* codeavatar-m-1-111.png */,
-				ABDC448D1A802F9C0048EBE6 /* recommand-1.jpg */,
-			);
-			path = illust;
 			sourceTree = "<group>";
 		};
 		ABDC44A61A803D450048EBE6 /* CustomTableCell */ = {
@@ -471,33 +548,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB47D0801A94069A007C7F09 /* achievement-2-active.png in Resources */,
+				AB47D0851A94069A007C7F09 /* achievement-4.png in Resources */,
 				ABDC44901A802F9C0048EBE6 /* icon-app-120.png in Resources */,
+				AB47D0871A94069A007C7F09 /* achievement-5.png in Resources */,
+				AB47D09A1A940B9C007C7F09 /* tabbar-sleep-graph.png in Resources */,
 				ABDC449D1A802F9C0048EBE6 /* icon-start-sleep.png in Resources */,
 				ABDC44941A802F9C0048EBE6 /* icon-avatar-active.png in Resources */,
-				ABDC44A11A802F9C0048EBE6 /* codeavatar-m-1-111.png in Resources */,
 				ABDC448F1A802F9C0048EBE6 /* icon-achievement.png in Resources */,
 				ABDC44981A802F9C0048EBE6 /* icon-latency-30.png in Resources */,
+				AB47D07F1A94069A007C7F09 /* achievement-1.png in Resources */,
 				ABDC44931A802F9C0048EBE6 /* icon-avatar.png in Resources */,
-				ABDC44A21A802F9C0048EBE6 /* recommand-1.jpg in Resources */,
+				AB47D0961A940B9C007C7F09 /* tabbar-achievement.png in Resources */,
+				AB47D07E1A94069A007C7F09 /* achievement-1-active.png in Resources */,
+				AB47D0A61A9410F2007C7F09 /* codeavatar-m-1-111.png in Resources */,
 				ABDC44971A802F9C0048EBE6 /* icon-latency-25.png in Resources */,
+				AB47D0831A94069A007C7F09 /* achievement-3.png in Resources */,
+				AB47D0891A94069A007C7F09 /* achievement-6.png in Resources */,
 				ABDC44371A8021D70048EBE6 /* Images.xcassets in Resources */,
 				ABDC44911A802F9C0048EBE6 /* icon-app-58.png in Resources */,
 				ABDC448E1A802F9C0048EBE6 /* icon-achievement-active.png in Resources */,
+				AB47D09C1A940B9C007C7F09 /* tabbar-start-sleep.png in Resources */,
+				AB47D0A31A9410F2007C7F09 /* avatar-f-1-0.png in Resources */,
 				ABDC449C1A802F9C0048EBE6 /* icon-start-sleep-active.png in Resources */,
-				ABDC44A01A802F9C0048EBE6 /* codeavatar-f-1-111.png in Resources */,
+				AB47D08B1A940883007C7F09 /* icon-back-title.png in Resources */,
+				AB47D0A71A9410F2007C7F09 /* codeavatar-m-1-433.png in Resources */,
 				ABDC44921A802F9C0048EBE6 /* icon-app-80.png in Resources */,
+				AB47D0811A94069A007C7F09 /* achievement-2.png in Resources */,
 				ABDC44991A802F9C0048EBE6 /* icon-menu.png in Resources */,
 				AB2D47581A8578E90058DDDF /* icon-back-text.png in Resources */,
 				AB2D47561A85774C0058DDDF /* icon-back.png in Resources */,
 				ABDC44291A8021D70048EBE6 /* InfoPlist.strings in Resources */,
-				ABDC449F1A802F9C0048EBE6 /* avatar-m-1-0.png in Resources */,
-				ABDC449E1A802F9C0048EBE6 /* avatar-f-1-0.png in Resources */,
+				AB47D0841A94069A007C7F09 /* achievement-4-active.png in Resources */,
+				AB47D0991A940B9C007C7F09 /* tabbar-sleep-graph-active.png in Resources */,
+				AB47D0881A94069A007C7F09 /* achievement-6-active.png in Resources */,
 				ABDC44961A802F9C0048EBE6 /* icon-duration-30.png in Resources */,
 				ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */,
 				ABDC449B1A802F9C0048EBE6 /* icon-sleep-graph.png in Resources */,
+				AB47D0981A940B9C007C7F09 /* tabbar-avatar.png in Resources */,
 				ABDC449A1A802F9C0048EBE6 /* icon-sleep-graph-active.png in Resources */,
+				AB47D0821A94069A007C7F09 /* achievement-3-active.png in Resources */,
+				AB47D0A51A9410F2007C7F09 /* codeavatar-f-1-111.png in Resources */,
 				AB4DEC471A9311B90096691E /* sleepAvatar.sqlite in Resources */,
 				ABDC44951A802F9C0048EBE6 /* icon-duration-25.png in Resources */,
+				AB47D0861A94069A007C7F09 /* achievement-5-active.png in Resources */,
+				AB47D0971A940B9C007C7F09 /* tabbar-avatar-active.png in Resources */,
+				AB47D0951A940B9C007C7F09 /* tabbar-achievement-active.png in Resources */,
+				AB47D0A41A9410F2007C7F09 /* avatar-m-1-0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

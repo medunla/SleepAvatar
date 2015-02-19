@@ -87,7 +87,7 @@
         
 #warning not full
         if ([obj isEqualToString:@"1"]) {
-            [self.ach1 setImage:[UIImage imageNamed:@"icon-sleep-graph-active.png"] forState:UIControlStateNormal];
+            [self.ach1 setImage:[UIImage imageNamed:@"achievement-1-active.png"] forState:UIControlStateNormal];
         }
     }
 }
@@ -191,8 +191,7 @@
     NSLog(@"item_id : %i", item_id);
     
     self.ViewDescript.alpha = 1;
-//    self.ImageAchievement.image = [UIImage imageNamed:[NSString stringWithFormat:@"achievement-%i-active.png",achievement_id] ];
-    self.ImageAchievement.image = [UIImage imageNamed:@"icon-sleep-graph-active.png" ];
+    self.ImageAchievement.image = [UIImage imageNamed:[NSString stringWithFormat:@"achievement-%i-active.png",achievement_id] ];
     self.Descript.text = [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:indexOfachievement_descript];
 //    self.ImageReward.image = [UIImage imageNamed:[NSString stringWithFormat:@"item-%i-15.png",item_id] ];
     self.ImageReward.image = [UIImage imageNamed:@"icon-sleep-graph-active.png" ];
