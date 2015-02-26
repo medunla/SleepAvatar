@@ -88,6 +88,7 @@
 		AB7991611A9F7E10004A0314 /* illust-choose-sex-m.png in Resources */ = {isa = PBXBuildFile; fileRef = AB79915D1A9F7E10004A0314 /* illust-choose-sex-m.png */; };
 		AB7991641A9F871F004A0314 /* ChangeWearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7991631A9F871F004A0314 /* ChangeWearViewController.m */; };
 		AB7991661A9FAE75004A0314 /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB7991651A9FAE75004A0314 /* sleepAvatar.sqlite */; };
+		AB7991AC1A9FD703004A0314 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7991AB1A9FD703004A0314 /* Social.framework */; };
 		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
 		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
 		ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
@@ -236,6 +237,7 @@
 		AB7991621A9F871F004A0314 /* ChangeWearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWearViewController.h; sourceTree = "<group>"; };
 		AB7991631A9F871F004A0314 /* ChangeWearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWearViewController.m; sourceTree = "<group>"; };
 		AB7991651A9FAE75004A0314 /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
+		AB7991AB1A9FD703004A0314 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -314,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7991AC1A9FD703004A0314 /* Social.framework in Frameworks */,
 				ABDC445C1A802C390048EBE6 /* libsqlite3.dylib in Frameworks */,
 				ABDC44B61A804AE90048EBE6 /* QuartzCore.framework in Frameworks */,
 				ABDC44B81A804AFB0048EBE6 /* CoreMotion.framework in Frameworks */,
@@ -471,6 +474,7 @@
 		ABDC441D1A8021D70048EBE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB7991AB1A9FD703004A0314 /* Social.framework */,
 				ABDC44B71A804AFB0048EBE6 /* CoreMotion.framework */,
 				ABDC44B51A804AE90048EBE6 /* QuartzCore.framework */,
 				ABDC445B1A802C390048EBE6 /* libsqlite3.dylib */,

@@ -27,6 +27,7 @@
 #import "ECSlidingInteractiveTransition.h"
 #import "ECSlidingSegue.h"
 
+
 @interface ECSlidingViewController()
 @property (nonatomic, assign) ECSlidingViewControllerOperation currentOperation;
 @property (nonatomic, strong) ECSlidingAnimationController *defaultAnimationController;
@@ -129,10 +130,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (!self.topViewController) [NSException raise:@"Missing topViewController"
-                                             format:@"Set the topViewController before loading ECSlidingViewController"];
-    self.topViewController.view.frame = [self topViewCalculatedFrameForPosition:self.currentTopViewPosition];
-    [self.view addSubview:self.topViewController.view];
+    
+    
+    // Initialize the dbManager property.
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sqlite"];
+    
+    // Check Has user in db
+    NSString *query = @"SELECT * FROM user";
+    NSArray *arrUser = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    int countUser = (int)arrUser.count;
+    
+    if (countUser > 0) {
+        
+        if (!self.topViewController) [NSException raise:@"Missing topViewController"
+                                                 format:@"Set the topViewController before loading ECSlidingViewController"];
+        self.topViewController.view.frame = [self topViewCalculatedFrameForPosition:self.currentTopViewPosition];
+        [self.view addSubview:self.topViewController.view];
+        
+    }
+    else {
+        self.createUserViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateUserViewController"];
+        [self.view addSubview:self.createUserViewController.view];
+    }
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

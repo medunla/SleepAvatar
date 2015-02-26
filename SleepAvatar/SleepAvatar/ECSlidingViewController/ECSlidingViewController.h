@@ -24,6 +24,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ECSlidingConstants.h"
+#import "CreateUserViewController.h"
+#import "DBManager.h"
 
 @class ECSlidingViewController;
 
@@ -117,6 +119,7 @@
     UIViewController *_underRightViewController;
 }
 
+@property (nonatomic, strong) DBManager *dbManager;
 
 ///----------------------------------------
 /// @name Creating Sliding View Controllers
@@ -160,6 +163,7 @@
  */
 @property (nonatomic, strong) UIViewController *underRightViewController;
 
+@property (nonatomic, strong) CreateUserViewController *createUserViewController;
 
 ///-----------------------------
 /// @name Configuring the Layout

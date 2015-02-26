@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "StartSleepDetectViewController.h"
-#import "CreateUserViewController.h"
+#import "ECSlidingViewController.h"
 
 @interface AppDelegate()
 
