@@ -16,4 +16,10 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+@property (weak, nonatomic) IBOutlet UIImageView *ImageBody;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageShirt;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageEmotionFace;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageHair;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageEmotionElement;
+
 @end

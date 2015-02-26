@@ -10,7 +10,16 @@
 #import "UIViewController+ECSlidingViewController.h"
 
 @interface AvatarViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *ViewAvatar;
+@property (nonatomic) int avatar_id;
+@property (strong,nonatomic) NSString *avatar_sex;
+@property (strong,nonatomic) NSString *avatar_size;
+@property (nonatomic) int avatar_skin;
+@property (nonatomic) int shirt;
+@property (nonatomic) int hair;
+@property (strong,nonatomic) NSString *codeavatar;
+
 
 @end
 
@@ -49,7 +58,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self showAvatar];
+    
+    [self findAvatarValue];
+    [self showAvatar:self.avatar_sex size:self.avatar_size skin:self.avatar_skin shirt:self.shirt hair:self.hair codeavatar:self.codeavatar];
 }
 
 
@@ -62,35 +73,28 @@
 // ----------------------------------------------------------------------------
 
 
-- (void)showAvatar {
-    
-    // STEP : 1 Get value
-    
-    NSString *sex        = [self findAvatarSex];
-    NSString *set        = [self findAvatarSet];
-    NSString *codeavatar = [self findCodeAvatar];
-    
-    NSLog(@"[Avatar] sex : %@, set : %@, codeavatar : %@", sex, set, codeavatar);
+-(void)showAvatar:(NSString*)sex size:(NSString*)size skin:(int)skin shirt:(int)shirt hair:(int)hair codeavatar:(NSString*)codeavatar {
     
     
+    // body
+    NSString *body_pic = [NSString stringWithFormat:@"body-%@-%@-%i.png", sex, size, skin];
+    self.ImageBody.image = [UIImage imageNamed:body_pic];
     
+    // shirt
+    NSString *shirt_pic = [NSString stringWithFormat:@"shirt-%@-%@-%i.png", sex, size, shirt];
+    self.ImageShirt.image = [UIImage imageNamed:shirt_pic];
     
-    // STEP 2 : Set image
-    // avatar
-    UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 454)];
-    NSString *avatar_pic = [NSString stringWithFormat:@"avatar-%@-%@-0.png", sex, set];
-    avatar.image = [UIImage imageNamed:avatar_pic];
-    [self.ViewAvatar addSubview:avatar];
+    // emotion-face
+    NSString *emotion_face_pic = [NSString stringWithFormat:@"emotion-face-%@-%@-%@.png", sex, size,  codeavatar];
+    self.ImageEmotionFace.image = [UIImage imageNamed:emotion_face_pic];
     
-#warning lost change shirt
+    // shirt
+    NSString *hair_pic = [NSString stringWithFormat:@"hair-%@-%@-%i.png", sex, size, hair];
+    self.ImageHair.image = [UIImage imageNamed:hair_pic];
     
-    // emotion
-    UIImageView *emotion = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 454)];
-    NSString *emotion_pic = [NSString stringWithFormat:@"codeavatar-%@-%@-%@.png", sex, set, codeavatar];
-    emotion.image = [UIImage imageNamed:emotion_pic];
-    [self.ViewAvatar addSubview:emotion];
-    
-    
+    // emotion-element
+    NSString *emotion_element_pic = [NSString stringWithFormat:@"emotion-element-%@.png", codeavatar];
+    self.ImageEmotionElement.image = [UIImage imageNamed:emotion_element_pic];
 }
 
 
@@ -101,43 +105,75 @@
 
 
 // ----------------------------------------------------------------------------
-//                              FIND AVATAR SEX
+//                              FIND AVATAR VALUE
 // ----------------------------------------------------------------------------
 
-
-- (NSString*)findAvatarSex {
+- (void)findAvatarValue {
     
-    NSString *query = @"SELECT avatar_sex FROM avatar ORDER BY avatar_id DESC LIMIT 1";
+    // Id, Sex, Size, Skin
+    NSString *query = @"SELECT * FROM avatar ORDER BY avatar_id DESC LIMIT 1";
+    NSArray *arrAvatar = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
-    NSArray *arrSex = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSInteger indexOfavatar_id = [self.dbManager.arrColumnNames indexOfObject:@"avatar_id"];
     NSInteger indexOfavatar_sex = [self.dbManager.arrColumnNames indexOfObject:@"avatar_sex"];
+    NSInteger indexOfavatar_size = [self.dbManager.arrColumnNames indexOfObject:@"avatar_size"];
+    NSInteger indexOfavatar_skin = [self.dbManager.arrColumnNames indexOfObject:@"avatar_skin"];
     
-    NSString *sex = [[arrSex objectAtIndex:0] objectAtIndex:indexOfavatar_sex];
-    return sex;
+    self.avatar_id = [[[arrAvatar objectAtIndex:0] objectAtIndex:indexOfavatar_id] intValue];
+    self.avatar_sex = [[arrAvatar objectAtIndex:0] objectAtIndex:indexOfavatar_sex];
+    self.avatar_size = [[arrAvatar objectAtIndex:0] objectAtIndex:indexOfavatar_size];
+    self.avatar_skin = [[[arrAvatar objectAtIndex:0] objectAtIndex:indexOfavatar_skin] intValue];
+    
+    
+    
+    
+    
+    // Shirt
+    query = [NSString stringWithFormat:@"SELECT * FROM decoration_item INNER JOIN item ON decoration_item.item_id = item.item_id WHERE decoration_item.avatar_id =%i AND decoration_item.decoration_status = 1 AND item.item_type='shirt'",self.avatar_id];
+    NSArray *arrShirt = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    
+    NSInteger indexOfitem_picture = [self.dbManager.arrColumnNames indexOfObject:@"item_picture"];
+
+    NSString *shirt_picture = [[arrShirt objectAtIndex:0] objectAtIndex:indexOfitem_picture];
+    NSArray *shirt_picture_explode = [shirt_picture componentsSeparatedByString: @"-"];
+    NSArray *shirt_picture_explode2 = [[shirt_picture_explode objectAtIndex:3] componentsSeparatedByString: @"."];
+    
+    self.shirt = [[shirt_picture_explode2 objectAtIndex:0] intValue];
+//    self.shirt = 3;
+    
+    
+    
+    // Hair
+    query = [NSString stringWithFormat:@"SELECT * FROM decoration_item INNER JOIN item ON decoration_item.item_id = item.item_id WHERE decoration_item.avatar_id =%i AND decoration_item.decoration_status = 1 AND item.item_type='hair'",self.avatar_id];
+    NSArray *arrHair = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    
+//    NSInteger indexOfitem_picture = [self.dbManager.arrColumnNames indexOfObject:@"item_picture"];
+    
+    NSString *hair_picture = [[arrHair objectAtIndex:0] objectAtIndex:indexOfitem_picture];
+    NSArray *hair_picture_explode = [hair_picture componentsSeparatedByString: @"-"];
+    NSArray *hair_picture_explode2 = [[hair_picture_explode objectAtIndex:3] componentsSeparatedByString: @"."];
+    
+    self.hair = [[hair_picture_explode2 objectAtIndex:0] intValue];
+    
+//    self.hair = 2;
+    
+    
+    
+    
+    // Codeavatar
+    query = @"SELECT sleepData_codeavatar FROM sleepData ORDER BY sleepData_id DESC LIMIT 1";
+    
+    NSArray *arrCodeAvatar = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    
+    if ([arrCodeAvatar count] == 0) {
+        self.codeavatar = @"111";
+    }
+    else {
+        NSInteger indexOfsleepData_codeavatar = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_codeavatar"];
+        self.codeavatar = [[arrCodeAvatar objectAtIndex:0] objectAtIndex:indexOfsleepData_codeavatar];
+    }
+    
 }
-
-
-
-
-
-
-
-// ----------------------------------------------------------------------------
-//                              FIND AVATAR SET
-// ----------------------------------------------------------------------------
-
-
-- (NSString*)findAvatarSet {
-    
-    NSString *query = @"SELECT avatar_set FROM avatar ORDER BY avatar_id DESC LIMIT 1";
-    
-    NSArray *arrSet = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSInteger indexOfavatar_set = [self.dbManager.arrColumnNames indexOfObject:@"avatar_set"];
-    
-    NSString *set = [[arrSet objectAtIndex:0] objectAtIndex:indexOfavatar_set];
-    return set;
-}
-
 
 
 
