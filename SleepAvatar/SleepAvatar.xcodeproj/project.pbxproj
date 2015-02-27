@@ -89,6 +89,7 @@
 		AB7991641A9F871F004A0314 /* ChangeWearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7991631A9F871F004A0314 /* ChangeWearViewController.m */; };
 		AB7991661A9FAE75004A0314 /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB7991651A9FAE75004A0314 /* sleepAvatar.sqlite */; };
 		AB7991AC1A9FD703004A0314 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7991AB1A9FD703004A0314 /* Social.framework */; };
+		AB7991AF1A9FDBA4004A0314 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7991AE1A9FDBA4004A0314 /* ShareViewController.m */; };
 		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
 		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
 		ABDC44231A8021D70048EBE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44221A8021D70048EBE6 /* UIKit.framework */; };
@@ -238,6 +239,8 @@
 		AB7991631A9F871F004A0314 /* ChangeWearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWearViewController.m; sourceTree = "<group>"; };
 		AB7991651A9FAE75004A0314 /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
 		AB7991AB1A9FD703004A0314 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		AB7991AD1A9FDBA4004A0314 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		AB7991AE1A9FDBA4004A0314 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -516,6 +519,8 @@
 				AB7991631A9F871F004A0314 /* ChangeWearViewController.m */,
 				AB2D474A1A8571650058DDDF /* AboutSleepViewController.h */,
 				AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */,
+				AB7991AD1A9FDBA4004A0314 /* ShareViewController.h */,
+				AB7991AE1A9FDBA4004A0314 /* ShareViewController.m */,
 				ABDC44A61A803D450048EBE6 /* CustomTableCell */,
 				ABDC44541A8029D40048EBE6 /* Images */,
 				ABDC44531A80296E0048EBE6 /* Extension */,
@@ -871,6 +876,7 @@
 				ABDC44761A802E830048EBE6 /* NavigationViewController.m in Sources */,
 				ABDC446B1A802D5E0048EBE6 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				ABDC446E1A802D5E0048EBE6 /* ECSlidingSegue.m in Sources */,
+				AB7991AF1A9FDBA4004A0314 /* ShareViewController.m in Sources */,
 				AB0C45C71A9A17B4002F4DB7 /* CreateAvatarSexViewController.m in Sources */,
 				ABDC44B41A8045C90048EBE6 /* SimpleBarChart.m in Sources */,
 				ABDC44B31A8045C90048EBE6 /* SHPieChartView.m in Sources */,
