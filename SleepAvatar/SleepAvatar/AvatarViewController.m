@@ -166,11 +166,63 @@
     NSArray *arrCodeAvatar = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     if ([arrCodeAvatar count] == 0) {
-        self.codeavatar = @"111";
+        self.codeavatar = @"1";
     }
     else {
         NSInteger indexOfsleepData_codeavatar = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_codeavatar"];
         self.codeavatar = [[arrCodeAvatar objectAtIndex:0] objectAtIndex:indexOfsleepData_codeavatar];
+        
+        
+        // 1
+        if      ([self.codeavatar isEqualToString:@"111"]) { self.codeavatar = @"1"; }
+        else if ([self.codeavatar isEqualToString:@"112"]) { self.codeavatar = @"1"; }
+        else if ([self.codeavatar isEqualToString:@"113"]) { self.codeavatar = @"1"; }
+        else if ([self.codeavatar isEqualToString:@"121"]) { self.codeavatar = @"1"; }
+        else if ([self.codeavatar isEqualToString:@"131"]) { self.codeavatar = @"1"; }
+        
+        //2
+        else if ([self.codeavatar isEqualToString:@"122"]) { self.codeavatar = @"2"; }
+        else if ([self.codeavatar isEqualToString:@"123"]) { self.codeavatar = @"2"; }
+        else if ([self.codeavatar isEqualToString:@"132"]) { self.codeavatar = @"2"; }
+        else if ([self.codeavatar isEqualToString:@"133"]) { self.codeavatar = @"2"; }
+        else if ([self.codeavatar isEqualToString:@"222"]) { self.codeavatar = @"2"; }
+        else if ([self.codeavatar isEqualToString:@"223"]) { self.codeavatar = @"2"; }
+        else if ([self.codeavatar isEqualToString:@"232"]) { self.codeavatar = @"2"; }
+        else if ([self.codeavatar isEqualToString:@"233"]) { self.codeavatar = @"2"; }
+        
+        //3
+        else if ([self.codeavatar isEqualToString:@"211"]) { self.codeavatar = @"3"; }
+        else if ([self.codeavatar isEqualToString:@"212"]) { self.codeavatar = @"3"; }
+        else if ([self.codeavatar isEqualToString:@"213"]) { self.codeavatar = @"3"; }
+        else if ([self.codeavatar isEqualToString:@"221"]) { self.codeavatar = @"3"; }
+        else if ([self.codeavatar isEqualToString:@"231"]) { self.codeavatar = @"3"; }
+        
+        //4
+        else if ([self.codeavatar isEqualToString:@"311"]) { self.codeavatar = @"4"; }
+        else if ([self.codeavatar isEqualToString:@"312"]) { self.codeavatar = @"4"; }
+        else if ([self.codeavatar isEqualToString:@"321"]) { self.codeavatar = @"4"; }
+        else if ([self.codeavatar isEqualToString:@"322"]) { self.codeavatar = @"4"; }
+        
+        //5
+        else if ([self.codeavatar isEqualToString:@"331"]) { self.codeavatar = @"5"; }
+        else if ([self.codeavatar isEqualToString:@"332"]) { self.codeavatar = @"5"; }
+        else if ([self.codeavatar isEqualToString:@"313"]) { self.codeavatar = @"5"; }
+        else if ([self.codeavatar isEqualToString:@"323"]) { self.codeavatar = @"5"; }
+        else if ([self.codeavatar isEqualToString:@"333"]) { self.codeavatar = @"5"; }
+        
+        //6
+        else if ([self.codeavatar isEqualToString:@"411"]) { self.codeavatar = @"6"; }
+        else if ([self.codeavatar isEqualToString:@"421"]) { self.codeavatar = @"6"; }
+        else if ([self.codeavatar isEqualToString:@"412"]) { self.codeavatar = @"6"; }
+        else if ([self.codeavatar isEqualToString:@"422"]) { self.codeavatar = @"6"; }
+        
+        //7
+        else if ([self.codeavatar isEqualToString:@"431"]) { self.codeavatar = @"7"; }
+        else if ([self.codeavatar isEqualToString:@"432"]) { self.codeavatar = @"7"; }
+        else if ([self.codeavatar isEqualToString:@"413"]) { self.codeavatar = @"7"; }
+        else if ([self.codeavatar isEqualToString:@"423"]) { self.codeavatar = @"7"; }
+        else if ([self.codeavatar isEqualToString:@"433"]) { self.codeavatar = @"7"; }
+        else { self.codeavatar = @"7"; }
     }
     
 }

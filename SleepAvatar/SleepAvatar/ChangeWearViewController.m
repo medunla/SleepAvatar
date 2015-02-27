@@ -199,7 +199,18 @@
 
 -(void)setItemThumbnail {
     
-    // STEP 0 : Convert avatarType
+    
+    
+    // STEP 0 : Clear old button
+    NSArray *viewsToRemove = [self.ViewItem subviews];
+    for (UIView *v in viewsToRemove) {
+        [v removeFromSuperview];
+    }
+    
+    
+    
+    
+    // STEP 1 : Convert avatarType
     NSString *type = @"";
     if ([self.avatarType isEqualToString:@"Shirt"]) {
         type = @"shirt";
@@ -210,7 +221,7 @@
     
 
     
-    // STEP 1 : Get item_id from type
+    // STEP 2 : Get item_id from type
     NSString *query = [NSString stringWithFormat:@"SELECT * FROM decoration_item INNER JOIN item ON decoration_item.item_id = item.item_id WHERE decoration_item.avatar_id =%i AND item.item_type='%@'",self.avatar_id,type];
     NSArray *arrItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
@@ -394,4 +405,8 @@
 
 
 
+- (IBAction)ButtonBack:(id)sender {
+    ECSlidingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 @end

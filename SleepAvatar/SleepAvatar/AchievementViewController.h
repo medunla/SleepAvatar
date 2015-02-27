@@ -24,5 +24,22 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *ach1;
 @property (weak, nonatomic) IBOutlet UIButton *ach2;
+@property (weak, nonatomic) IBOutlet UIButton *ach3;
+@property (weak, nonatomic) IBOutlet UIButton *ach4;
+@property (weak, nonatomic) IBOutlet UIButton *ach5;
+@property (weak, nonatomic) IBOutlet UIButton *ach6;
+@property (weak, nonatomic) IBOutlet UIButton *ach7;
+@property (weak, nonatomic) IBOutlet UIButton *ach8;
+@property (weak, nonatomic) IBOutlet UIButton *ach9;
+@property (weak, nonatomic) IBOutlet UIButton *ach10;
+@property (weak, nonatomic) IBOutlet UIButton *ach11;
+@property (weak, nonatomic) IBOutlet UIButton *ach12;
+@property (weak, nonatomic) IBOutlet UIButton *ach13;
+@property (weak, nonatomic) IBOutlet UIButton *ach14;
+@property (weak, nonatomic) IBOutlet UIButton *ach15;
+
+
+
+
 
 @end

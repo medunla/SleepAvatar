@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+- (IBAction)ButtonBack:(id)sender;
+
 @property (nonatomic) int user_id;
 @property (nonatomic) int avatar_id;
 @property (strong,nonatomic) NSString *avatar_sex;

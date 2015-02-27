@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
+#import "ECSlidingViewController.h"
 
 @interface ShareViewController : UIViewController
+
+- (IBAction)menuButtonTapped:(id)sender;
 
 @property (nonatomic, strong) DBManager *dbManager;
 
 @property (weak, nonatomic) IBOutlet UIView *ViewAvatar;
-@property (weak, nonatomic) IBOutlet UIImageView *ImageShare;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageBody;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageShirt;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageEmotionFace;

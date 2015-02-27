@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 
-@interface AboutSleepViewController : UIViewController <ECSlidingViewControllerDelegate>
+@interface AboutSleepViewController : UIViewController
 
 - (IBAction)menuButtonTapped:(id)sender;
 

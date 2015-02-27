@@ -33,7 +33,8 @@
     
     // Set menu
     self.transitionsNavigationController = (UINavigationController *)self.slidingViewController.topViewController;
-    self.menu = @[@"zero", @"one", @"two", @"three"];
+    self.menu = @[@"zero", @"one", @"two", @"three",@"four",@"wear",@"about",@"share"];
+    
 }
 
 - (void)didReceiveMemoryWarning

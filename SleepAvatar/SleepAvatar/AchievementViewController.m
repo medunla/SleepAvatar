@@ -58,6 +58,45 @@
     [self.ach2 setTag:2];
     [self.ach2 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
     [self.ach2 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach3 setTag:3];
+    [self.ach3 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach3 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach4 setTag:4];
+    [self.ach4 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach4 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach5 setTag:5];
+    [self.ach5 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach5 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach6 setTag:6];
+    [self.ach6 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach6 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach7 setTag:7];
+    [self.ach7 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach7 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach8 setTag:8];
+    [self.ach8 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach8 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach9 setTag:9];
+    [self.ach9 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach9 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach10 setTag:10];
+    [self.ach10 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach10 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach11 setTag:11];
+    [self.ach11 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach11 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach12 setTag:12];
+    [self.ach12 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach12 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach13 setTag:13];
+    [self.ach13 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach13 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach14 setTag:14];
+    [self.ach14 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach14 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.ach15 setTag:15];
+    [self.ach15 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.ach15 addTarget:self action:@selector(achievementTouchUp:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,10 +123,51 @@
     
     // Loop for setup active
     for (id obj in avatarAchievement) {
-        
-#warning not full
+
         if ([obj isEqualToString:@"1"]) {
             [self.ach1 setImage:[UIImage imageNamed:@"achievement-1-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"2"]) {
+            [self.ach2 setImage:[UIImage imageNamed:@"achievement-2-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"3"]) {
+            [self.ach3 setImage:[UIImage imageNamed:@"achievement-3-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"4"]) {
+            [self.ach4 setImage:[UIImage imageNamed:@"achievement-4-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"5"]) {
+            [self.ach5 setImage:[UIImage imageNamed:@"achievement-5-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"6"]) {
+            [self.ach6 setImage:[UIImage imageNamed:@"achievement-6-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"7"]) {
+            [self.ach7 setImage:[UIImage imageNamed:@"achievement-7-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"8"]) {
+            [self.ach8 setImage:[UIImage imageNamed:@"achievement-8-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"9"]) {
+            [self.ach9 setImage:[UIImage imageNamed:@"achievement-9-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"10"]) {
+            [self.ach10 setImage:[UIImage imageNamed:@"achievement-10-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"11"]) {
+            [self.ach11 setImage:[UIImage imageNamed:@"achievement-11-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"12"]) {
+            [self.ach12 setImage:[UIImage imageNamed:@"achievement-12-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"13"]) {
+            [self.ach13 setImage:[UIImage imageNamed:@"achievement-13-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"14"]) {
+            [self.ach14 setImage:[UIImage imageNamed:@"achievement-14-active.png"] forState:UIControlStateNormal];
+        }
+        if ([obj isEqualToString:@"15"]) {
+            [self.ach15 setImage:[UIImage imageNamed:@"achievement-15-active.png"] forState:UIControlStateNormal];
         }
     }
 }
@@ -108,6 +188,7 @@
     
     NSString *query = @"SELECT * FROM achievement";
     self.arrAcievementDetail = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"arrAchievement : %@",self.arrAcievementDetail);
 
 }
 
@@ -180,21 +261,35 @@
 
 
 -(void)achievementTouchDown:(UIButton *)sender {
+    
+    // STEP 1 : Set achievement_id
     int achievement_id = (int)sender.tag;
     int arrObj = (int)sender.tag - 1;
     NSLog(@"achievement_id : %i, arrObj : %i", achievement_id, arrObj);
     
-    NSInteger indexOfitem_id = [self.dbManager.arrColumnNames indexOfObject:@"item_id"];
-    NSInteger indexOfachievement_descript = [self.dbManager.arrColumnNames indexOfObject:@"achievement_descript"];
-    
-    int item_id = [ [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:indexOfitem_id] intValue];
+    // STEP 2 : Find item_id(reward), achievement_descript
+    int item_id = [ [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:1] intValue];
     NSLog(@"item_id : %i", item_id);
     
+    
+    // STEP 3 : Find item_thumbnail from item_id
+    NSString *query = [NSString stringWithFormat:@"SELECT item_thumbnail FROM item WHERE item_id = %d",item_id];
+    
+    NSArray *arrItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSInteger indexOfitem_thumbnail = [self.dbManager.arrColumnNames indexOfObject:@"item_thumbnail"];
+    
+    NSString *item_thumbnail = [[arrItem objectAtIndex:0] objectAtIndex:indexOfitem_thumbnail];
+    NSLog(@"item_thumbnail : %@",item_thumbnail);
+    
+    
+    
+    
+    // STEP 4 : Show ViewDescript
     self.ViewDescript.alpha = 1;
     self.ImageAchievement.image = [UIImage imageNamed:[NSString stringWithFormat:@"achievement-%i-active.png",achievement_id] ];
-    self.Descript.text = [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:indexOfachievement_descript];
-//    self.ImageReward.image = [UIImage imageNamed:[NSString stringWithFormat:@"item-%i-15.png",item_id] ];
-    self.ImageReward.image = [UIImage imageNamed:@"icon-sleep-graph-active.png" ];
+    self.Descript.text = [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:3];
+    self.ImageReward.image = [UIImage imageNamed:item_thumbnail ];
+
     
     NSLog(@"imageAch : %@", [NSString stringWithFormat:@"achievement-%i-active.png",achievement_id]);
     NSLog(@"descript : %@",self.Descript.text);

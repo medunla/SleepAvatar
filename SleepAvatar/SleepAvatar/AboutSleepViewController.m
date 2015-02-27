@@ -7,7 +7,6 @@
 //
 
 #import "AboutSleepViewController.h"
-#import "UIViewController+ECSlidingViewController.h"
 
 @interface AboutSleepViewController ()
 
@@ -28,11 +27,6 @@
 {
     [super viewDidLoad];
     
-    
-    // LeftMenu
-    self.slidingViewController.delegate = nil;
-    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +47,8 @@
 
 
 - (IBAction)menuButtonTapped:(id)sender {
-    [self.slidingViewController anchorTopViewToRightAnimated:YES];
+    ECSlidingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 
