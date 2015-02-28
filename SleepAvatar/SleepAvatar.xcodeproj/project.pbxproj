@@ -96,6 +96,13 @@
 		AB569B3C1AA105A400E8429D /* emotion-face-m-s-5.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B271AA105A400E8429D /* emotion-face-m-s-5.png */; };
 		AB569B3D1AA105A400E8429D /* emotion-face-m-s-6.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B281AA105A400E8429D /* emotion-face-m-s-6.png */; };
 		AB569B3E1AA105A400E8429D /* emotion-face-m-s-7.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B291AA105A400E8429D /* emotion-face-m-s-7.png */; };
+		AB569B401AA112AE00E8429D /* illust-menu-avatar-border.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B3F1AA112AE00E8429D /* illust-menu-avatar-border.png */; };
+		AB569B451AA12D0A00E8429D /* icon-app-2-120.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B421AA12D0A00E8429D /* icon-app-2-120.png */; };
+		AB569B461AA12D0A00E8429D /* icon-app-2-58.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B431AA12D0A00E8429D /* icon-app-2-58.png */; };
+		AB569B471AA12D0A00E8429D /* icon-app-2-80.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B441AA12D0A00E8429D /* icon-app-2-80.png */; };
+		AB569B4B1AA12F0E00E8429D /* launchimage-640.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B4A1AA12F0E00E8429D /* launchimage-640.png */; };
+		AB569B4D1AA12F8300E8429D /* launchimage-1136.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B4C1AA12F8300E8429D /* launchimage-1136.png */; };
+		AB569B4F1AA1307000E8429D /* illust-create-user-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B4E1AA1307000E8429D /* illust-create-user-logo.png */; };
 		AB5FB15D1A9C42160022FDB1 /* body-f-s-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5FB1421A9C42160022FDB1 /* body-f-s-1.png */; };
 		AB5FB15E1A9C42160022FDB1 /* body-f-s-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5FB1431A9C42160022FDB1 /* body-f-s-2.png */; };
 		AB5FB15F1A9C42160022FDB1 /* body-m-s-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5FB1441A9C42160022FDB1 /* body-m-s-1.png */; };
@@ -302,6 +309,13 @@
 		AB569B271AA105A400E8429D /* emotion-face-m-s-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emotion-face-m-s-5.png"; sourceTree = "<group>"; };
 		AB569B281AA105A400E8429D /* emotion-face-m-s-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emotion-face-m-s-6.png"; sourceTree = "<group>"; };
 		AB569B291AA105A400E8429D /* emotion-face-m-s-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emotion-face-m-s-7.png"; sourceTree = "<group>"; };
+		AB569B3F1AA112AE00E8429D /* illust-menu-avatar-border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "illust-menu-avatar-border.png"; sourceTree = "<group>"; };
+		AB569B421AA12D0A00E8429D /* icon-app-2-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-app-2-120.png"; sourceTree = "<group>"; };
+		AB569B431AA12D0A00E8429D /* icon-app-2-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-app-2-58.png"; sourceTree = "<group>"; };
+		AB569B441AA12D0A00E8429D /* icon-app-2-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-app-2-80.png"; sourceTree = "<group>"; };
+		AB569B4A1AA12F0E00E8429D /* launchimage-640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchimage-640.png"; sourceTree = "<group>"; };
+		AB569B4C1AA12F8300E8429D /* launchimage-1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchimage-1136.png"; sourceTree = "<group>"; };
+		AB569B4E1AA1307000E8429D /* illust-create-user-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "illust-create-user-logo.png"; sourceTree = "<group>"; };
 		AB5FB1421A9C42160022FDB1 /* body-f-s-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "body-f-s-1.png"; sourceTree = "<group>"; };
 		AB5FB1431A9C42160022FDB1 /* body-f-s-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "body-f-s-2.png"; sourceTree = "<group>"; };
 		AB5FB1441A9C42160022FDB1 /* body-m-s-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "body-m-s-1.png"; sourceTree = "<group>"; };
@@ -579,6 +593,18 @@
 			path = "about-sleep";
 			sourceTree = "<group>";
 		};
+		AB569B411AA12D0A00E8429D /* icon-app */ = {
+			isa = PBXGroup;
+			children = (
+				AB569B4A1AA12F0E00E8429D /* launchimage-640.png */,
+				AB569B4C1AA12F8300E8429D /* launchimage-1136.png */,
+				AB569B421AA12D0A00E8429D /* icon-app-2-120.png */,
+				AB569B431AA12D0A00E8429D /* icon-app-2-58.png */,
+				AB569B441AA12D0A00E8429D /* icon-app-2-80.png */,
+			);
+			path = "icon-app";
+			sourceTree = "<group>";
+		};
 		AB5FB1801A9CACFE0022FDB1 /* item-thumbnail */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,6 +650,8 @@
 		AB7991591A9F7E10004A0314 /* illust */ = {
 			isa = PBXGroup;
 			children = (
+				AB569B4E1AA1307000E8429D /* illust-create-user-logo.png */,
+				AB569B3F1AA112AE00E8429D /* illust-menu-avatar-border.png */,
 				AB79915A1A9F7E10004A0314 /* illust-choose-sex-f-active.png */,
 				AB79915B1A9F7E10004A0314 /* illust-choose-sex-f.png */,
 				AB79915C1A9F7E10004A0314 /* illust-choose-sex-m-active.png */,
@@ -753,6 +781,7 @@
 		ABDC44541A8029D40048EBE6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB569B411AA12D0A00E8429D /* icon-app */,
 				AB569AC71AA0A8BF00E8429D /* about-sleep */,
 				AB7991591A9F7E10004A0314 /* illust */,
 				AB7991521A9F7691004A0314 /* icon */,
@@ -951,6 +980,7 @@
 				AB569AEE1AA0B55B00E8429D /* achievement-10.png in Resources */,
 				AB5FB16C1A9C42160022FDB1 /* hair-m-s-4.png in Resources */,
 				AB5FB17F1A9CACEE0022FDB1 /* shirt-m-s-4.png in Resources */,
+				AB569B451AA12D0A00E8429D /* icon-app-2-120.png in Resources */,
 				AB7991601A9F7E10004A0314 /* illust-choose-sex-m-active.png in Resources */,
 				AB47D0871A94069A007C7F09 /* achievement-5.png in Resources */,
 				AB569AD51AA0AD7100E8429D /* icon-menu-share.png in Resources */,
@@ -976,6 +1006,7 @@
 				ABDC44931A802F9C0048EBE6 /* icon-avatar.png in Resources */,
 				AB569AD31AA0AD7100E8429D /* icon-menu-about-sleep.png in Resources */,
 				AB47D0961A940B9C007C7F09 /* tabbar-achievement.png in Resources */,
+				AB569B461AA12D0A00E8429D /* icon-app-2-58.png in Resources */,
 				AB47D07E1A94069A007C7F09 /* achievement-1-active.png in Resources */,
 				AB5FB1971A9CACFE0022FDB1 /* thumbnail-skin-1.png in Resources */,
 				AB569B0F1AA0E42900E8429D /* thumbnail-hair-m-s-1.png in Resources */,
@@ -1005,11 +1036,13 @@
 				AB5FB1691A9C42160022FDB1 /* hair-m-s-1.png in Resources */,
 				AB5FB1611A9C42160022FDB1 /* emotion-element-111.png in Resources */,
 				AB7991581A9F7868004A0314 /* icon-wear-right.png in Resources */,
+				AB569B401AA112AE00E8429D /* illust-menu-avatar-border.png in Resources */,
 				AB569B2B1AA105A400E8429D /* emotion-element-2.png in Resources */,
 				AB569B371AA105A400E8429D /* emotion-face-f-s-7.png in Resources */,
 				ABDC449C1A802F9C0048EBE6 /* icon-start-sleep-active.png in Resources */,
 				AB569B2C1AA105A400E8429D /* emotion-element-3.png in Resources */,
 				AB5FB1641A9C42160022FDB1 /* emotion-face-m-s-111.png in Resources */,
+				AB569B4D1AA12F8300E8429D /* launchimage-1136.png in Resources */,
 				AB47D08B1A940883007C7F09 /* icon-back-title.png in Resources */,
 				AB47D0A71A9410F2007C7F09 /* codeavatar-m-1-433.png in Resources */,
 				AB569B391AA105A400E8429D /* emotion-face-m-s-2.png in Resources */,
@@ -1055,6 +1088,7 @@
 				AB5FB16F1A9C42160022FDB1 /* shirt-f-s-1.png in Resources */,
 				AB569AFE1AA0D3F000E8429D /* sleepAvatar.sqlite in Resources */,
 				AB569AF01AA0B55B00E8429D /* achievement-11.png in Resources */,
+				AB569B4F1AA1307000E8429D /* illust-create-user-logo.png in Resources */,
 				AB5FB1621A9C42160022FDB1 /* emotion-element-433.png in Resources */,
 				ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */,
 				AB5FB1671A9C42160022FDB1 /* hair-f-s-3.png in Resources */,
@@ -1068,6 +1102,7 @@
 				AB47D0821A94069A007C7F09 /* achievement-3-active.png in Resources */,
 				AB47D0A51A9410F2007C7F09 /* codeavatar-f-1-111.png in Resources */,
 				AB79915E1A9F7E10004A0314 /* illust-choose-sex-f-active.png in Resources */,
+				AB569B4B1AA12F0E00E8429D /* launchimage-640.png in Resources */,
 				AB5FB1731A9C42160022FDB1 /* shirt-f-s-5.png in Resources */,
 				ABDC44951A802F9C0048EBE6 /* icon-duration-25.png in Resources */,
 				AB569AF41AA0B55B00E8429D /* achievement-13.png in Resources */,
@@ -1076,6 +1111,7 @@
 				AB569AF51AA0B55B00E8429D /* achievement-14-active.png in Resources */,
 				AB47D0951A940B9C007C7F09 /* tabbar-achievement-active.png in Resources */,
 				AB47D0A41A9410F2007C7F09 /* avatar-m-1-0.png in Resources */,
+				AB569B471AA12D0A00E8429D /* icon-app-2-80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

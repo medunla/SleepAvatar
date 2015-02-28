@@ -75,7 +75,7 @@
     self.ImageShirt.image = [UIImage imageNamed:shirt_pic];
     
     // emotion-face
-    NSString *emotion_face_pic = [NSString stringWithFormat:@"emotion-face-%@-%@-111.png", sex, size];
+    NSString *emotion_face_pic = [NSString stringWithFormat:@"emotion-face-%@-%@-1.png", sex, size];
     self.ImageEmotionFace.image = [UIImage imageNamed:emotion_face_pic];
     
     // shirt
