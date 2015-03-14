@@ -20,6 +20,8 @@
 @property (nonatomic) int hair;
 @property (strong,nonatomic) NSString *codeavatar;
 
+@property (nonatomic) BOOL checkShowViewSummary;
+
 
 @end
 
@@ -41,11 +43,27 @@
     // LeftMenu
     self.slidingViewController.delegate = nil;
     self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    [self.ViewAvatar addGestureRecognizer:self.slidingViewController.panGesture];
     
     
     // Initialize the dbManager property.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sqlite"];
+    
+    
+    // Set border
+    self.ViewButtonSummarySleep.layer.cornerRadius = 2.5;
+    self.ViewButtonSummarySleep.layer.masksToBounds = YES;
+    
+    // Set defalut
+    self.checkShowViewSummary = false;
+    
+    // Set Show/Hide viewSummarySleep
+    UISwipeGestureRecognizer *slideShowViewSummary = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showViewSummary:)];
+    slideShowViewSummary.direction = UISwipeGestureRecognizerDirectionDown;
+    UISwipeGestureRecognizer *slideHideViewSummary = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideViewSummary:)];
+    slideHideViewSummary.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.ButtonSummarySleep addGestureRecognizer:slideShowViewSummary];
+    [self.ButtonSummarySleep addGestureRecognizer:slideHideViewSummary];
 
     
 }
@@ -300,6 +318,58 @@
     self.slidingViewController.topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
     self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StartSleepRecommandViewController"];
     [self.slidingViewController resetTopViewAnimated:YES];
+}
+
+
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                            SHOW/HIDE VIEW-SUMMARY
+// ----------------------------------------------------------------------------
+
+- (IBAction)ButtonSummary:(id)sender {
+    if (self.checkShowViewSummary == false) {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewSummaySleep setFrame:CGRectMake(0, 0, 320, 106)];
+                             self.ViewSummaySleep.backgroundColor = [UIColor colorWithRed:(26/255.0) green:(32/255.0) blue:(44/255.0) alpha:0.8];
+                         }];
+        self.checkShowViewSummary = true;
+    }
+    else {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewSummaySleep setFrame:CGRectMake(0, -81, 320, 106)];
+                             self.ViewSummaySleep.backgroundColor = [UIColor clearColor];
+                         }];
+        self.checkShowViewSummary = false;
+    }
+    
+}
+
+-(void)showViewSummary:(UISwipeGestureRecognizer *)gestureRecognizer{
+    [UIView animateWithDuration:0.25
+                     animations:^{
+                         [self.ViewSummaySleep setFrame:CGRectMake(0, 0, 320, 106)];
+                         self.ViewSummaySleep.backgroundColor = [UIColor colorWithRed:(26/255.0) green:(32/255.0) blue:(44/255.0) alpha:0.8];
+                     }];
+    self.checkShowViewSummary = true;
+    
+}
+-(void)hideViewSummary:(UISwipeGestureRecognizer *)gestureRecognizer{
+    [UIView animateWithDuration:0.25
+                     animations:^{
+                         [self.ViewSummaySleep setFrame:CGRectMake(0, -81, 320, 106)];
+                         self.ViewSummaySleep.backgroundColor = [UIColor clearColor];
+                     }];
+    self.checkShowViewSummary = false;
+    
 }
 
 

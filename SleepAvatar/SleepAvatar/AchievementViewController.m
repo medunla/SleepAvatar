@@ -285,10 +285,13 @@
     
     
     // STEP 4 : Show ViewDescript
-    self.ViewDescript.alpha = 1;
     self.ImageAchievement.image = [UIImage imageNamed:[NSString stringWithFormat:@"achievement-%i-active.png",achievement_id] ];
     self.Descript.text = [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:3];
     self.ImageReward.image = [UIImage imageNamed:item_thumbnail ];
+    [UIView animateWithDuration:0.25
+                     animations:^{
+                         self.ViewDescript.alpha = 1;
+                     }];
 
     
     NSLog(@"imageAch : %@", [NSString stringWithFormat:@"achievement-%i-active.png",achievement_id]);
@@ -296,7 +299,10 @@
     NSLog(@"imageReward : %@", [NSString stringWithFormat:@"item-%i-15.png",item_id]);
 }
 -(void)achievementTouchUp:(id)sender{
-    self.ViewDescript.alpha = 0;
+    [UIView animateWithDuration:0.25
+                     animations:^{
+                         self.ViewDescript.alpha = 0;
+                     }];
 }
 
 

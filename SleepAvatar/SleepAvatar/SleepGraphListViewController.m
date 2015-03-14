@@ -45,7 +45,11 @@
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sleepAvatar.sqlite"];
     
     // Load the data.
+    [self findAvatarid];
     [self loadData];
+    
+    // Check receive achievement
+    [self checkReceiveAchievement];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +62,31 @@
 
 
 
+
+
+// ----------------------------------------------------------------------------
+//                                 LOAD DATA
+// ----------------------------------------------------------------------------
+
+
+- (void)findAvatarid {
+    NSString *query = @"SELECT avatar_id FROM avatar ORDER BY avatar_id DESC LIMIT 1";
+    NSInteger indexOfavatar_id = [self.dbManager.arrColumnNames indexOfObject:@"avatar_id"];
+    NSArray *data = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    self.avatar_id = [[[data objectAtIndex:0] objectAtIndex:indexOfavatar_id] intValue];
+    NSLog(@"avatar_id : %d",self.avatar_id);
+//    NSLog(@"%@",data);
+}
+
+
+
+
+
+
+
+
+
+
 // ----------------------------------------------------------------------------
 //                                 LOAD DATA
 // ----------------------------------------------------------------------------
@@ -65,7 +94,8 @@
 
 - (void)loadData {
     
-    NSString *query = @"SELECT * FROM sleepData ORDER BY sleepData_id DESC";
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM sleepData WHERE Avatar_id=%d ORDER BY sleepData_id DESC",self.avatar_id];
+    
     
     if (self.arrSleepData != nil) {
         self.arrSleepData = nil;
@@ -112,11 +142,12 @@
     headerLabel.font = [UIFont boldSystemFontOfSize:17.0];
     headerLabel.textAlignment = NSTextAlignmentLeft;
     
-    NSInteger indexOfsleepData_date = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_date"];
-    NSString *sleepData_date = [[self.arrSleepData objectAtIndex:0] objectAtIndex:indexOfsleepData_date];
-    NSArray* arrSleepData_date = [sleepData_date componentsSeparatedByString: @" "];
-    
-    headerLabel.text = [NSString stringWithFormat:@"%@, %@", [arrSleepData_date objectAtIndex:1], [arrSleepData_date objectAtIndex:2]];
+//    NSInteger indexOfsleepData_date = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_date"];
+//    NSString *sleepData_date = [[self.arrSleepData objectAtIndex:0] objectAtIndex:indexOfsleepData_date];
+//    NSArray* arrSleepData_date = [sleepData_date componentsSeparatedByString: @" "];
+//    
+//    headerLabel.text = [NSString stringWithFormat:@"%@, %@", [arrSleepData_date objectAtIndex:1], [arrSleepData_date objectAtIndex:2]];
+    headerLabel.text = @"March, 2015";
     
     // 4. Add the label to the header view
     [headerView addSubview:headerLabel];
@@ -137,7 +168,7 @@
     SleepGraphListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SleepGraphListCell" forIndexPath:indexPath];
     cell.layer.borderWidth = 0;
     
-    
+    NSLog(@"ddd");
     
     // STEP 1 : Get value
     
@@ -294,5 +325,37 @@
     self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StartSleepRecommandViewController"];
     [self.slidingViewController resetTopViewAnimated:YES];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------------------------
+//                          CHECK RECEIVE ACHIEVEMENT
+// ----------------------------------------------------------------------------
+
+-(void)checkReceiveAchievement {
+    
+    // STEP 1 : Get avatar_achievement
+    NSString *querys = [NSString stringWithFormat:@"SELECT achievement_id FROM avatar_achievement WHERE avatar_id=%d",self.avatar_id];
+//    [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:querys]];
+    NSLog(@"arrAvatarAchievement : %@", self.arrAvatarAchievement);
+    
+
+}
+
+
+
+
+
+
 
 @end

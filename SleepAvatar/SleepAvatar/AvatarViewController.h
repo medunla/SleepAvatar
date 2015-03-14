@@ -22,4 +22,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ImageHair;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageEmotionElement;
 
+
+@property (weak, nonatomic) IBOutlet UIView *ViewSummaySleep;
+@property (weak, nonatomic) IBOutlet UILabel *labelQuality;
+@property (weak, nonatomic) IBOutlet UILabel *labelDuration;
+@property (weak, nonatomic) IBOutlet UILabel *labelLatency;
+@property (weak, nonatomic) IBOutlet UIView *ViewButtonSummarySleep;
+@property (weak, nonatomic) IBOutlet UIButton *ButtonSummarySleep;
+
+
 @end

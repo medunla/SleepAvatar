@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (nonatomic, strong) DBManager *dbManager;
 @property (nonatomic, strong) NSArray *arrSleepData;
+@property (nonatomic, strong) NSArray *arrAvatarAchievement;
+@property (nonatomic) int avatar_id;
 
 - (void)loadData;
 

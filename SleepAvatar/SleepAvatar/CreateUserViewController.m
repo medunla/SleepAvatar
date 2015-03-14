@@ -128,20 +128,32 @@
 - (void)viewMoveup
 {
     if ( [[UIScreen mainScreen] bounds].size.height == 568 ) {
-        [self.ViewView setFrame:CGRectMake(0, self.move, 320, 568)];
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewView setFrame:CGRectMake(0, self.move, 320, 568)];
+                         }];
     }
     else {
-        [self.ViewView setFrame:CGRectMake(0, self.move, 320, 460)];
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewView setFrame:CGRectMake(0, self.move, 320, 460)];
+                         }];
     }
     
 }
 - (void)viewMoveDown
 {
     if ( [[UIScreen mainScreen] bounds].size.height == 568 ) {
-        [self.ViewView setFrame:CGRectMake(0, 0, 320, 568)];
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewView setFrame:CGRectMake(0, 0, 320, 568)];
+                         }];
     }
     else {
-        [self.ViewView setFrame:CGRectMake(0, 0, 320, 460)];
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewView setFrame:CGRectMake(0, 0, 320, 460)];
+                         }];
     }
 }
 
