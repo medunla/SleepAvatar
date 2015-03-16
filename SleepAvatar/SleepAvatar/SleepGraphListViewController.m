@@ -49,7 +49,7 @@
     [self loadData];
     
     // Check receive achievement
-    [self checkReceiveAchievement];
+    [self checkRequirementAchievement];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,6 +94,17 @@
 
 - (void)loadData {
     
+    // Avatar_achievement
+    NSString *query2 = [NSString stringWithFormat:@"SELECT achievement_id FROM avatar_achievement WHERE avatar_id=%d",self.avatar_id];
+    self.arrAvatarAchievement = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query2]];
+    NSLog(@"arrAvatarAchievement : %@", self.arrAvatarAchievement);
+    
+    
+    
+    
+    
+    
+    // sleepData
     NSString *query = [NSString stringWithFormat:@"SELECT * FROM sleepData WHERE Avatar_id=%d ORDER BY sleepData_id DESC",self.avatar_id];
     
     
@@ -104,6 +115,7 @@
     [self.table reloadData];
     
     NSLog(@"Count sleepdata %lu", (unsigned long)[self.arrSleepData count]);
+
     
 }
 
@@ -168,7 +180,6 @@
     SleepGraphListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SleepGraphListCell" forIndexPath:indexPath];
     cell.layer.borderWidth = 0;
     
-    NSLog(@"ddd");
     
     // STEP 1 : Get value
     
@@ -342,18 +353,172 @@
 //                          CHECK RECEIVE ACHIEVEMENT
 // ----------------------------------------------------------------------------
 
--(void)checkReceiveAchievement {
+-(void)checkRequirementAchievement {
+    NSLog(@"[checkRequirementAchievement] Start");
     
-    // STEP 1 : Get avatar_achievement
-    NSString *querys = [NSString stringWithFormat:@"SELECT achievement_id FROM avatar_achievement WHERE avatar_id=%d",self.avatar_id];
-//    [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:querys]];
-    NSLog(@"arrAvatarAchievement : %@", self.arrAvatarAchievement);
+    // STEP 1 : Get sleep data
+    NSLog(@"arrSleepData : %@", self.arrSleepData);
     
+    
+    // STEP 2 : Check requirement
+    if (self.arrSleepData.count > 0) {
+        
+        BOOL show = NO;
+        
+        // #1 Quality better 80% in once
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 80 && show == NO) {
+            show = [self checkReceiveAchievement:1];
+        }
+        
+        // #2 Qualuty better 50% in once
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 50 && show == NO) {
+            show = [self checkReceiveAchievement:2];
+        }
+        
+        // #3 Qualuty better 30% in once
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 30 && show == NO) {
+            show = [self checkReceiveAchievement:3];
+        }
+        
+        // #3 Qualuty better 30% in once
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 30 && show == NO) {
+            show = [self checkReceiveAchievement:3];
+        }
+        
+    }
 
 }
-
-
-
+-(BOOL)checkReceiveAchievement:(int)achievement_id {
+    NSLog(@"[checkReceiveAchievement] Start");
+    
+    // STEP 1 : Get avatar_achievement
+    NSLog(@"arrAvatarAchievement : %@", self.arrAvatarAchievement);
+    
+    
+    // STEP 2 : Check received
+    BOOL checkRepeat = false;
+    if (self.arrAvatarAchievement.count > 0) {
+        
+        
+        for (id achievement_id_object in self.arrAvatarAchievement) {
+            int ac_id = [[achievement_id_object objectAtIndex:0] intValue];
+            if (ac_id == achievement_id) {
+                checkRepeat = true;
+                NSLog(@"Achievement id%d received.",achievement_id);
+            }
+        }
+    }
+    
+    
+    // STEP 3 : Alert for receive achievement
+    if (checkRepeat == false) {
+        NSLog(@"Achievement id%d not received.",achievement_id);
+        [self showAlertReceiveAchievement:achievement_id];
+        return YES;
+    }
+    else {
+        return NO;
+    }
+    
+    
+    
+}
+-(void)showAlertReceiveAchievement:(int)achievement_id {
+    
+    // STEP 1 : Get information achievement
+    
+    
+    // STEP 2 : CreateView
+    // Create View
+    self.ViewReceiveAchievement = [[UIView alloc] initWithFrame:CGRectMake(20, 50, 280, 230)];
+    self.ViewReceiveAchievement.backgroundColor = [UIColor colorWithRed:(49/255.0) green:(64/255.0) blue:(71/255.0) alpha:1.0];
+    self.ViewReceiveAchievement.alpha = 0;
+//    ViewReceiveAchievement.layer.cornerRadius = 5;
+//    ViewReceiveAchievement.layer.masksToBounds = YES;
+    
+    // Head text
+    UILabel *headText = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 60)];
+    headText.text = @"Achievement unlocked";
+    headText.textAlignment = NSTextAlignmentCenter;
+    headText.textColor = [UIColor whiteColor];
+    headText.backgroundColor = [UIColor colorWithRed:0 green:(130/255.0) blue:(200/255.0) alpha:1.0];
+    [headText setFont: [UIFont systemFontOfSize:17 ]];
+    
+    // Picture achievement
+    UIImageView *imageAchievement = [[UIImageView alloc] initWithFrame:CGRectMake(20, 75, 60, 60)];
+    imageAchievement.image = [UIImage imageNamed:@"achievement-1-active.png"];
+    
+    // Description achievement
+    UITextView *description = [[UITextView alloc] initWithFrame:CGRectMake(88, 69, 172, 71)];
+    description.text = @"Require latency of sleep less than or equal 15min continue for two weeks.";
+    description.textColor = [UIColor whiteColor];
+    description.backgroundColor = [UIColor clearColor];
+    description.editable = NO;
+    [description setFont: [UIFont systemFontOfSize:14 ]];
+    
+    // Text reward
+    UILabel *textReward = [[UILabel alloc] initWithFrame:CGRectMake(93, 138, 65, 21)];
+    textReward.text = @"Reward :";
+    textReward.textColor = [UIColor whiteColor];
+    [textReward setFont: [UIFont systemFontOfSize:14 ]];
+    
+    // Picture reward
+    UIImageView *imageReward = [[UIImageView alloc] initWithFrame:CGRectMake(158, 141, 15, 15)];
+    imageReward.image = [UIImage imageNamed:@"thumbnail-hair-f-s-1.png"];
+    
+    // Get reward button
+    UIButton *getRewardButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 179, 260, 40)];
+    getRewardButton.backgroundColor = [UIColor colorWithRed:(132/255.0) green:(132/255.0) blue:(132/255.0) alpha:1];
+    [getRewardButton setTitle:@"Get reward" forState:UIControlStateNormal];
+    [getRewardButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [getRewardButton addTarget:self action:@selector(getReward:) forControlEvents:UIControlEventTouchUpInside];
+    getRewardButton.tag = achievement_id;
+    getRewardButton.layer.cornerRadius = 5;
+    getRewardButton.layer.masksToBounds = YES;
+    
+    
+    
+    [self.ViewReceiveAchievement addSubview:headText];
+    [self.ViewReceiveAchievement addSubview:imageAchievement];
+    [self.ViewReceiveAchievement addSubview:description];
+    [self.ViewReceiveAchievement addSubview:textReward];
+    [self.ViewReceiveAchievement addSubview:imageReward];
+    [self.ViewReceiveAchievement addSubview:getRewardButton];
+    [self.view addSubview:self.ViewReceiveAchievement];
+    
+    [UIView animateWithDuration:1
+                     animations:^{
+                         self.ViewReceiveAchievement.alpha = 1;
+                     }];
+}
+- (void)getReward:(UIButton *)sender {
+    NSLog(@"tag : %d",(int)sender.tag);
+    
+    // STEP 1 : Update achievement
+    
+    // STEP 2 : Add item reward
+    
+    
+    // STEP 3 : Hide ViewReceiveAchievement
+    [UIView animateWithDuration:0.25
+                     animations:^{
+                         self.ViewReceiveAchievement.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                         // Clear subviews
+                         NSArray *viewsToRemove = [self.ViewReceiveAchievement subviews];
+                         for (UIView *v in viewsToRemove) {
+                             [v removeFromSuperview];
+                         }
+                         
+                         // Check requirement achievement again
+                         [self checkRequirementAchievement];
+                         
+                     }];
+    
+    
+}
 
 
 

@@ -20,6 +20,8 @@
 @property (nonatomic, strong) NSArray *arrAvatarAchievement;
 @property (nonatomic) int avatar_id;
 
+@property (nonatomic, strong) UIView *ViewReceiveAchievement;
+
 - (void)loadData;
 
 @end

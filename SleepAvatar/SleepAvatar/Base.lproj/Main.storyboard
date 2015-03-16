@@ -1891,7 +1891,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tN-8Q-m4l">
-                                <rect key="frame" x="25" y="500" width="270" height="30"/>
+                                <rect key="frame" x="25" y="424" width="270" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.18039216101169586" green="0.80000001192092896" blue="0.44313725829124451" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Next">
@@ -1906,8 +1906,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="25" y="90" width="270" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Place your iPhone under the pillow and charging the iPhone away." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v98-qu-7kI">
-                                <rect key="frame" x="43" y="370" width="235" height="52"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Place your iPhone under the pillow and charging the iPhone away." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v98-qu-7kI">
+                                <rect key="frame" x="43" y="370" width="235" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
