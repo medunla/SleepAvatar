@@ -1016,14 +1016,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z23-9E-x1c">
                                 <rect key="frame" x="25" y="130" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="achievement-1.png">
+                                <state key="normal" image="achievement-5.png">
                                     <attributedString key="attributedTitle"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-Z0-Blz">
                                 <rect key="frame" x="95" y="130" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="achievement-2.png">
+                                <state key="normal" image="achievement-6.png">
                                     <attributedString key="attributedTitle"/>
                                 </state>
                             </button>
@@ -2232,6 +2232,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="achievement-2.png" width="120" height="120"/>
         <image name="achievement-3.png" width="120" height="120"/>
         <image name="achievement-4.png" width="120" height="120"/>
+        <image name="achievement-5.png" width="120" height="120"/>
+        <image name="achievement-6.png" width="120" height="120"/>
         <image name="achievement-7.png" width="120" height="120"/>
         <image name="achievement-8.png" width="120" height="120"/>
         <image name="achievement-9.png" width="120" height="120"/>

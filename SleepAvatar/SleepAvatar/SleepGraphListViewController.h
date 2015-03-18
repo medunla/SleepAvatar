@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSArray *arrSleepData;
 @property (nonatomic, strong) NSArray *arrAvatarAchievement;
 @property (nonatomic) int avatar_id;
+@property (nonatomic) int item_id;
+@property (nonatomic) BOOL checkRequirementAgain;
 
 @property (nonatomic, strong) UIView *ViewReceiveAchievement;
 

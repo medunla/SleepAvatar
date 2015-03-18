@@ -49,6 +49,7 @@
     [self loadData];
     
     // Check receive achievement
+    self.checkRequirementAgain = NO;
     [self checkRequirementAchievement];
 }
 
@@ -94,18 +95,9 @@
 
 - (void)loadData {
     
-    // Avatar_achievement
-    NSString *query2 = [NSString stringWithFormat:@"SELECT achievement_id FROM avatar_achievement WHERE avatar_id=%d",self.avatar_id];
-    self.arrAvatarAchievement = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query2]];
-    NSLog(@"arrAvatarAchievement : %@", self.arrAvatarAchievement);
-    
-    
-    
-    
-    
-    
     // sleepData
-    NSString *query = [NSString stringWithFormat:@"SELECT * FROM sleepData WHERE Avatar_id=%d ORDER BY sleepData_id DESC",self.avatar_id];
+    NSString *query  = [NSString stringWithFormat:@"SELECT * FROM sleepData WHERE Avatar_id=%d ORDER BY sleepData_id DESC",self.avatar_id];
+//    NSString *query2 = [NSString stringWithFormat:@"SELECT * FROM sleepData WHERE Avatar_id=%d ORDER BY sleepData_id DESC",self.avatar_id];
     
     
     if (self.arrSleepData != nil) {
@@ -154,12 +146,21 @@
     headerLabel.font = [UIFont boldSystemFontOfSize:17.0];
     headerLabel.textAlignment = NSTextAlignmentLeft;
     
-//    NSInteger indexOfsleepData_date = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_date"];
-//    NSString *sleepData_date = [[self.arrSleepData objectAtIndex:0] objectAtIndex:indexOfsleepData_date];
-//    NSArray* arrSleepData_date = [sleepData_date componentsSeparatedByString: @" "];
-//    
-//    headerLabel.text = [NSString stringWithFormat:@"%@, %@", [arrSleepData_date objectAtIndex:1], [arrSleepData_date objectAtIndex:2]];
-    headerLabel.text = @"March, 2015";
+//    if (self.arrSleepData.count > 0) {
+//        NSInteger indexOfsleepData_date = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_date"];
+//        NSString *sleepData_date = [[self.arrSleepData objectAtIndex:0] objectAtIndex:indexOfsleepData_date];
+//        NSArray* arrSleepData_date = [sleepData_date componentsSeparatedByString: @" "];
+//        
+//        headerLabel.text = [NSString stringWithFormat:@"%@, %@", [arrSleepData_date objectAtIndex:1], [arrSleepData_date objectAtIndex:2]];
+//    }
+//    else {
+//        headerLabel.text = @"March, 2015";
+//    }
+    NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
+    [objDateformat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] ];
+    [objDateformat setDateFormat:@"MMMM, yyyy"];
+    headerLabel.text = [objDateformat stringFromDate:[NSDate date]];
+    
     
     // 4. Add the label to the header view
     [headerView addSubview:headerLabel];
@@ -183,16 +184,12 @@
     
     // STEP 1 : Get value
     
-    NSInteger indexOfsleepData_date = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_date"];
-    NSInteger indexOfsleepData_duration = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_duration"];
-    NSInteger indexOfsleepData_quality = [self.dbManager.arrColumnNames indexOfObject:@"sleepData_quality"];
-    
     // Explode date ---------------------------------------------
-    NSString *sleepData_date = [[self.arrSleepData objectAtIndex:indexPath.row] objectAtIndex:indexOfsleepData_date];
-    NSArray* arrSleepData_date = [sleepData_date componentsSeparatedByString: @" "];
+    NSString *sleepData_date = [[self.arrSleepData objectAtIndex:indexPath.row] objectAtIndex:2];
+    NSArray *arrSleepData_date = [sleepData_date componentsSeparatedByString: @" "];
     
     // Calculate duration from (min) -> (h)(min) ---------------------------------------------
-    int durationFull = [  [[self.arrSleepData objectAtIndex:indexPath.row] objectAtIndex:indexOfsleepData_duration]  intValue];
+    int durationFull = [  [[self.arrSleepData objectAtIndex:indexPath.row] objectAtIndex:7]  intValue];
     NSString *duration;
     if (durationFull>=60) {
         int durationHour = durationFull/60;
@@ -204,7 +201,7 @@
     }
     
     // Quality ---------------------------------------------
-    int quality = [[[self.arrSleepData objectAtIndex:indexPath.row] objectAtIndex:indexOfsleepData_quality] intValue];
+    int quality = [[[self.arrSleepData objectAtIndex:indexPath.row] objectAtIndex:6] intValue];
     
     
     
@@ -354,42 +351,211 @@
 // ----------------------------------------------------------------------------
 
 -(void)checkRequirementAchievement {
-    NSLog(@"[checkRequirementAchievement] Start");
+    NSLog(@"[checkRequirementAchievement :1] Start");
     
     // STEP 1 : Get sleep data
     NSLog(@"arrSleepData : %@", self.arrSleepData);
     
     
-    // STEP 2 : Check requirement
+    
+    
+    // STEP 2 : Get avatar_achievement
+    NSString *query = [NSString stringWithFormat:@"SELECT achievement_id FROM avatar_achievement WHERE avatar_id=%d",self.avatar_id];
+    self.arrAvatarAchievement = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"arrAvatarAchievement : %@", self.arrAvatarAchievement);
+    
+    
+    
+    
+    // STEP 3 : Check requirement
     if (self.arrSleepData.count > 0) {
         
         BOOL show = NO;
         
         // #1 Quality better 80% in once
+        NSLog(@"Check requirement #1");
         if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 80 && show == NO) {
             show = [self checkReceiveAchievement:1];
         }
         
         // #2 Qualuty better 50% in once
-        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 50 && show == NO) {
+        NSLog(@"Check requirement #2");
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] < 80 &&
+            [[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 50 &&
+            show == NO) {
             show = [self checkReceiveAchievement:2];
         }
         
         // #3 Qualuty better 30% in once
-        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 30 && show == NO) {
+        NSLog(@"Check requirement #3");
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] < 50 &&
+            [[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 30 &&
+            show == NO) {
             show = [self checkReceiveAchievement:3];
         }
         
-        // #3 Qualuty better 30% in once
-        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 30 && show == NO) {
-            show = [self checkReceiveAchievement:3];
+        // #4 Qualuty better 80% continue two days
+        NSLog(@"Check requirement #4");
+        if (self.arrSleepData.count>=2) {
+            if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:1] objectAtIndex:6] integerValue] >= 80 &&
+                show == NO) {
+                show = [self checkReceiveAchievement:4];
+            }
         }
+        
+        // #5 Qualuty better 80% continue a week
+        NSLog(@"Check requirement #5");
+        if (self.arrSleepData.count>=7) {
+            if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:1] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:2] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:3] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:4] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:5] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:6] objectAtIndex:6] integerValue] >= 80 &&
+                show == NO) {
+                show = [self checkReceiveAchievement:5];
+            }
+        }
+        
+        // #6 Qualuty better 80% continue two weeks
+        NSLog(@"Check requirement #6");
+        if (self.arrSleepData.count>=14) {
+            if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:1] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:2] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:3] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:4] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:5] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:6] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:7] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:8] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:9] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:10] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:11] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:12] objectAtIndex:6] integerValue] >= 80 &&
+                [[[self.arrSleepData objectAtIndex:13] objectAtIndex:6] integerValue] >= 80 &&
+                show == NO) {
+                show = [self checkReceiveAchievement:6];
+            }
+        }
+        
+        // #7 Latency less than or equal 15min in once
+        NSLog(@"Check requirement #7");
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 15 && show == NO) {
+            show = [self checkReceiveAchievement:7];
+        }
+        
+        // #8 Latency less than or equal 30min in once
+        NSLog(@"Check requirement #8");
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 30 && show == NO) {
+            show = [self checkReceiveAchievement:8];
+        }
+        
+        // #9 Latency less than or equal 60min in once
+        NSLog(@"Check requirement #9");
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 60 && show == NO) {
+            show = [self checkReceiveAchievement:9];
+        }
+        
+        // #10 Latency less than or equal 15min continue two days
+        NSLog(@"Check requirement #10");
+        if (self.arrSleepData.count>=2) {
+            if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:1] objectAtIndex:5] integerValue] <= 15 &&
+                show == NO) {
+                show = [self checkReceiveAchievement:10];
+            }
+        }
+        
+        // #11 Latency less than or equal 15min continue a week
+        NSLog(@"Check requirement #11");
+        if (self.arrSleepData.count>=7) {
+            if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:1] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:2] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:3] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:4] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:5] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:6] objectAtIndex:5] integerValue] <= 15 &&
+                show == NO) {
+                show = [self checkReceiveAchievement:11];
+            }
+        }
+        
+        // #12 Latency less than or equal 15min continue two weeks
+        NSLog(@"Check requirement #12");
+        if (self.arrSleepData.count>=14) {
+            if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:1] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:2] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:3] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:4] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:5] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:6] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:7] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:8] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:9] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:10] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:11] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:12] objectAtIndex:5] integerValue] <= 15 &&
+                [[[self.arrSleepData objectAtIndex:13] objectAtIndex:5] integerValue] <= 15 &&
+                show == NO) {
+                show = [self checkReceiveAchievement:12];
+            }
+        }
+        
+        // #13 Duration more than or equal 8h in once
+        NSLog(@"Check requirement #13");
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:7] integerValue] >= 480 && show == NO) {
+            show = [self checkReceiveAchievement:13];
+        }
+        
+        // #14 Duration more than or equal 7h in once
+        NSLog(@"Check requirement #14");
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:7] integerValue] < 480 &&
+            [[[self.arrSleepData objectAtIndex:0] objectAtIndex:7] integerValue] >= 420 &&
+            show == NO) {
+            show = [self checkReceiveAchievement:14];
+        }
+        
+        // #15 Duration more than or equal 6h in once
+        NSLog(@"Check requirement #15");
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:7] integerValue] < 420 &&
+            [[[self.arrSleepData objectAtIndex:0] objectAtIndex:7] integerValue] >= 360 &&
+            show == NO) {
+            show = [self checkReceiveAchievement:15];
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        NSLog(@"show :%d",show);
+        
+        
+        
+        // Check requirement achievement again
+        NSLog(@"checkRequirementAgain :%d",self.checkRequirementAgain);
+        if (show == YES) {
+            self.checkRequirementAgain = YES;
+        }
+        NSLog(@"checkRequirementAgain :%d",self.checkRequirementAgain);
         
     }
+    
+    NSLog(@"[checkRequirementAchievement :1] End");
 
 }
 -(BOOL)checkReceiveAchievement:(int)achievement_id {
-    NSLog(@"[checkReceiveAchievement] Start");
+    NSLog(@"[checkReceiveAchievement :2] Start");
     
     // STEP 1 : Get avatar_achievement
     NSLog(@"arrAvatarAchievement : %@", self.arrAvatarAchievement);
@@ -414,9 +580,11 @@
     if (checkRepeat == false) {
         NSLog(@"Achievement id%d not received.",achievement_id);
         [self showAlertReceiveAchievement:achievement_id];
+        NSLog(@"[checkReceiveAchievement :2] END");
         return YES;
     }
     else {
+        NSLog(@"[checkReceiveAchievement :2] END");
         return NO;
     }
     
@@ -424,17 +592,30 @@
     
 }
 -(void)showAlertReceiveAchievement:(int)achievement_id {
+    NSLog(@"[showAlertReceiveAchievement :3] Start");
     
     // STEP 1 : Get information achievement
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM achievement WHERE achievement_id=%d",achievement_id];
+    NSArray *arrAchievement = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"arrAchievement : %@",arrAchievement);
     
     
-    // STEP 2 : CreateView
+    
+    // STEP 2 : Get information item
+#warning (int)
+    self.item_id = (int)[[[arrAchievement objectAtIndex:0] objectAtIndex:1] integerValue];
+    query = [NSString stringWithFormat:@"SELECT item_thumbnail FROM item WHERE item_id=%d",self.item_id];
+    NSArray *arrItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"arrItem : %@",arrItem);
+
+    
+    
+    
+    // STEP 3 : CreateView
     // Create View
     self.ViewReceiveAchievement = [[UIView alloc] initWithFrame:CGRectMake(20, 50, 280, 230)];
     self.ViewReceiveAchievement.backgroundColor = [UIColor colorWithRed:(49/255.0) green:(64/255.0) blue:(71/255.0) alpha:1.0];
     self.ViewReceiveAchievement.alpha = 0;
-//    ViewReceiveAchievement.layer.cornerRadius = 5;
-//    ViewReceiveAchievement.layer.masksToBounds = YES;
     
     // Head text
     UILabel *headText = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 60)];
@@ -446,11 +627,12 @@
     
     // Picture achievement
     UIImageView *imageAchievement = [[UIImageView alloc] initWithFrame:CGRectMake(20, 75, 60, 60)];
-    imageAchievement.image = [UIImage imageNamed:@"achievement-1-active.png"];
+    NSString *imageAchievementName = [NSString stringWithFormat:@"achievement-%d-active.png",achievement_id];
+    imageAchievement.image = [UIImage imageNamed:imageAchievementName];
     
     // Description achievement
     UITextView *description = [[UITextView alloc] initWithFrame:CGRectMake(88, 69, 172, 71)];
-    description.text = @"Require latency of sleep less than or equal 15min continue for two weeks.";
+    description.text = [[arrAchievement objectAtIndex:0] objectAtIndex:3];
     description.textColor = [UIColor whiteColor];
     description.backgroundColor = [UIColor clearColor];
     description.editable = NO;
@@ -464,7 +646,7 @@
     
     // Picture reward
     UIImageView *imageReward = [[UIImageView alloc] initWithFrame:CGRectMake(158, 141, 15, 15)];
-    imageReward.image = [UIImage imageNamed:@"thumbnail-hair-f-s-1.png"];
+    imageReward.image = [UIImage imageNamed:[[arrItem objectAtIndex:0] objectAtIndex:0]];
     
     // Get reward button
     UIButton *getRewardButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 179, 260, 40)];
@@ -490,13 +672,52 @@
                      animations:^{
                          self.ViewReceiveAchievement.alpha = 1;
                      }];
+    
+    NSLog(@"[showAlertReceiveAchievement :3] End");
 }
 - (void)getReward:(UIButton *)sender {
-    NSLog(@"tag : %d",(int)sender.tag);
+    NSLog(@"[getReward :4] Start");
+    NSLog(@"achievement_id : %d",(int)sender.tag);
     
-    // STEP 1 : Update achievement
+    // STEP 1 : Add acievement received in table avatar_achievement
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO avatar_achievement (avatar_id, achievement_id) VALUES(%i, %i)", self.avatar_id, (int)sender.tag];
+    [self.dbManager executeQuery:query];
     
-    // STEP 2 : Add item reward
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"[InsertAvatarAchievement] Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+    }
+    else{
+        NSLog(@"[InsertAvatarAchievement] Could not execute the query.");
+    }
+    
+    
+    // STEP 2 : Add item reward in table decoration_item
+    
+    // Check repeat item in decoration_item
+    query = [NSString stringWithFormat:@"SELECT * FROM decoration_item WHERE avatar_id=%d AND item_id=%d",self.avatar_id, self.item_id];
+    NSArray *arrDecorationItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSLog(@"arrDecorationItem : %@",arrDecorationItem);
+    
+    // If not repeat go to add item in decoration_item
+    if (arrDecorationItem.count == 0) {
+        
+        NSLog(@"Not repeat item in decoration_item.");
+        
+        
+        query = [NSString stringWithFormat:@"INSERT INTO decoration_item (avatar_id, item_id, decoration_status) VALUES(%i, %i, 0)", self.avatar_id, self.item_id];
+        [self.dbManager executeQuery:query];
+        
+        if (self.dbManager.affectedRows != 0) {
+            NSLog(@"[InsertDecorationItem] Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+        }
+        else{
+            NSLog(@"[InsertAvatarAchievement] Could not execute the query.");
+        }
+    }
+    else {
+        NSLog(@"Repeat item in decoration_item");
+    }
+    
     
     
     // STEP 3 : Hide ViewReceiveAchievement
@@ -506,18 +727,24 @@
                      }
                      completion:^(BOOL finished) {
                          
+                         NSLog(@"hide view");
+                         
                          // Clear subviews
                          NSArray *viewsToRemove = [self.ViewReceiveAchievement subviews];
                          for (UIView *v in viewsToRemove) {
                              [v removeFromSuperview];
                          }
                          
-                         // Check requirement achievement again
-                         [self checkRequirementAchievement];
+                         // Check requirement again
+                         if (self.checkRequirementAgain == YES) {
+                             NSLog(@"Repeat check again");
+                             self.checkRequirementAgain = NO;
+                             [self checkRequirementAchievement];
+                         }
                          
                      }];
     
-    
+    NSLog(@"[getReward :4] End");
 }
 
 
