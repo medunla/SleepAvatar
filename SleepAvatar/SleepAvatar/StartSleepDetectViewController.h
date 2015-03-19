@@ -13,4 +13,9 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *ImageViewGear1;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageViewGear2;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageViewGear3;
+
 @end

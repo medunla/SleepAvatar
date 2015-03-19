@@ -449,13 +449,17 @@
         
         // #8 Latency less than or equal 30min in once
         NSLog(@"Check requirement #8");
-        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 30 && show == NO) {
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] > 15 &&
+            [[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 30 &&
+            show == NO) {
             show = [self checkReceiveAchievement:8];
         }
         
         // #9 Latency less than or equal 60min in once
         NSLog(@"Check requirement #9");
-        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 60 && show == NO) {
+        if ([[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] > 30 &&
+            [[[self.arrSleepData objectAtIndex:0] objectAtIndex:5] integerValue] <= 60 &&
+            show == NO) {
             show = [self checkReceiveAchievement:9];
         }
         
@@ -602,7 +606,6 @@
     
     
     // STEP 2 : Get information item
-#warning (int)
     self.item_id = (int)[[[arrAchievement objectAtIndex:0] objectAtIndex:1] integerValue];
     query = [NSString stringWithFormat:@"SELECT item_thumbnail FROM item WHERE item_id=%d",self.item_id];
     NSArray *arrItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];

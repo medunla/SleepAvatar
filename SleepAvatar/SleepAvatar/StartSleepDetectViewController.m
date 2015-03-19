@@ -9,6 +9,7 @@
 #import "StartSleepDetectViewController.h"
 #import "AppDelegate.h"
 #import "UIViewController+ECSlidingViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface StartSleepDetectViewController ()
 
@@ -56,11 +57,15 @@
     self.graphCheck = false;
     
     // Add data
-    [self addData];
+//    [self addData];
     
     // Custom button
     self.ButtonStopDetect.layer.cornerRadius = 5;
     self.ButtonStopDetect.layer.masksToBounds = YES;
+    
+    
+    // Animation rotation gear
+    [self spin];
     
 }
 
@@ -75,6 +80,26 @@
 
 
 
+// ----------------------------------------------------------------------------
+//                            ANIMATION ROTATE GEAR
+// ----------------------------------------------------------------------------
+
+
+- (void)spin
+{
+    
+    [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.ImageViewGear1.transform = CGAffineTransformRotate(self.ImageViewGear1.transform, M_PI_2);
+        self.ImageViewGear2.transform = CGAffineTransformRotate(self.ImageViewGear2.transform, -M_PI_2);
+        self.ImageViewGear3.transform = CGAffineTransformRotate(self.ImageViewGear3.transform, M_PI_2);
+    } completion:^(BOOL finished) {
+        [self spin];
+    }];
+}
+
+
+
+
 
 // ----------------------------------------------------------------------------
 //                                 ADD DATA
@@ -82,7 +107,6 @@
 
 
 - (void)addData {
-    
     
     // STEP 1 : Check session & Set start value
     

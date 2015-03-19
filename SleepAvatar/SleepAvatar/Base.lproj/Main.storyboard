@@ -659,7 +659,7 @@
                                                 <color key="textColor" red="0.0" green="0.50980395078659058" blue="0.78431373834609985" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tn5-QX-8xd">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-duration-60.png" translatesAutoresizingMaskIntoConstraints="NO" id="tn5-QX-8xd">
                                                 <rect key="frame" x="77" y="28" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -691,7 +691,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="62W-HI-ceJ">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-latency-60.png" translatesAutoresizingMaskIntoConstraints="NO" id="62W-HI-ceJ">
                                                 <rect key="frame" x="205" y="27" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -1322,11 +1322,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-duration-25.png" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-Pk-JQc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-duration-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-Pk-JQc">
                                 <rect key="frame" x="158" y="54" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-latency-25.png" translatesAutoresizingMaskIntoConstraints="NO" id="IMg-DO-ukx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-latency-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="IMg-DO-ukx">
                                 <rect key="frame" x="158" y="114" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1938,7 +1938,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3df-ng-bxr">
-                                <rect key="frame" x="25" y="269" width="270" height="30"/>
+                                <rect key="frame" x="25" y="424" width="270" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90588235859999999" green="0.29803922770000002" blue="0.23529411850000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Stop">
@@ -1950,11 +1950,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <segue destination="LTq-wW-uWs" kind="custom" customClass="ECSlidingSegue" id="JR2-Mc-W9O"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="illust-gear1.png" translatesAutoresizingMaskIntoConstraints="NO" id="lxT-HJ-GQY">
+                                <rect key="frame" x="110" y="132" width="155" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="illust-gear2.png" translatesAutoresizingMaskIntoConstraints="NO" id="mG7-DG-5TL">
+                                <rect key="frame" x="50" y="253" width="97" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="illust-gear3.png" translatesAutoresizingMaskIntoConstraints="NO" id="ry2-eQ-4IT">
+                                <rect key="frame" x="134" y="330" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078568696976" green="0.12549020349979401" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="ButtonStopDetect" destination="3df-ng-bxr" id="3t8-b2-X2m"/>
+                        <outlet property="ImageViewGear1" destination="lxT-HJ-GQY" id="lLb-Pn-Pde"/>
+                        <outlet property="ImageViewGear2" destination="mG7-DG-5TL" id="88K-B0-PWX"/>
+                        <outlet property="ImageViewGear3" destination="ry2-eQ-4IT" id="DtS-HW-vvU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLn-vA-ovf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2238,8 +2253,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="achievement-8.png" width="120" height="120"/>
         <image name="achievement-9.png" width="120" height="120"/>
         <image name="icon-back-text.png" width="54" height="40"/>
-        <image name="icon-duration-25.png" width="25" height="25"/>
-        <image name="icon-latency-25.png" width="25" height="25"/>
+        <image name="icon-duration-50.png" width="50" height="50"/>
+        <image name="icon-duration-60.png" width="60" height="60"/>
+        <image name="icon-latency-50.png" width="50" height="50"/>
+        <image name="icon-latency-60.png" width="60" height="60"/>
         <image name="icon-menu-about-sleep.png" width="60" height="60"/>
         <image name="icon-menu-change-wear.png" width="60" height="60"/>
         <image name="icon-menu-share.png" width="60" height="60"/>
@@ -2249,6 +2266,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="illust-choose-sex-f.png" width="260" height="260"/>
         <image name="illust-choose-sex-m-active.png" width="260" height="260"/>
         <image name="illust-create-user-logo.png" width="300" height="300"/>
+        <image name="illust-gear1.png" width="310" height="310"/>
+        <image name="illust-gear2.png" width="195" height="195"/>
+        <image name="illust-gear3.png" width="108" height="108"/>
         <image name="illust-menu-avatar-border.png" width="250" height="250"/>
         <image name="illust-recommand-sleep.png" width="540" height="540"/>
         <image name="tabbar-achievement-active.png" width="50" height="50"/>

@@ -48,7 +48,56 @@
     
     // Set data from datapicker into textfield
     [self.DatepickerBirthday addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
-
+//    NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
+//    [objDateformat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+//    [objDateformat setDateFormat:@"yyyy-MMMM-dd"];
+//    NSString *strTime = [objDateformat stringFromDate:[NSDate date]];
+//    NSDate *date = [objDateformat dateFromString:strTime];
+//
+//    NSLog(@"strTime :%@",strTime);
+//    NSLog(@"date :%@",date);
+//    NSLog(@"date in datepicker:%@",self.DatepickerBirthday.date);
+//    [self.DatepickerBirthday setDate:date];
+//    NSLog(@"%@",date);
+    
+//    NSLocale *us = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+//    NSCalendar *cal = [NSCalendar currentCalendar];
+//    [cal setLocale:us];
+//    [self.DatepickerBirthday setLocale:us];
+    
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    formatter.dateStyle = NSDateFormatterFullStyle;
+//    formatter.timeStyle = NSDateFormatterFullStyle;
+//    formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+//    formatter.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:];
+//    
+//    NSString *str = [formatter stringFromDate: [NSDate date]];
+//    NSLog( @"date: %@" , str);
+    
+//    NSDate *date = [formatter dateFromString: str];
+//    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:118800];
+//    NSLog( @"date: %@" , date);
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    NSString *tomorrow = [dateFormatter stringFromDate:[NSDate dateWithTimeInterval:(24*60*60) sinceDate:[NSDate date]]];
+    NSLog(@"strDate :%@",strDate);
+    NSLog(@"tomorrow :%@",tomorrow);
+    
+    NSDateFormatter* dateFormatter2 = [[NSDateFormatter alloc] init];
+    [dateFormatter2 setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
+    NSDate* outputDate = [dateFormatter2 dateFromString:strDate];
+    NSLog(@"%@", outputDate);
+//    NSArray *arroutputDate = [strDate componentsSeparatedByString: @" "];
+//    NSLog(@"%@",[arroutputDate objectAtIndex:1]);
+//    NSArray *arroutputDate2 = [[arroutputDate objectAtIndex:1] componentsSeparatedByString: @":"];
+//    NSLog(@"%d",[[arroutputDate2 objectAtIndex:0] integerValue]);
+//    if () {
+//        <#statements#>
+//    }
+    [self.DatepickerBirthday setDate:outputDate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +125,7 @@
 // ----------------------------------------------------------------------------
 
 -(void)dateChanged:(id)sender {
+    
     UIDatePicker *datePicker = (UIDatePicker *)sender;
     NSString *date = [NSString stringWithFormat:@"%@",datePicker.date];
     NSArray* arrDate = [date componentsSeparatedByString: @" "];
