@@ -22,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ImageReward;
 
 
+@property (weak, nonatomic) IBOutlet UIScrollView *ScrollViewAchievement;
+
+
 @property (weak, nonatomic) IBOutlet UIButton *ach1;
 @property (weak, nonatomic) IBOutlet UIButton *ach2;
 @property (weak, nonatomic) IBOutlet UIButton *ach3;

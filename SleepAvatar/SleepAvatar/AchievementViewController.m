@@ -51,6 +51,10 @@
     self.ViewDescript.alpha = 0;
     
     
+    
+
+    
+    
     // Setup button
     [self.ach1 setTag:1];
     [self.ach1 addTarget:self action:@selector(achievementTouchDown:) forControlEvents:UIControlEventTouchDown];

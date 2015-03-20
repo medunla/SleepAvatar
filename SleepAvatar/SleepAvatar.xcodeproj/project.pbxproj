@@ -13,6 +13,7 @@
 		AB2D474C1A8571650058DDDF /* AboutSleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */; };
 		AB2D47561A85774C0058DDDF /* icon-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47551A85774C0058DDDF /* icon-back.png */; };
 		AB2D47581A8578E90058DDDF /* icon-back-text.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2D47571A8578E90058DDDF /* icon-back-text.png */; };
+		AB3BDC531ABCA2A600869425 /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB3BDC521ABCA2A600869425 /* sleepAvatar.sqlite */; };
 		AB47D07E1A94069A007C7F09 /* achievement-1-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0721A94069A007C7F09 /* achievement-1-active.png */; };
 		AB47D07F1A94069A007C7F09 /* achievement-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0731A94069A007C7F09 /* achievement-1.png */; };
 		AB47D0801A94069A007C7F09 /* achievement-2-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0741A94069A007C7F09 /* achievement-2-active.png */; };
@@ -38,7 +39,7 @@
 		AB47D0A51A9410F2007C7F09 /* codeavatar-f-1-111.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0A01A9410F2007C7F09 /* codeavatar-f-1-111.png */; };
 		AB47D0A61A9410F2007C7F09 /* codeavatar-m-1-111.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0A11A9410F2007C7F09 /* codeavatar-m-1-111.png */; };
 		AB47D0A71A9410F2007C7F09 /* codeavatar-m-1-433.png in Resources */ = {isa = PBXBuildFile; fileRef = AB47D0A21A9410F2007C7F09 /* codeavatar-m-1-433.png */; };
-		AB5355AF1AB9DA7500185C76 /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB5355AE1AB9DA7500185C76 /* sleepAvatar.sqlite */; };
+		AB5355AF1AB9DA7500185C76 /* sleepAvatar2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB5355AE1AB9DA7500185C76 /* sleepAvatar2.sqlite */; };
 		AB569ACC1AA0A8BF00E8429D /* about-sleep-how-to-good-sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569AC81AA0A8BF00E8429D /* about-sleep-how-to-good-sleep.png */; };
 		AB569ACD1AA0A8BF00E8429D /* about-sleep-level.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569AC91AA0A8BF00E8429D /* about-sleep-level.png */; };
 		AB569ACE1AA0A8BF00E8429D /* about-sleep-measurement.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569ACA1AA0A8BF00E8429D /* about-sleep-measurement.png */; };
@@ -64,7 +65,6 @@
 		AB569AF61AA0B55B00E8429D /* achievement-14.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569AE51AA0B55B00E8429D /* achievement-14.png */; };
 		AB569AF71AA0B55B00E8429D /* achievement-15-active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569AE61AA0B55B00E8429D /* achievement-15-active.png */; };
 		AB569AFC1AA0C2C200E8429D /* achievement-15.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569AFB1AA0C2C200E8429D /* achievement-15.png */; };
-		AB569AFE1AA0D3F000E8429D /* sleepAvatar2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB569AFD1AA0D3F000E8429D /* sleepAvatar2.sqlite */; };
 		AB569B001AA0D59D00E8429D /* illust-recommand-sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569AFF1AA0D59D00E8429D /* illust-recommand-sleep.png */; };
 		AB569B0B1AA0E42900E8429D /* thumbnail-hair-f-s-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B011AA0E42900E8429D /* thumbnail-hair-f-s-1.png */; };
 		AB569B0C1AA0E42900E8429D /* thumbnail-hair-f-s-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AB569B021AA0E42900E8429D /* thumbnail-hair-f-s-2.png */; };
@@ -218,6 +218,7 @@
 		AB2D474B1A8571650058DDDF /* AboutSleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSleepViewController.m; sourceTree = "<group>"; };
 		AB2D47551A85774C0058DDDF /* icon-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back.png"; sourceTree = "<group>"; };
 		AB2D47571A8578E90058DDDF /* icon-back-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-back-text.png"; sourceTree = "<group>"; };
+		AB3BDC521ABCA2A600869425 /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
 		AB47D0721A94069A007C7F09 /* achievement-1-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-1-active.png"; sourceTree = "<group>"; };
 		AB47D0731A94069A007C7F09 /* achievement-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-1.png"; sourceTree = "<group>"; };
 		AB47D0741A94069A007C7F09 /* achievement-2-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-2-active.png"; sourceTree = "<group>"; };
@@ -243,7 +244,7 @@
 		AB47D0A01A9410F2007C7F09 /* codeavatar-f-1-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-f-1-111.png"; sourceTree = "<group>"; };
 		AB47D0A11A9410F2007C7F09 /* codeavatar-m-1-111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-m-1-111.png"; sourceTree = "<group>"; };
 		AB47D0A21A9410F2007C7F09 /* codeavatar-m-1-433.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "codeavatar-m-1-433.png"; sourceTree = "<group>"; };
-		AB5355AE1AB9DA7500185C76 /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
+		AB5355AE1AB9DA7500185C76 /* sleepAvatar2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar2.sqlite; sourceTree = "<group>"; };
 		AB569AC81AA0A8BF00E8429D /* about-sleep-how-to-good-sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-sleep-how-to-good-sleep.png"; sourceTree = "<group>"; };
 		AB569AC91AA0A8BF00E8429D /* about-sleep-level.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-sleep-level.png"; sourceTree = "<group>"; };
 		AB569ACA1AA0A8BF00E8429D /* about-sleep-measurement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-sleep-measurement.png"; sourceTree = "<group>"; };
@@ -269,7 +270,6 @@
 		AB569AE51AA0B55B00E8429D /* achievement-14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-14.png"; sourceTree = "<group>"; };
 		AB569AE61AA0B55B00E8429D /* achievement-15-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-15-active.png"; sourceTree = "<group>"; };
 		AB569AFB1AA0C2C200E8429D /* achievement-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-15.png"; sourceTree = "<group>"; };
-		AB569AFD1AA0D3F000E8429D /* sleepAvatar2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar2.sqlite; sourceTree = "<group>"; };
 		AB569AFF1AA0D59D00E8429D /* illust-recommand-sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "illust-recommand-sleep.png"; sourceTree = "<group>"; };
 		AB569B011AA0E42900E8429D /* thumbnail-hair-f-s-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-hair-f-s-1.png"; sourceTree = "<group>"; };
 		AB569B021AA0E42900E8429D /* thumbnail-hair-f-s-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-hair-f-s-2.png"; sourceTree = "<group>"; };
@@ -734,8 +734,8 @@
 				ABDC442A1A8021D70048EBE6 /* main.m */,
 				ABDC44261A8021D70048EBE6 /* SleepAvatar-Info.plist */,
 				ABDC442C1A8021D70048EBE6 /* SleepAvatar-Prefix.pch */,
-				AB5355AE1AB9DA7500185C76 /* sleepAvatar.sqlite */,
-				AB569AFD1AA0D3F000E8429D /* sleepAvatar2.sqlite */,
+				AB3BDC521ABCA2A600869425 /* sleepAvatar.sqlite */,
+				AB5355AE1AB9DA7500185C76 /* sleepAvatar2.sqlite */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -961,7 +961,7 @@
 				AB569AD51AA0AD7100E8429D /* icon-menu-share.png in Resources */,
 				AB569AEF1AA0B55B00E8429D /* achievement-11-active.png in Resources */,
 				AB47D09A1A940B9C007C7F09 /* tabbar-sleep-graph.png in Resources */,
-				AB5355AF1AB9DA7500185C76 /* sleepAvatar.sqlite in Resources */,
+				AB5355AF1AB9DA7500185C76 /* sleepAvatar2.sqlite in Resources */,
 				AB569B3D1AA105A400E8429D /* emotion-face-m-s-6.png in Resources */,
 				AB569AF31AA0B55B00E8429D /* achievement-13-active.png in Resources */,
 				AB569AF61AA0B55B00E8429D /* achievement-14.png in Resources */,
@@ -990,6 +990,7 @@
 				AB569B3E1AA105A400E8429D /* emotion-face-m-s-7.png in Resources */,
 				AB47D0891A94069A007C7F09 /* achievement-6.png in Resources */,
 				AB569AEA1AA0B55B00E8429D /* achievement-8.png in Resources */,
+				AB3BDC531ABCA2A600869425 /* sleepAvatar.sqlite in Resources */,
 				AB5FB1741A9C42160022FDB1 /* shirt-f-s-6.png in Resources */,
 				ABDC44371A8021D70048EBE6 /* Images.xcassets in Resources */,
 				AB5FB1981A9CACFE0022FDB1 /* thumbnail-skin-2.png in Resources */,
@@ -1056,7 +1057,6 @@
 				AB5FB15E1A9C42160022FDB1 /* body-f-s-2.png in Resources */,
 				AB5FB1681A9C42160022FDB1 /* hair-f-s-4.png in Resources */,
 				AB5FB16F1A9C42160022FDB1 /* shirt-f-s-1.png in Resources */,
-				AB569AFE1AA0D3F000E8429D /* sleepAvatar2.sqlite in Resources */,
 				AB569AF01AA0B55B00E8429D /* achievement-11.png in Resources */,
 				AB569B4F1AA1307000E8429D /* illust-create-user-logo.png in Resources */,
 				AB7D42061ABB479300E5BF76 /* icon-duration-60.png in Resources */,

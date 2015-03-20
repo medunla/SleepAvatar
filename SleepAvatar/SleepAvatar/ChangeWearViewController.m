@@ -227,6 +227,7 @@
     
     NSInteger indexOfitem_id = [self.dbManager.arrColumnNames indexOfObject:@"item_id"];
     NSInteger indexOfitem_thumbnail = [self.dbManager.arrColumnNames indexOfObject:@"item_thumbnail"];
+    NSInteger indexOfdecoration_status = [self.dbManager.arrColumnNames indexOfObject:@"decoration_status"];
     
     NSLog(@"count : %d",(int)arrItem.count);
     NSLog(@"%@",arrItem);
@@ -235,13 +236,16 @@
     
     int item_id = 0;
     NSString *item_thumbnail = @"";
+    int decoration_status = 0;
     for (int i=0; i<arrItem.count; i++) {
         
-        // Get item_id, item_picture
+        // Get item_id, item_picture, decoration_status
         item_id = [[[arrItem objectAtIndex:i] objectAtIndex:indexOfitem_id] intValue];
         item_thumbnail = [[arrItem objectAtIndex:i] objectAtIndex:indexOfitem_thumbnail];
+        decoration_status = [[[arrItem objectAtIndex:i] objectAtIndex:indexOfdecoration_status] intValue];
         
-        NSLog(@"item_id : %d, item_thumbnal : %@",item_id,item_thumbnail);
+        
+        NSLog(@"item_id : %d, item_thumbnal : %@, decoration_status : %d",item_id,item_thumbnail,decoration_status);
         
         // Create Button
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -251,11 +255,40 @@
         [button setBackgroundImage:[UIImage imageNamed:item_thumbnail] forState:UIControlStateNormal];
         button.frame = CGRectMake(80*(i%4), 80*(i/4), 79, 79);
         [button setTag:item_id];
+        button.alpha = 1;
+        if (decoration_status == 1) {
+            button.alpha = 0.5;
+        }
         [self.ViewItem addSubview:button];
         
         
     }
     
+    
+    
+    // STEP 3 : Set content size
+    if (arrItem.count>8) {
+        NSLog(@"set contentsize");
+        NSLog(@"count item: %d",arrItem.count);
+        int round_int       = arrItem.count/4;
+        double round_double = arrItem.count/4.0;
+        
+        NSLog(@"roundint: %d",round_int);
+        NSLog(@"rounddouble: %f",round_double);
+        
+        if (round_double>round_int) {
+            round_int++;
+            NSLog(@"roundint++ = %d",round_int);
+        }
+        NSLog(@"size:%d",80*round_int);
+        
+        for(NSLayoutConstraint *constraint in self.ViewItem.constraints)
+        {
+            if(constraint.firstAttribute == NSLayoutAttributeHeight) {
+                constraint.constant = 80*round_int;
+            }
+        }
+    }
     
 }
 
@@ -297,6 +330,18 @@
         self.hair_id = item_id;
     }
     [self showAvatar:self.avatar_sex size:self.avatar_size skin:self.avatar_skin shirt:self.shirt hair:self.hair];
+    
+    
+    // STEP 3 : Change opacity
+    
+    // Set opacity = 1 all item
+    NSArray *subview = [self.ViewItem subviews];
+    for (UIView *v in subview) {
+        v.alpha = 1;
+    }
+    // Set opacity = 0.5 in click button
+    sender.alpha = 0.5;
+    
     
 }
 
