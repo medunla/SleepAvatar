@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *ButtonNext;
 @property (weak, nonatomic) IBOutlet UIDatePicker *DatepickerBirthday;
 
+- (IBAction)nextBtn:(id)sender;
 
 @end

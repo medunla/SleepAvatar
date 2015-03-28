@@ -48,35 +48,6 @@
     
     // Set data from datapicker into textfield
     [self.DatepickerBirthday addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
-//    NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
-//    [objDateformat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-//    [objDateformat setDateFormat:@"yyyy-MMMM-dd"];
-//    NSString *strTime = [objDateformat stringFromDate:[NSDate date]];
-//    NSDate *date = [objDateformat dateFromString:strTime];
-//
-//    NSLog(@"strTime :%@",strTime);
-//    NSLog(@"date :%@",date);
-//    NSLog(@"date in datepicker:%@",self.DatepickerBirthday.date);
-//    [self.DatepickerBirthday setDate:date];
-//    NSLog(@"%@",date);
-    
-//    NSLocale *us = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-//    NSCalendar *cal = [NSCalendar currentCalendar];
-//    [cal setLocale:us];
-//    [self.DatepickerBirthday setLocale:us];
-    
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateStyle = NSDateFormatterFullStyle;
-//    formatter.timeStyle = NSDateFormatterFullStyle;
-//    formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-//    formatter.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:];
-//    
-//    NSString *str = [formatter stringFromDate: [NSDate date]];
-//    NSLog( @"date: %@" , str);
-    
-//    NSDate *date = [formatter dateFromString: str];
-//    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:118800];
-//    NSLog( @"date: %@" , date);
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
@@ -90,14 +61,13 @@
     [dateFormatter2 setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
     NSDate* outputDate = [dateFormatter2 dateFromString:strDate];
     NSLog(@"%@", outputDate);
-//    NSArray *arroutputDate = [strDate componentsSeparatedByString: @" "];
-//    NSLog(@"%@",[arroutputDate objectAtIndex:1]);
-//    NSArray *arroutputDate2 = [[arroutputDate objectAtIndex:1] componentsSeparatedByString: @":"];
-//    NSLog(@"%d",[[arroutputDate2 objectAtIndex:0] integerValue]);
-//    if () {
-//        <#statements#>
-//    }
+    
     [self.DatepickerBirthday setDate:outputDate];
+    
+
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,8 +77,6 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    
     
 }
 
@@ -162,6 +130,12 @@
     [self.FieldName resignFirstResponder];
     [self hideKeyboardDatepicker];
     [self viewMoveDown];
+    
+    if ( [[UIScreen mainScreen] bounds].size.height == 480 ) {
+        if (self.FieldName.text.length>0 && self.FieldBirthday.text.length>0) {
+            [self performSegueWithIdentifier:@"CreateUserSegue" sender:nil];
+        }
+    }
 }
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     [self.FieldName resignFirstResponder];
@@ -186,7 +160,7 @@
     else {
         [UIView animateWithDuration:0.25
                          animations:^{
-                             [self.ViewView setFrame:CGRectMake(0, self.move, 320, 460)];
+                             [self.ViewView setFrame:CGRectMake(0, (self.move-88), 320, 460)];
                          }];
     }
     
@@ -202,7 +176,7 @@
     else {
         [UIView animateWithDuration:0.25
                          animations:^{
-                             [self.ViewView setFrame:CGRectMake(0, 0, 320, 460)];
+                             [self.ViewView setFrame:CGRectMake(0, -40, 320, 460)];
                          }];
     }
 }
@@ -223,10 +197,34 @@
 // ----------------------------------------------------------------------------
 
 -(void)showKeyboardDatepicker {
-    self.ViewKeybaordDatepicker.hidden = NO;
+    NSLog(@"show");
+    if ( [[UIScreen mainScreen] bounds].size.height == 568 ) {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewKeybaordDatepicker setFrame:CGRectMake(0, 352, 320, 216)];
+                         }];
+    }
+    else {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewKeybaordDatepicker setFrame:CGRectMake(0, 264, 320, 216)];
+                         }];
+    }
 }
 -(void)hideKeyboardDatepicker {
-    self.ViewKeybaordDatepicker.hidden = YES;
+    NSLog(@"hide");
+    if ( [[UIScreen mainScreen] bounds].size.height == 568 ) {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewKeybaordDatepicker setFrame:CGRectMake(0, 568, 320, 216)];
+                         }];
+    }
+    else {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             [self.ViewKeybaordDatepicker setFrame:CGRectMake(0, 480, 320, 216)];
+                         }];
+    }
 }
 
 

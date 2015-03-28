@@ -27,6 +27,7 @@
 @property (nonatomic) NSString *graphTextT;
 @property (strong, nonatomic) NSLocale *lang;
 
+
 @property (weak, nonatomic) IBOutlet UIButton *ButtonStopDetect;
 
 
@@ -57,7 +58,8 @@
     self.graphCheck = false;
     
     // Add data
-//    [self addData];
+    self.countTimeAddData = 0;
+    [self addData];
     
     // Custom button
     self.ButtonStopDetect.layer.cornerRadius = 5;
@@ -122,10 +124,10 @@
         NSLog(@"sleepListCount1 = %i",SleepListCount);
         
         
-        [objDateformat setDateFormat:@"dd MMMM yyyy eee"];
-        NSString *strTime = [objDateformat stringFromDate:[NSDate date]];
-        
-        [self createSleepData:strTime];
+//        [objDateformat setDateFormat:@"dd MMMM yyyy eee"];
+//        NSString *strTime = [objDateformat stringFromDate:[NSDate date]];
+//        
+//        [self createSleepData:strTime];
     }
     else {
         SleepListCount = (int)arrCheckSleepList.count;
@@ -150,6 +152,7 @@
     __block NSString *timeStart;
     __block NSString *timeEnd;
     __block int count = 0;
+    __block int countLatency = 1;
     
     float timeRun = 0.5;
     NSTimeInterval updateInterval = timeRun;
@@ -233,15 +236,43 @@
                 // --------------------------
                 rangePer = ( (rangeXX+rangeYY) *100)/0.5; // 0.5 => max range
                 typeFloat = rangePer*0.01;
-                if (typeFloat <= 0.1) {
-                    type = @"Deep sleep";
-                }
-                else if (typeFloat <= 0.5) {
-                    type = @"Light sleep";
+                
+                // Old
+//                if (typeFloat <= 0.1) {
+//                    type = @"Deep sleep";
+//                }
+//                else if (typeFloat <= 0.5) {
+//                    type = @"Light sleep";
+//                }
+//                else {
+//                    type = @"Awake";
+//                }
+                
+                // New
+                if (countLatency<=15) {
+                    if (typeFloat <= 0.05) {
+                        type = @"Deep sleep";
+                    }
+                    else if (typeFloat <= 0.25) {
+                        type = @"Light sleep";
+                    }
+                    else {
+                        type = @"Awake";
+                    }
                 }
                 else {
-                    type = @"Awake";
+                    if (typeFloat <= 0.1) {
+                        type = @"Deep sleep";
+                    }
+                    else if (typeFloat <= 0.5) {
+                        type = @"Light sleep";
+                    }
+                    else {
+                        type = @"Awake";
+                    }
                 }
+                
+                
                 NSLog(@"%d, rangePer : %i, typeFloat : %f, [%@]",count,rangePer,typeFloat,type);
                 
                 if (count == (60/timeRun) ) {
@@ -267,12 +298,20 @@
                     
                     
                     // Add data into sqlite
+                    if (self.countTimeAddData==0) {
+                        [objDateformat setDateFormat:@"dd MMMM yyyy eee"];
+                        NSString *strTime = [objDateformat stringFromDate:[NSDate date]];
+                        
+                        [self createSleepData:strTime];
+                        self.countTimeAddData = 1;
+                    }
                     NSLog(@"[Start function save sleepBehavior]");
                     [self saveSleepBehavior:SleepListCount timeStart:timeStart timeEnd:timeEnd type:type range:typeFloat ];
                     
                     rangeXX =0;
                     rangeYY =0;
                     count = 0;
+                    countLatency++;
                 }
             }
             
@@ -487,8 +526,9 @@
     
     
     
-    // STEP 2 : update database
+    // STEP 2 : update/delate database
     NSString *query = [NSString stringWithFormat:@"UPDATE sleepData SET sleepData_timestart = '%@', sleepData_timeend = '%@', sleepData_latency = %d, sleepData_quality = %d, sleepData_duration = %d, sleepData_durationdeep = %d, sleepData_durationlight = %d, sleepData_codeavatar = '%@', sleepData_graphBar = '%@', sleepData_graphBarText = '%@' WHERE sleepData_id = %d", timeStart, timeEnd, latency, quality, duration, durationdeep, durationlight, codeavatar, graphBar, graphBarText, sleepData_id];
+    
     NSLog(@"sql : %@",query);
     [self.dbManager executeQuery:query];
     
@@ -753,12 +793,7 @@
     // Step 2 : Analyze data -> Quality
     // ------------------------------------------------
     
-    
-    // Section Latency
-#warning low duration = good latency ,but it not good fix it
-    if      (latency > 60) { scoreLatency = 3; }
-    else if (latency > 30) { scoreLatency = 2; }
-    else if (latency > 15) { scoreLatency = 1; }
+
     // Section Duration
     if (durationHour<properDurationMin) {
         scoreDuration = properDurationMin - durationHour;
@@ -766,10 +801,18 @@
             scoreDuration = 3;
         }
     }
+    
+    // Section Latency
+    if      (latency > 60) { scoreLatency = 3; }
+    else if (latency > 30 && scoreDuration<3) { scoreLatency = 2; }
+    else if (latency > 15 && scoreDuration<3) { scoreLatency = 1; }
+    else    { scoreLatency = 3; }
+    
     // Section Efficiency
     if      (efficiency < 65) { scoreEfficiency = 3; }
-    else if (efficiency < 75) { scoreEfficiency = 2; }
-    else if (efficiency < 85) { scoreEfficiency = 1; }
+    else if (efficiency < 75 && scoreDuration<3) { scoreEfficiency = 2; }
+    else if (efficiency >= 75 && scoreDuration<3) { scoreEfficiency = 1; }
+    else    { scoreEfficiency = 3; }
     
     quality = 100 - (11*scoreLatency) - (11*scoreDuration) - (11*scoreEfficiency);
     NSLog(@"Quality : %d%%", quality);

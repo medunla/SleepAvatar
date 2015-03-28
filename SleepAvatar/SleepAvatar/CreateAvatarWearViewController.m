@@ -215,8 +215,8 @@
             
             [self.ButtonItem1 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-m-s-1.png"] forState:UIControlStateNormal];
             [self.ButtonItem2 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-m-s-2.png"] forState:UIControlStateNormal];
-            [self.ButtonItem3 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-m-s-3.png"] forState:UIControlStateNormal];
-            [self.ButtonItem4 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-m-s-4.png"] forState:UIControlStateNormal];
+            [self.ButtonItem3 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png.png"] forState:UIControlStateNormal];
+            [self.ButtonItem4 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
             [self.ButtonItem5 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
             [self.ButtonItem6 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
         }
@@ -224,10 +224,10 @@
             
             [self.ButtonItem1 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-m-s-1.png"] forState:UIControlStateNormal];
             [self.ButtonItem2 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-m-s-2.png"] forState:UIControlStateNormal];
-            [self.ButtonItem3 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-m-s-3.png"] forState:UIControlStateNormal];
-            [self.ButtonItem4 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-m-s-4.png"] forState:UIControlStateNormal];
-            [self.ButtonItem5 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-m-s-5.png"] forState:UIControlStateNormal];
-            [self.ButtonItem6 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-m-s-6.png"] forState:UIControlStateNormal];
+            [self.ButtonItem3 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
+            [self.ButtonItem4 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
+            [self.ButtonItem5 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
+            [self.ButtonItem6 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
         }
         
     }
@@ -247,17 +247,17 @@
             
             [self.ButtonItem1 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-f-s-1.png"] forState:UIControlStateNormal];
             [self.ButtonItem2 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-f-s-2.png"] forState:UIControlStateNormal];
-            [self.ButtonItem3 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-f-s-3.png"] forState:UIControlStateNormal];
-            [self.ButtonItem4 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-f-s-4.png"] forState:UIControlStateNormal];
-            [self.ButtonItem5 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-f-s-5.png"] forState:UIControlStateNormal];
-            [self.ButtonItem6 setBackgroundImage:[UIImage imageNamed:@"thumbnail-shirt-f-s-6.png"] forState:UIControlStateNormal];
+            [self.ButtonItem3 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
+            [self.ButtonItem4 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
+            [self.ButtonItem5 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
+            [self.ButtonItem6 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
         }
         else if ([self.avatarType isEqualToString:@"Hair"]) {
             
             [self.ButtonItem1 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-f-s-1.png"] forState:UIControlStateNormal];
             [self.ButtonItem2 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-f-s-2.png"] forState:UIControlStateNormal];
-            [self.ButtonItem3 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-f-s-3.png"] forState:UIControlStateNormal];
-            [self.ButtonItem4 setBackgroundImage:[UIImage imageNamed:@"thumbnail-hair-f-s-4.png"] forState:UIControlStateNormal];
+            [self.ButtonItem3 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
+            [self.ButtonItem4 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
             [self.ButtonItem5 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
             [self.ButtonItem6 setBackgroundImage:[UIImage imageNamed:@"thumbnail.png"] forState:UIControlStateNormal];
         }

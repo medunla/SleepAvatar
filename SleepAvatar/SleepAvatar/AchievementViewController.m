@@ -242,13 +242,17 @@
     
     int avatar_id;
     
-    NSString *query = @"SELECT avatar_id FROM avatar ORDER BY avatar_id DESC LIMIT 1";
+    NSString *query = @"SELECT avatar_id, avatar_sex FROM avatar ORDER BY avatar_id DESC LIMIT 1";
     
     NSArray *arrAvatarid = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     NSInteger indexOfavatar_id = [self.dbManager.arrColumnNames indexOfObject:@"avatar_id"];
+    NSInteger indexOfavatar_sex = [self.dbManager.arrColumnNames indexOfObject:@"avatar_sex"];
 
     avatar_id = [ [[arrAvatarid objectAtIndex:0] objectAtIndex:indexOfavatar_id] intValue];
     NSLog(@"[findAvatarid] avatar_id : %i",avatar_id);
+    
+    self.avatar_sex = [[arrAvatarid objectAtIndex:0] objectAtIndex:indexOfavatar_sex];
+    NSLog(@"[findAvatarid] avatar_sex : %@",self.avatar_sex);
     
     return avatar_id;
 }
@@ -272,17 +276,33 @@
     NSLog(@"achievement_id : %i, arrObj : %i", achievement_id, arrObj);
     
     // STEP 2 : Find item_id(reward), achievement_descript
-    int item_id = [ [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:1] intValue];
+    int item_id = 0;
+    if ([self.avatar_sex isEqualToString:@"m"]) {
+        item_id = [ [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:1] intValue];
+    }
+    else {
+        item_id = [ [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:5] intValue];
+    }
     NSLog(@"item_id : %i", item_id);
     
     
     // STEP 3 : Find item_thumbnail from item_id
-    NSString *query = [NSString stringWithFormat:@"SELECT item_thumbnail FROM item WHERE item_id = %d",item_id];
+    NSString *item_thumbnail;
+    NSString *text_reward = @"Reward:      x 1";
+    if(item_id!=0) {
+        NSString *query = [NSString stringWithFormat:@"SELECT item_thumbnail FROM item WHERE item_id = %d",item_id];
+        
+        NSArray *arrItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+        NSInteger indexOfitem_thumbnail = [self.dbManager.arrColumnNames indexOfObject:@"item_thumbnail"];
+        
+        item_thumbnail = [[arrItem objectAtIndex:0] objectAtIndex:indexOfitem_thumbnail];
+        
+    }
+    else {
+        item_thumbnail = @"thumbnail.png";
+        text_reward    = @"Reward: -";
+    }
     
-    NSArray *arrItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSInteger indexOfitem_thumbnail = [self.dbManager.arrColumnNames indexOfObject:@"item_thumbnail"];
-    
-    NSString *item_thumbnail = [[arrItem objectAtIndex:0] objectAtIndex:indexOfitem_thumbnail];
     NSLog(@"item_thumbnail : %@",item_thumbnail);
     
     
@@ -292,6 +312,7 @@
     self.ImageAchievement.image = [UIImage imageNamed:[NSString stringWithFormat:@"achievement-%i-active.png",achievement_id] ];
     self.Descript.text = [[self.arrAcievementDetail objectAtIndex:arrObj] objectAtIndex:3];
     self.ImageReward.image = [UIImage imageNamed:item_thumbnail ];
+    self.labelReward.text  = text_reward;
     [UIView animateWithDuration:0.25
                      animations:^{
                          self.ViewDescript.alpha = 1;

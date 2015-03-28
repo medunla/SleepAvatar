@@ -36,6 +36,16 @@
     
     [self findAvatarValue];
     [self showAvatar:self.avatar_sex size:self.avatar_size skin:self.avatar_skin shirt:self.shirt hair:self.hair codeavatar:self.codeavatar];
+    [self calculateSummarySleep];
+
+    
+    
+    // Set border
+    self.ButtonShareOutlet.layer.cornerRadius = 5;
+    self.ButtonShareOutlet.layer.masksToBounds = YES;
+    
+    
+    
     
 }
 
@@ -44,6 +54,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 
@@ -217,6 +228,91 @@
 
 
 
+// ----------------------------------------------------------------------------
+//                         CALCULATE VIEW-SUMMARY & Date
+// ----------------------------------------------------------------------------
+- (void)calculateSummarySleep {
+    
+    // STEP 1 : Get information sleepData
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM sleepData WHERE Avatar_id = %d ORDER BY sleepData_id DESC LIMIT 1",self.avatar_id];
+    NSArray *arrSleepData = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    
+    
+    // STEP 2 : Caluclate information
+    int quality  = 0;
+    int duration = 0;
+    int latency  = 0;
+    NSString *quality_  = @"0%";
+    NSString *duration_ = @"0 min";
+    NSString *latency_  = @"0 min";
+    NSString *date      = @"";
+    NSArray *arrDate;
+    
+    if (arrSleepData.count > 0) {
+        for (id data in arrSleepData) {
+            quality  += [[data objectAtIndex:6] integerValue];
+            duration += [[data objectAtIndex:7] integerValue];
+            latency  += [[data objectAtIndex:5] integerValue];
+            date      = [data objectAtIndex:2];
+        }
+        NSLog(@"Sum quality: %d",quality);
+        NSLog(@"Sum duration: %d",duration);
+        NSLog(@"Sum latency: %d",latency);
+        
+        
+        // Avg
+        quality  = quality/arrSleepData.count;
+        duration = duration/arrSleepData.count;
+        latency  = latency/arrSleepData.count;
+        
+        NSLog(@"Avg quality: %d",quality);
+        NSLog(@"Avg duration: %d",duration);
+        NSLog(@"Avg latency: %d",latency);
+        
+        
+        // Set value in text
+        // quailty
+        quality_ = [NSString stringWithFormat:@"%d%%",quality];
+        // duration
+        if (duration>=60) {
+            duration_ = [NSString stringWithFormat:@"%dh %dmin",duration/60,duration-((duration/60)*60) ];
+        }
+        else {
+            duration_ = [NSString stringWithFormat:@"%d min",duration];
+        }
+        // latency
+        if (latency>=60) {
+            latency_ = [NSString stringWithFormat:@"%dh %dmin",latency/60,latency-((latency/60)*60) ];
+        }
+        else {
+            latency_ = [NSString stringWithFormat:@"%d min",latency];
+        }
+        // date
+        arrDate = [date componentsSeparatedByString: @" "];
+        date = [NSString stringWithFormat:@"%@ %@, %@",
+                [arrDate objectAtIndex:0],
+                [[arrDate objectAtIndex:1] substringWithRange:NSMakeRange(0,3)],
+                [arrDate objectAtIndex:2]];
+    }
+    
+    
+    
+    // STEP 3 : Set value into label
+    self.labelQuality.text  = quality_;
+    self.labelDuration.text = duration_;
+    self.labelLatency.text  = latency_;
+    self.labelDate.text     = date;
+    
+}
+
+
+
+
+
+
+
+
+
 
 // ----------------------------------------------------------------------------
 //                                BUTTON SHARE
@@ -225,17 +321,21 @@
 - (IBAction)ButtonShare:(id)sender {
     
     // STEP 1 : Capture photo
-    [self.ImageBody addSubview:self.ImageShirt];
-    [self.ImageBody addSubview:self.ImageEmotionFace];
-    [self.ImageBody addSubview:self.ImageHair];
-    [self.ImageBody addSubview:self.ImageEmotionElement];
-    UIImage *imageShare = [self createImage:self.ImageBody];
+    [self.ImageViewShare addSubview:self.ImageBody];
+    [self.ImageViewShare addSubview:self.ImageShirt];
+    [self.ImageViewShare addSubview:self.ImageEmotionFace];
+    [self.ImageViewShare addSubview:self.ImageHair];
+    [self.ImageViewShare addSubview:self.ImageEmotionElement];
+    [self.ImageViewShare addSubview:self.ViewSummary];
+    [self.ImageViewShare addSubview:self.ViewDate];
+    
+    UIImage *imageShare = [self createImage:self.ImageViewShare];
     
     
     // STEP 2 : Share
     SLComposeViewController * fbSheetOBJ = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     
-    [fbSheetOBJ setInitialText:@"#SleepAvatar"];
+//    [fbSheetOBJ setInitialText:@"#SleepAvatar"];
     [fbSheetOBJ addImage:imageShare];
     
     [self presentViewController:fbSheetOBJ animated:YES completion:Nil];
@@ -292,9 +392,6 @@
 
 
 
-
-- (IBAction)ButtonSwitch:(id)sender {
-}
 
 
 

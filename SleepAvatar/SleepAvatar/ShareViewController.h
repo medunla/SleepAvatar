@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ImageEmotionFace;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageHair;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageEmotionElement;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageViewShare;
 
 @property (nonatomic) int avatar_id;
 @property (strong,nonatomic) NSString *avatar_sex;
@@ -31,7 +32,18 @@
 @property (nonatomic) int hair;
 @property (strong,nonatomic) NSString *codeavatar;
 
+@property (weak, nonatomic) IBOutlet UIView *ViewSummary;
+@property (weak, nonatomic) IBOutlet UILabel *labelQuality;
+@property (weak, nonatomic) IBOutlet UILabel *labelDuration;
+@property (weak, nonatomic) IBOutlet UILabel *labelLatency;
+
+@property (weak, nonatomic) IBOutlet UIView *ViewDate;
+@property (weak, nonatomic) IBOutlet UILabel *labelDate;
+
+
+
+@property (weak, nonatomic) IBOutlet UIButton *ButtonShareOutlet;
+
 - (IBAction)ButtonShare:(id)sender;
-- (IBAction)ButtonSwitch:(id)sender;
 
 @end

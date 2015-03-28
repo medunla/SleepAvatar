@@ -49,6 +49,15 @@
     }
     
     
+    
+    // Resize picture avatar
+    self.ViewAvatar.frame = CGRectMake(0, 0, 320, 220);
+    NSLog(@"height view: %@",self.ViewAvatar);
+
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

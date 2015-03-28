@@ -55,7 +55,7 @@
     self.ViewButtonSummarySleep.layer.masksToBounds = YES;
     
     // Set defalut
-    self.checkShowViewSummary = false;
+    self.checkShowViewSummary = true;
     
     // Set Show/Hide viewSummarySleep
     UISwipeGestureRecognizer *slideShowViewSummary = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showViewSummary:)];

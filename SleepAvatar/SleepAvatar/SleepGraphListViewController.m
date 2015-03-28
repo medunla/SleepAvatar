@@ -71,11 +71,20 @@
 
 
 - (void)findAvatarid {
-    NSString *query = @"SELECT avatar_id FROM avatar ORDER BY avatar_id DESC LIMIT 1";
-    NSInteger indexOfavatar_id = [self.dbManager.arrColumnNames indexOfObject:@"avatar_id"];
+    NSString *query = @"SELECT avatar_id, avatar_sex FROM avatar ORDER BY avatar_id DESC LIMIT 1";
     NSArray *data = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    
+    NSInteger indexOfavatar_id = [self.dbManager.arrColumnNames indexOfObject:@"avatar_id"];
+    NSInteger indexOfavatar_sex = [self.dbManager.arrColumnNames indexOfObject:@"avatar_sex"];
+    
     self.avatar_id = [[[data objectAtIndex:0] objectAtIndex:indexOfavatar_id] intValue];
     NSLog(@"avatar_id : %d",self.avatar_id);
+    
+    self.avatar_sex = [[data objectAtIndex:0] objectAtIndex:indexOfavatar_sex];
+    NSLog(@"avatar_sex : %@",self.avatar_sex);
+    
+    
+    
 //    NSLog(@"%@",data);
 }
 
@@ -159,7 +168,13 @@
     NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
     [objDateformat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] ];
     [objDateformat setDateFormat:@"MMMM, yyyy"];
-    headerLabel.text = [objDateformat stringFromDate:[NSDate date]];
+    if (self.arrSleepData.count>0) {
+        headerLabel.text = [objDateformat stringFromDate:[NSDate date]];
+    }
+    else {
+        headerLabel.text = @"No data about sleep.";
+    }
+    
     
     
     // 4. Add the label to the header view
@@ -606,10 +621,21 @@
     
     
     // STEP 2 : Get information item
-    self.item_id = (int)[[[arrAchievement objectAtIndex:0] objectAtIndex:1] integerValue];
-    query = [NSString stringWithFormat:@"SELECT item_thumbnail FROM item WHERE item_id=%d",self.item_id];
-    NSArray *arrItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"arrItem : %@",arrItem);
+    NSString *image_reward = @"thumbnail.png";
+    if ([self.avatar_sex isEqualToString:@"m"]) {
+        self.item_id = (int)[[[arrAchievement objectAtIndex:0] objectAtIndex:1] integerValue];
+    }
+    else {
+        self.item_id = (int)[[[arrAchievement objectAtIndex:0] objectAtIndex:5] integerValue];
+    }
+    
+    if (self.item_id != 0) {
+        query = [NSString stringWithFormat:@"SELECT item_thumbnail FROM item WHERE item_id=%d",self.item_id];
+        NSArray *arrItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+        NSLog(@"arrItem : %@",arrItem);
+        image_reward = [[arrItem objectAtIndex:0] objectAtIndex:0];
+    }
+    
 
     
     
@@ -642,14 +668,18 @@
     [description setFont: [UIFont systemFontOfSize:14 ]];
     
     // Text reward
-    UILabel *textReward = [[UILabel alloc] initWithFrame:CGRectMake(93, 138, 65, 21)];
+    UILabel *textReward = [[UILabel alloc] initWithFrame:CGRectMake(93, 138, 70, 21)];
     textReward.text = @"Reward :";
+    if(self.item_id == 0) {
+        textReward.text = @"Reward : -";  
+    }
     textReward.textColor = [UIColor whiteColor];
     [textReward setFont: [UIFont systemFontOfSize:14 ]];
     
     // Picture reward
     UIImageView *imageReward = [[UIImageView alloc] initWithFrame:CGRectMake(158, 141, 15, 15)];
-    imageReward.image = [UIImage imageNamed:[[arrItem objectAtIndex:0] objectAtIndex:0]];
+    imageReward.image = [UIImage imageNamed:image_reward];
+    
     
     // Get reward button
     UIButton *getRewardButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 179, 260, 40)];
@@ -697,31 +727,34 @@
     // STEP 2 : Add item reward in table decoration_item
     
     // Check repeat item in decoration_item
-    query = [NSString stringWithFormat:@"SELECT * FROM decoration_item WHERE avatar_id=%d AND item_id=%d",self.avatar_id, self.item_id];
-    NSArray *arrDecorationItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSLog(@"arrDecorationItem : %@",arrDecorationItem);
+    if (self.item_id != 0) {
+        
     
-    // If not repeat go to add item in decoration_item
-    if (arrDecorationItem.count == 0) {
+        query = [NSString stringWithFormat:@"SELECT * FROM decoration_item WHERE avatar_id=%d AND item_id=%d",self.avatar_id, self.item_id];
+        NSArray *arrDecorationItem = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+        NSLog(@"arrDecorationItem : %@",arrDecorationItem);
+    
+        // If not repeat go to add item in decoration_item
+        if (arrDecorationItem.count == 0) {
         
-        NSLog(@"Not repeat item in decoration_item.");
+            NSLog(@"Not repeat item in decoration_item.");
         
         
-        query = [NSString stringWithFormat:@"INSERT INTO decoration_item (avatar_id, item_id, decoration_status) VALUES(%i, %i, 0)", self.avatar_id, self.item_id];
-        [self.dbManager executeQuery:query];
+            query = [NSString stringWithFormat:@"INSERT INTO decoration_item (avatar_id, item_id, decoration_status) VALUES(%i, %i, 0)", self.avatar_id, self.item_id];
+            [self.dbManager executeQuery:query];
         
-        if (self.dbManager.affectedRows != 0) {
-            NSLog(@"[InsertDecorationItem] Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+            if (self.dbManager.affectedRows != 0) {
+                NSLog(@"[InsertDecorationItem] Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+            }
+            else{
+                NSLog(@"[InsertAvatarAchievement] Could not execute the query.");
+            }
         }
-        else{
-            NSLog(@"[InsertAvatarAchievement] Could not execute the query.");
+        else {
+            NSLog(@"Repeat item in decoration_item");
         }
-    }
-    else {
-        NSLog(@"Repeat item in decoration_item");
-    }
     
-    
+    }
     
     // STEP 3 : Hide ViewReceiveAchievement
     [UIView animateWithDuration:0.25

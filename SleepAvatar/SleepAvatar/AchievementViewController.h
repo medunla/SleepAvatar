@@ -16,10 +16,14 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+@property (nonatomic) NSString *avatar_sex;
+
 @property (weak, nonatomic) IBOutlet UIView *ViewDescript;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageAchievement;
 @property (weak, nonatomic) IBOutlet UITextView *Descript;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageReward;
+@property (weak, nonatomic) IBOutlet UILabel *labelReward;
+
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *ScrollViewAchievement;
