@@ -684,7 +684,11 @@
     // Get reward button
     UIButton *getRewardButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 179, 260, 40)];
     getRewardButton.backgroundColor = [UIColor colorWithRed:(132/255.0) green:(132/255.0) blue:(132/255.0) alpha:1];
-    [getRewardButton setTitle:@"Get reward" forState:UIControlStateNormal];
+    NSString *titleGetReward = @"Get reward";
+    if(self.item_id == 0) {
+        titleGetReward = @"Get achievement";
+    }
+    [getRewardButton setTitle:titleGetReward forState:UIControlStateNormal];
     [getRewardButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [getRewardButton addTarget:self action:@selector(getReward:) forControlEvents:UIControlEventTouchUpInside];
     getRewardButton.tag = achievement_id;

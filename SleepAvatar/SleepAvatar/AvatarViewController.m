@@ -20,7 +20,6 @@
 @property (nonatomic) int hair;
 @property (strong,nonatomic) NSString *codeavatar;
 
-@property (nonatomic) BOOL checkShowViewSummary;
 
 
 @end
@@ -54,8 +53,6 @@
     self.ViewButtonSummarySleep.layer.cornerRadius = 2.5;
     self.ViewButtonSummarySleep.layer.masksToBounds = YES;
     
-    // Set defalut
-    self.checkShowViewSummary = true;
     
     // Set Show/Hide viewSummarySleep
     UISwipeGestureRecognizer *slideShowViewSummary = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showViewSummary:)];
@@ -65,6 +62,33 @@
     [self.ButtonSummarySleep addGestureRecognizer:slideShowViewSummary];
     [self.ButtonSummarySleep addGestureRecognizer:slideHideViewSummary];
 
+    
+    
+    
+    // Set NSUserDefaults
+    self.defaults = [NSUserDefaults standardUserDefaults];
+    
+    // First Setting
+    if ([self.defaults objectForKey:@"statusViewSummarys"] == NULL) {
+        [self.defaults setBool:YES forKey:@"statusViewSummarys"];
+        [self.defaults synchronize];
+    }
+    
+    if ([[self.defaults objectForKey:@"statusViewSummarys"] intValue] == 1) {
+        [self showViewSummaryCode:0];
+    }
+    else {
+        for(NSLayoutConstraint *constraint in self.ViewWrapSummary.constraints)
+        {
+            if(constraint.firstAttribute == NSLayoutAttributeTop) {
+                constraint.constant = -81;
+            }
+        }
+        self.ViewSummaySleep.backgroundColor = [UIColor clearColor];
+        [self.defaults setBool:NO forKey:@"statusViewSummarys"];
+        [self.defaults synchronize];
+    }
+    
     
 }
 
@@ -80,6 +104,8 @@
     [self findAvatarValue];
     [self showAvatar:self.avatar_sex size:self.avatar_size skin:self.avatar_skin shirt:self.shirt hair:self.hair codeavatar:self.codeavatar];
     [self calculateSummarySleep];
+    
+    
 }
 
 
@@ -411,41 +437,55 @@
 // ----------------------------------------------------------------------------
 
 - (IBAction)ButtonSummary:(id)sender {
-    if (self.checkShowViewSummary == false) {
-        [UIView animateWithDuration:0.25
-                         animations:^{
-                             [self.ViewSummaySleep setFrame:CGRectMake(0, 0, 320, 106)];
-                             self.ViewSummaySleep.backgroundColor = [UIColor colorWithRed:(26/255.0) green:(32/255.0) blue:(44/255.0) alpha:0.8];
-                         }];
-        self.checkShowViewSummary = true;
+    NSLog(@"Click : %i",[[self.defaults objectForKey:@"statusViewSummarys"] intValue]);
+    
+    if ([[self.defaults objectForKey:@"statusViewSummarys"] intValue] == 0) {
+        [self showViewSummaryCode:0.25];
     }
     else {
-        [UIView animateWithDuration:0.25
-                         animations:^{
-                             [self.ViewSummaySleep setFrame:CGRectMake(0, -81, 320, 106)];
-                             self.ViewSummaySleep.backgroundColor = [UIColor clearColor];
-                         }];
-        self.checkShowViewSummary = false;
+        [self hideViewSummaryCode:0.25];
     }
     
 }
 
 -(void)showViewSummary:(UISwipeGestureRecognizer *)gestureRecognizer{
-    [UIView animateWithDuration:0.25
+    [self showViewSummaryCode:0.25];
+}
+-(void)hideViewSummary:(UISwipeGestureRecognizer *)gestureRecognizer{
+    [self hideViewSummaryCode:0.25];
+    
+}
+
+-(void)showViewSummaryCode:(NSTimeInterval)duration {
+    for(NSLayoutConstraint *constraint in self.ViewWrapSummary.constraints)
+    {
+        if(constraint.firstAttribute == NSLayoutAttributeTop) {
+            constraint.constant = 0;
+        }
+    }
+    [UIView animateWithDuration:duration
                      animations:^{
                          [self.ViewSummaySleep setFrame:CGRectMake(0, 0, 320, 106)];
                          self.ViewSummaySleep.backgroundColor = [UIColor colorWithRed:(26/255.0) green:(32/255.0) blue:(44/255.0) alpha:0.8];
                      }];
-    self.checkShowViewSummary = true;
+    [self.defaults setBool:YES forKey:@"statusViewSummarys"];
+    [self.defaults synchronize];
     
 }
--(void)hideViewSummary:(UISwipeGestureRecognizer *)gestureRecognizer{
-    [UIView animateWithDuration:0.25
+-(void)hideViewSummaryCode:(NSTimeInterval)duration {
+    for(NSLayoutConstraint *constraint in self.ViewWrapSummary.constraints)
+    {
+        if(constraint.firstAttribute == NSLayoutAttributeTop) {
+            constraint.constant = 0;
+        }
+    }
+    [UIView animateWithDuration:duration
                      animations:^{
                          [self.ViewSummaySleep setFrame:CGRectMake(0, -81, 320, 106)];
                          self.ViewSummaySleep.backgroundColor = [UIColor clearColor];
                      }];
-    self.checkShowViewSummary = false;
+    [self.defaults setBool:NO forKey:@"statusViewSummarys"];
+    [self.defaults synchronize];
     
 }
 

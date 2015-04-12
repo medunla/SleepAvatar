@@ -144,6 +144,9 @@
 		AB5FB1961A9CACFE0022FDB1 /* thumbnail-shirt-m-s-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5FB18A1A9CACFE0022FDB1 /* thumbnail-shirt-m-s-4.png */; };
 		AB5FB1971A9CACFE0022FDB1 /* thumbnail-skin-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5FB18B1A9CACFE0022FDB1 /* thumbnail-skin-1.png */; };
 		AB5FB1981A9CACFE0022FDB1 /* thumbnail-skin-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5FB18C1A9CACFE0022FDB1 /* thumbnail-skin-2.png */; };
+		AB66FAB21ADA102100729526 /* tabbar-more2.png in Resources */ = {isa = PBXBuildFile; fileRef = AB66FAB11ADA102100729526 /* tabbar-more2.png */; };
+		AB66FAB51ADA102F00729526 /* button-share-fb.png in Resources */ = {isa = PBXBuildFile; fileRef = AB66FAB41ADA102F00729526 /* button-share-fb.png */; };
+		AB66FABB1ADA187200729526 /* tabbar-more3.png in Resources */ = {isa = PBXBuildFile; fileRef = AB66FABA1ADA187200729526 /* tabbar-more3.png */; };
 		AB767CC01AC5DDE700A8BC61 /* sleepAvatar.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AB767CBF1AC5DDE700A8BC61 /* sleepAvatar.sqlite */; };
 		AB7991511A9F74BA004A0314 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = AB7991501A9F74BA004A0314 /* thumbnail.png */; };
 		AB7991561A9F7738004A0314 /* icon-wear-left.png in Resources */ = {isa = PBXBuildFile; fileRef = AB7991551A9F7738004A0314 /* icon-wear-left.png */; };
@@ -162,6 +165,7 @@
 		AB7D42061ABB479300E5BF76 /* icon-duration-60.png in Resources */ = {isa = PBXBuildFile; fileRef = AB7D42021ABB479300E5BF76 /* icon-duration-60.png */; };
 		AB7D42071ABB479300E5BF76 /* icon-latency-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AB7D42031ABB479300E5BF76 /* icon-latency-50.png */; };
 		AB7D42081ABB479300E5BF76 /* icon-latency-60.png in Resources */ = {isa = PBXBuildFile; fileRef = AB7D42041ABB479300E5BF76 /* icon-latency-60.png */; };
+		ABC651F31AD4612B00833C2C /* tabbar-more.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC651F21AD4612B00833C2C /* tabbar-more.png */; };
 		ABDB22D71AC00FC20072BCDB /* sleepAvatar2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = ABDB22D61AC00FC20072BCDB /* sleepAvatar2.sqlite */; };
 		ABDC441F1A8021D70048EBE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC441E1A8021D70048EBE6 /* Foundation.framework */; };
 		ABDC44211A8021D70048EBE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC44201A8021D70048EBE6 /* CoreGraphics.framework */; };
@@ -352,6 +356,9 @@
 		AB5FB18A1A9CACFE0022FDB1 /* thumbnail-shirt-m-s-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-shirt-m-s-4.png"; sourceTree = "<group>"; };
 		AB5FB18B1A9CACFE0022FDB1 /* thumbnail-skin-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-skin-1.png"; sourceTree = "<group>"; };
 		AB5FB18C1A9CACFE0022FDB1 /* thumbnail-skin-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail-skin-2.png"; sourceTree = "<group>"; };
+		AB66FAB11ADA102100729526 /* tabbar-more2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-more2.png"; sourceTree = "<group>"; };
+		AB66FAB41ADA102F00729526 /* button-share-fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-share-fb.png"; sourceTree = "<group>"; };
+		AB66FABA1ADA187200729526 /* tabbar-more3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-more3.png"; sourceTree = "<group>"; };
 		AB767CBF1AC5DDE700A8BC61 /* sleepAvatar.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar.sqlite; sourceTree = "<group>"; };
 		AB7991501A9F74BA004A0314 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		AB7991551A9F7738004A0314 /* icon-wear-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-wear-left.png"; sourceTree = "<group>"; };
@@ -372,6 +379,7 @@
 		AB7D42021ABB479300E5BF76 /* icon-duration-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-duration-60.png"; sourceTree = "<group>"; };
 		AB7D42031ABB479300E5BF76 /* icon-latency-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-latency-50.png"; sourceTree = "<group>"; };
 		AB7D42041ABB479300E5BF76 /* icon-latency-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-latency-60.png"; sourceTree = "<group>"; };
+		ABC651F21AD4612B00833C2C /* tabbar-more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-more.png"; sourceTree = "<group>"; };
 		ABDB22D61AC00FC20072BCDB /* sleepAvatar2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sleepAvatar2.sqlite; sourceTree = "<group>"; };
 		ABDC441B1A8021D70048EBE6 /* SleepAvatar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepAvatar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDC441E1A8021D70048EBE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -499,6 +507,9 @@
 		AB47D08C1A940B5B007C7F09 /* tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				AB66FABA1ADA187200729526 /* tabbar-more3.png */,
+				AB66FAB11ADA102100729526 /* tabbar-more2.png */,
+				ABC651F21AD4612B00833C2C /* tabbar-more.png */,
 				AB47D08D1A940B9C007C7F09 /* tabbar-achievement-active.png */,
 				AB47D08E1A940B9C007C7F09 /* tabbar-achievement.png */,
 				AB47D08F1A940B9C007C7F09 /* tabbar-avatar-active.png */,
@@ -622,6 +633,14 @@
 				AB5FB18C1A9CACFE0022FDB1 /* thumbnail-skin-2.png */,
 			);
 			path = "item-thumbnail";
+			sourceTree = "<group>";
+		};
+		AB66FAB31ADA102F00729526 /* button-share */ = {
+			isa = PBXGroup;
+			children = (
+				AB66FAB41ADA102F00729526 /* button-share-fb.png */,
+			);
+			path = "button-share";
 			sourceTree = "<group>";
 		};
 		AB7991521A9F7691004A0314 /* icon */ = {
@@ -780,6 +799,7 @@
 		ABDC44541A8029D40048EBE6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AB66FAB31ADA102F00729526 /* button-share */,
 				AB569B411AA12D0A00E8429D /* icon-app */,
 				AB569AC71AA0A8BF00E8429D /* about-sleep */,
 				AB7991591A9F7E10004A0314 /* illust */,
@@ -952,6 +972,7 @@
 				AB569AF11AA0B55B00E8429D /* achievement-12-active.png in Resources */,
 				AB569AFC1AA0C2C200E8429D /* achievement-15.png in Resources */,
 				AB569B2E1AA105A400E8429D /* emotion-element-5.png in Resources */,
+				AB66FAB21ADA102100729526 /* tabbar-more2.png in Resources */,
 				AB47D0851A94069A007C7F09 /* achievement-4.png in Resources */,
 				AB5FB1931A9CACFE0022FDB1 /* thumbnail-shirt-m-s-1.png in Resources */,
 				AB7991611A9F7E10004A0314 /* illust-choose-sex-m.png in Resources */,
@@ -1005,6 +1026,7 @@
 				AB47D0A31A9410F2007C7F09 /* avatar-f-1-0.png in Resources */,
 				AB569B0B1AA0E42900E8429D /* thumbnail-hair-f-s-1.png in Resources */,
 				AB5FB17D1A9CACEE0022FDB1 /* shirt-m-s-2.png in Resources */,
+				ABC651F31AD4612B00833C2C /* tabbar-more.png in Resources */,
 				AB569B141AA0E42900E8429D /* thumbnail-hair-m-s-6.png in Resources */,
 				AB569AE81AA0B55B00E8429D /* achievement-7.png in Resources */,
 				AB5FB1691A9C42160022FDB1 /* hair-m-s-1.png in Resources */,
@@ -1013,6 +1035,7 @@
 				AB7991581A9F7868004A0314 /* icon-wear-right.png in Resources */,
 				AB569B401AA112AE00E8429D /* illust-menu-avatar-border.png in Resources */,
 				AB569B2B1AA105A400E8429D /* emotion-element-2.png in Resources */,
+				AB66FABB1ADA187200729526 /* tabbar-more3.png in Resources */,
 				AB569B371AA105A400E8429D /* emotion-face-f-s-7.png in Resources */,
 				AB569B2C1AA105A400E8429D /* emotion-element-3.png in Resources */,
 				AB5FB1641A9C42160022FDB1 /* emotion-face-m-s-111.png in Resources */,
@@ -1070,6 +1093,7 @@
 				AB5FB1621A9C42160022FDB1 /* emotion-element-433.png in Resources */,
 				ABDC44321A8021D70048EBE6 /* Main.storyboard in Resources */,
 				AB5FB1671A9C42160022FDB1 /* hair-f-s-3.png in Resources */,
+				AB66FAB51ADA102F00729526 /* button-share-fb.png in Resources */,
 				AB569B351AA105A400E8429D /* emotion-face-f-s-5.png in Resources */,
 				AB5FB1721A9C42160022FDB1 /* shirt-f-s-4.png in Resources */,
 				AB569ACF1AA0A8BF00E8429D /* about-sleep-what-sleep.png in Resources */,

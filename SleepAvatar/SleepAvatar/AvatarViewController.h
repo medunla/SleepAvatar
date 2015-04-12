@@ -30,5 +30,9 @@
 @property (weak, nonatomic) IBOutlet UIView *ViewButtonSummarySleep;
 @property (weak, nonatomic) IBOutlet UIButton *ButtonSummarySleep;
 
+@property (nonatomic, strong) NSUserDefaults *defaults;
+
+@property (weak, nonatomic) IBOutlet UIView *ViewWrapSummary;
+
 
 @end
