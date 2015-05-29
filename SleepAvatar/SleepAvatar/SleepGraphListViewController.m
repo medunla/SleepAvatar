@@ -751,7 +751,7 @@
                 NSLog(@"[InsertDecorationItem] Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
             }
             else{
-                NSLog(@"[InsertAvatarAchievement] Could not execute the query.");
+                NSLog(@"[InsertDecorationItem] Could not execute the query.");
             }
         }
         else {

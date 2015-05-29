@@ -42,6 +42,14 @@
     
     // Set item thumbnail
     [self setItemThumbnail];
+    
+    NSLog(@"height item : %d", (int)self.ViewItem.frame.size.height);
+    
+    
+    for(UIView *subView in self.ViewItem.subviews)
+    {
+        NSLog(@"subview : %@",subView);
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -198,7 +206,7 @@
 // ----------------------------------------------------------------------------
 
 -(void)setItemThumbnail {
-    
+    NSLog(@"setItemThumbnail");
     
     
     // STEP 0 : Clear old button
@@ -253,7 +261,10 @@
                    action:@selector(ButtonItemClick:)
          forControlEvents:UIControlEventTouchUpInside];
         [button setBackgroundImage:[UIImage imageNamed:item_thumbnail] forState:UIControlStateNormal];
-        button.frame = CGRectMake(80*(i%4), 80*(i/4), 79, 79);
+        button.frame = CGRectMake(80*(i%4), (80*(i/4)), 79, 79);
+//        button.frame = CGRectMake(0, 408, 79, 79);
+        NSLog(@"height item : %d, %d - %d, %d",(int)self.ViewItem.frame.origin.x,(int)self.ViewItem.frame.origin.y, (int)self.ViewItem.frame.size.width,(int)self.ViewItem.frame.size.height);
+        NSLog(@"button position : %d, %d - %d, %d", (int)button.frame.origin.x,(int)button.frame.origin.y, (int)button.frame.size.width,(int)button.frame.size.height);
         [button setTag:item_id];
         button.alpha = 1;
         if (decoration_status == 1) {
@@ -269,8 +280,8 @@
     // STEP 3 : Set content size
     if (arrItem.count>8) {
         NSLog(@"set contentsize");
-        NSLog(@"count item: %d",arrItem.count);
-        int round_int       = arrItem.count/4;
+        NSLog(@"count item: %d",(int)arrItem.count);
+        int round_int       = (int)arrItem.count/4;
         double round_double = arrItem.count/4.0;
         
         NSLog(@"roundint: %d",round_int);
@@ -282,10 +293,21 @@
         }
         NSLog(@"size:%d",80*round_int);
         
+#warning height view item
         for(NSLayoutConstraint *constraint in self.ViewItem.constraints)
         {
             if(constraint.firstAttribute == NSLayoutAttributeHeight) {
                 constraint.constant = 80*round_int;
+            }
+        }
+        NSLog(@"height item : %d, %d - %d, %d",(int)self.ViewItem.frame.origin.x,(int)self.ViewItem.frame.origin.y, (int)self.ViewItem.frame.size.width,(int)self.ViewItem.frame.size.height);
+        
+    }
+    else {
+        for(NSLayoutConstraint *constraint in self.ViewItem.constraints)
+        {
+            if(constraint.firstAttribute == NSLayoutAttributeHeight) {
+                constraint.constant = 160;
             }
         }
     }
@@ -454,4 +476,36 @@
     ECSlidingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"mainView"];
     [self presentViewController:vc animated:YES completion:nil];
 }
+
+
+
+
+
+
+
+- (IBAction)addWear:(id)sender {
+    NSString* query = [NSString stringWithFormat:@"INSERT INTO decoration_item (avatar_id, item_id, decoration_status) VALUES(%i, 18, 0)", self.avatar_id];
+    [self.dbManager executeQuery:query];
+    
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"[InsertDecorationItem] Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+    }
+    else{
+        NSLog(@"[InsertDecorationItem] Could not execute the query.");
+    }
+    
+    query = [NSString stringWithFormat:@"INSERT INTO decoration_item (avatar_id, item_id, decoration_status) VALUES(%i, 19, 0)", self.avatar_id];
+    [self.dbManager executeQuery:query];
+    
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"[InsertDecorationItem] Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+    }
+    else{
+        NSLog(@"[InsertDecorationItem] Could not execute the query.");
+    }
+    
+    
+    
+}
+
 @end

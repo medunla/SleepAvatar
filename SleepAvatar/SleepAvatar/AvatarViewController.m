@@ -19,7 +19,7 @@
 @property (nonatomic) int shirt;
 @property (nonatomic) int hair;
 @property (strong,nonatomic) NSString *codeavatar;
-
+@property (nonatomic, strong) NSLayoutConstraint *constraintTop;
 
 
 @end
@@ -65,6 +65,7 @@
     
     
     
+    
     // Set NSUserDefaults
     self.defaults = [NSUserDefaults standardUserDefaults];
     
@@ -74,20 +75,30 @@
         [self.defaults synchronize];
     }
     
+    // Set constraints
+    [self.view setNeedsUpdateConstraints];
+    [self.view setNeedsLayout];
+    self.ViewSummaySleep.translatesAutoresizingMaskIntoConstraints = NO;
+    
     if ([[self.defaults objectForKey:@"statusViewSummarys"] intValue] == 1) {
         [self showViewSummaryCode:0];
+        NSLog(@"1");
+        self.constraintTop =[NSLayoutConstraint constraintWithItem:self.ViewSummaySleep attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.ViewWrapSummary attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0f];
+        [self.view addConstraint:self.constraintTop];
+        [self showViewSummaryCode:0.0];
     }
     else {
-        for(NSLayoutConstraint *constraint in self.ViewWrapSummary.constraints)
-        {
-            if(constraint.firstAttribute == NSLayoutAttributeTop) {
-                constraint.constant = -81;
-            }
-        }
-        self.ViewSummaySleep.backgroundColor = [UIColor clearColor];
-        [self.defaults setBool:NO forKey:@"statusViewSummarys"];
-        [self.defaults synchronize];
+        NSLog(@"2");
+        self.constraintTop =[NSLayoutConstraint constraintWithItem:self.ViewSummaySleep attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.ViewWrapSummary attribute:NSLayoutAttributeTop multiplier:1.0 constant:-81.0f];
+        [self.view addConstraint:self.constraintTop];
+        [self hideViewSummaryCode:0.0];
+        
+//        self.ViewSummaySleep.backgroundColor = [UIColor clearColor];
+//        [self.defaults setBool:NO forKey:@"statusViewSummarys"];
+//        [self.defaults synchronize];
     }
+    
+    
     
     
 }
@@ -104,6 +115,12 @@
     [self findAvatarValue];
     [self showAvatar:self.avatar_sex size:self.avatar_size skin:self.avatar_skin shirt:self.shirt hair:self.hair codeavatar:self.codeavatar];
     [self calculateSummarySleep];
+    
+    
+    
+    
+    
+    
     
     
 }
@@ -440,32 +457,37 @@
     NSLog(@"Click : %i",[[self.defaults objectForKey:@"statusViewSummarys"] intValue]);
     
     if ([[self.defaults objectForKey:@"statusViewSummarys"] intValue] == 0) {
+        self.constraintTop.constant = 0.0f;
         [self showViewSummaryCode:0.25];
     }
     else {
+        self.constraintTop.constant = -81.0f;
         [self hideViewSummaryCode:0.25];
     }
     
 }
 
 -(void)showViewSummary:(UISwipeGestureRecognizer *)gestureRecognizer{
+    self.constraintTop.constant = 0.0f;
     [self showViewSummaryCode:0.25];
 }
 -(void)hideViewSummary:(UISwipeGestureRecognizer *)gestureRecognizer{
+    self.constraintTop.constant = -81.0f;
     [self hideViewSummaryCode:0.25];
     
 }
 
 -(void)showViewSummaryCode:(NSTimeInterval)duration {
-    for(NSLayoutConstraint *constraint in self.ViewWrapSummary.constraints)
-    {
-        if(constraint.firstAttribute == NSLayoutAttributeTop) {
-            constraint.constant = 0;
-        }
-    }
+//    for(NSLayoutConstraint *constraint in self.ViewWrapSummary.constraints)
+//    {
+//        if(constraint.firstAttribute == NSLayoutAttributeTop) {
+//            constraint.constant = 0;
+//        }
+//    }
     [UIView animateWithDuration:duration
                      animations:^{
-                         [self.ViewSummaySleep setFrame:CGRectMake(0, 0, 320, 106)];
+                         [self.view layoutIfNeeded];
+//                         [self.ViewSummaySleep setFrame:CGRectMake(0, 0, 320, 106)];
                          self.ViewSummaySleep.backgroundColor = [UIColor colorWithRed:(26/255.0) green:(32/255.0) blue:(44/255.0) alpha:0.8];
                      }];
     [self.defaults setBool:YES forKey:@"statusViewSummarys"];
@@ -473,15 +495,16 @@
     
 }
 -(void)hideViewSummaryCode:(NSTimeInterval)duration {
-    for(NSLayoutConstraint *constraint in self.ViewWrapSummary.constraints)
-    {
-        if(constraint.firstAttribute == NSLayoutAttributeTop) {
-            constraint.constant = 0;
-        }
-    }
+//    for(NSLayoutConstraint *constraint in self.ViewWrapSummary.constraints)
+//    {
+//        if(constraint.firstAttribute == NSLayoutAttributeTop) {
+//            constraint.constant = 0;
+//        }
+//    }
     [UIView animateWithDuration:duration
                      animations:^{
-                         [self.ViewSummaySleep setFrame:CGRectMake(0, -81, 320, 106)];
+                         [self.view layoutIfNeeded];
+//                         [self.ViewSummaySleep setFrame:CGRectMake(0, -81, 320, 106)];
                          self.ViewSummaySleep.backgroundColor = [UIColor clearColor];
                      }];
     [self.defaults setBool:NO forKey:@"statusViewSummarys"];

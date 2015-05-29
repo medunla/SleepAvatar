@@ -13,6 +13,8 @@
 @interface CreateUserViewController ()
 
 @property (nonatomic) int move;
+@property (nonatomic, strong) NSLayoutConstraint *constraintTop;
+@property (nonatomic, strong) NSLayoutConstraint *constraintViewViewTop;
 
 @end
 
@@ -64,9 +66,16 @@
     
     [self.DatepickerBirthday setDate:outputDate];
     
-
     
     
+    // Set constraints
+    self.ViewView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.constraintViewViewTop =[NSLayoutConstraint constraintWithItem:self.ViewView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    [self.view addConstraint:self.constraintViewViewTop];
+    
+    self.ViewKeybaordDatepicker.translatesAutoresizingMaskIntoConstraints = NO;
+    self.constraintTop =[NSLayoutConstraint constraintWithItem:self.ViewKeybaordDatepicker attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:568];
+    [self.view addConstraint:self.constraintTop];
     
 }
 
@@ -117,16 +126,25 @@
 
 - (IBAction)btnFieldName:(id)sender {
     self.move = -69;
+    self.constraintViewViewTop.constant = -106.0f;
 }
 - (IBAction)btnFieldBirthday:(id)sender {
     self.move = -107;
+    self.constraintViewViewTop.constant = -107.0f;
+    self.constraintTop.constant = 352.0f;
     [self showKeyboardDatepicker];
 }
 - (IBAction)btnDatapickerBirthdayFinish:(id)sender {
+    self.constraintViewViewTop.constant = 0.0f;
+    self.constraintTop.constant = 568.0f;
+    
     [self hideKeyboardDatepicker];
     [self viewMoveDown];
 }
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.constraintViewViewTop.constant = 0.0f;
+    self.constraintTop.constant = 568.0f;
+    
     [self.FieldName resignFirstResponder];
     [self hideKeyboardDatepicker];
     [self viewMoveDown];
@@ -138,6 +156,8 @@
     }
 }
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    self.constraintViewViewTop.constant = 0.0f;
+    
     [self.FieldName resignFirstResponder];
     [self viewMoveDown];
     return YES;
@@ -151,10 +171,13 @@
 }
 - (void)viewMoveup
 {
+    NSLog(@"up");
     if ( [[UIScreen mainScreen] bounds].size.height == 568 ) {
+        NSLog(@"up2");
         [UIView animateWithDuration:0.25
                          animations:^{
-                             [self.ViewView setFrame:CGRectMake(0, self.move, 320, 568)];
+                             [self.view layoutIfNeeded];
+//                             [self.ViewView setFrame:CGRectMake(0, self.move, 320, 568)];
                          }];
     }
     else {
@@ -167,16 +190,19 @@
 }
 - (void)viewMoveDown
 {
+    NSLog(@"down");
     if ( [[UIScreen mainScreen] bounds].size.height == 568 ) {
+        NSLog(@"down2");    
         [UIView animateWithDuration:0.25
                          animations:^{
-                             [self.ViewView setFrame:CGRectMake(0, 0, 320, 568)];
+                             [self.view layoutIfNeeded];
+//                             [self.ViewView setFrame:CGRectMake(0, 0, 320, 568)];
                          }];
     }
     else {
         [UIView animateWithDuration:0.25
                          animations:^{
-                             [self.ViewView setFrame:CGRectMake(0, -40, 320, 460)];
+                             [self.ViewView setFrame:CGRectMake(0, -200, 320, 460)];
                          }];
     }
 }
@@ -197,11 +223,13 @@
 // ----------------------------------------------------------------------------
 
 -(void)showKeyboardDatepicker {
+    
     NSLog(@"show");
     if ( [[UIScreen mainScreen] bounds].size.height == 568 ) {
         [UIView animateWithDuration:0.25
                          animations:^{
-                             [self.ViewKeybaordDatepicker setFrame:CGRectMake(0, 352, 320, 216)];
+//                             [self.ViewKeybaordDatepicker setFrame:CGRectMake(0, 352, 320, 216)];
+                             [self.view layoutIfNeeded];
                          }];
     }
     else {
@@ -216,7 +244,8 @@
     if ( [[UIScreen mainScreen] bounds].size.height == 568 ) {
         [UIView animateWithDuration:0.25
                          animations:^{
-                             [self.ViewKeybaordDatepicker setFrame:CGRectMake(0, 568, 320, 216)];
+                             [self.view layoutIfNeeded];
+//                             [self.ViewKeybaordDatepicker setFrame:CGRectMake(0, 568, 320, 216)];
                          }];
     }
     else {
